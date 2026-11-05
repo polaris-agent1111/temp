@@ -5,6 +5,7 @@
 
 > 项目计划见 [PLAN.md](PLAN.md)，最新进展/榜单/评分异常排查见 [STATUS.md](STATUS.md)，
 > 每小时快照见 [hourly/INDEX.md](hourly/INDEX.md)。
+> 队友协作区（加入流程 / 任务认领 / 每日同步）见 [Discussions #1](https://github.com/YunHai121/idsn-challenge/discussions/1)。
 
 ---
 
