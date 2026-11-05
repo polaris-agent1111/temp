@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "generated_for": "六载穿柜（题目一）question/1..6/pacer.txt",
+  "source_of_truth": "docs/extracted/流量整形模块使用说明.md + docs/extracted/六载穿柜.md",
+  "file_format": {
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline": false,
+    "bom": false,
+    "line_count": 3,
+    "line1": "[timestamp:N]  (N 必须等于所在目录名, 正整数)",
+    "line2": "pacer_mode:<module>",
+    "line3": "pacer_config:<name>=<value>,<name>=<value>  (允许空值: 仅使用模块默认参数)",
+    "whitespace": "行首行尾不得有空白; 参数表内不得有多余空格"
+  },
+  "value_types": {
+    "posint": "正整数 (>=1)",
+    "nonnegint": "非负整数 (>=0)",
+    "bool01": "0 或 1"
+  },
+  "modules": {
+    "token_bucket": {
+      "params": {
+        "tokens": { "type": "posint", "default": 20, "required": false, "desc": "初始令牌数" },
+        "burst": { "type": "posint", "default": 40, "required": false, "desc": "令牌桶容量" },
+        "token_refill_rate": { "type": "posint", "default": 10, "required": false, "desc": "每次补充的令牌数" },
+        "token_refill_interval_us": { "type": "posint", "default": 100, "required": false, "desc": "补充时间间隔(微秒)" },
+        "enable_n_in_flight": { "type": "bool01", "default": 1, "required": false, "desc": "无在途包直接放行旁路" }
+      },
+      "constraints": [
+        { "op": ">=", "left": "burst", "right": "tokens", "msg": "burst 必须 >= tokens" }
+      ]
+    },
+    "coarse_grained_rate_based": {
+      "params": {
+        "max_pacing_rate": { "type": "nonnegint", "default": 0, "required": false, "desc": "最大发送速率(字节/秒), 0=不限速" },
+        "clock_granularity": { "type": "posint", "default": 1000, "required": false, "desc": "时钟粒度容差(微秒)" },
+        "enable_n_in_flight": { "type": "bool01", "default": 1, "required": false, "desc": "无在途包直接放行旁路" }
+      },
+      "constraints": []
+    },
+    "precise_rate_based": {
+      "params": {
+        "max_pacing_rate": { "type": "nonnegint", "default": 0, "required": false, "desc": "最大发送速率(字节/秒), 0=不限速" },
+        "clock_granularity": { "type": "posint", "default": 1000, "required": false, "desc": "时钟粒度容差(微秒)" },
+        "enable_n_in_flight": { "type": "bool01", "default": 1, "required": false, "desc": "无在途包直接放行旁路" }
+      },
+      "constraints": []
+    },
+    "origin": {
+      "params": {
+        "burst_tokens": { "type": "posint", "default": 10, "required": false, "desc": "突发令牌数" },
+        "max_pacing_rate": { "type": "nonnegint", "default": 0, "required": false, "desc": "第二阶段最大速率(字节/秒), 0=不限速" },
+        "clock_granularity": { "type": "posint", "default": 1000, "required": false, "desc": "时钟粒度容差(微秒)" }
+      },
+      "constraints": [],
+      "note": "混合模块: 机制1 突发令牌 + 机制2 粗粒度速率 + 机制3 无在途直接放行(最高优先级); 无 enable_n_in_flight 参数"
+    },
+    "leak_bucket": {
+      "params": {
+        "leak_rate": { "type": "posint", "default": 10, "required": false, "desc": "每次漏水的包数" },
+        "bucket_cap": { "type": "posint", "default": 30, "required": false, "desc": "漏桶容量" },
+        "leak_interval_us": { "type": "posint", "default": 1000, "required": false, "desc": "漏水间隔(微秒)" }
+      },
+      "constraints": [
+        { "op": ">=", "left": "bucket_cap", "right": "leak_rate", "msg": "bucket_cap 必须 >= leak_rate" }
+      ],
+      "note": "五模块中唯一没有 enable_n_in_flight 旁路的模块 (见 docs/analysis/official-score-anomaly.md)"
+    }
+  },
+  "module_names": [
+    "token_bucket",
+    "coarse_grained_rate_based",
+    "precise_rate_based",
+    "origin",
+    "leak_bucket"
+  ],
+  "question_dir_rule": "question/ 下必须恰有子目录 1..6 (无前导零); 每个子目录至多一个普通文件 pacer.txt; 不允许子目录或其它文件"
+}

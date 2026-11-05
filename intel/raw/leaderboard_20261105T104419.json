@@ -1,0 +1,344 @@
+{
+  "leaderboard": {
+    "problems": [
+      {
+        "id": 1,
+        "submissions": [
+          {
+            "attempts": [
+              {
+                "download_seconds": "130.5157",
+                "submitted_at": "2026-11-03 20:46:12"
+              },
+              {
+                "download_seconds": "128.2467",
+                "submitted_at": "2026-11-03 20:58:05"
+              },
+              {
+                "download_seconds": "126.9647",
+                "submitted_at": "2026-11-03 23:13:50"
+              },
+              {
+                "download_seconds": "134.769",
+                "submitted_at": "2026-11-03 23:16:06"
+              },
+              {
+                "download_seconds": "130.4897",
+                "submitted_at": "2026-11-03 23:57:07"
+              },
+              {
+                "download_seconds": "146.978",
+                "submitted_at": "2026-11-04 13:08:27"
+              },
+              {
+                "download_seconds": "186.9917",
+                "submitted_at": "2026-11-04 15:17:07"
+              },
+              {
+                "download_seconds": "133.4193",
+                "submitted_at": "2026-11-04 22:11:05"
+              },
+              {
+                "download_seconds": "129.8387",
+                "submitted_at": "2026-11-04 23:52:34"
+              },
+              {
+                "download_seconds": "133.5617",
+                "submitted_at": "2026-11-05 00:02:54"
+              }
+            ],
+            "team": "Catnet"
+          },
+          {
+            "attempts": [
+              {
+                "download_seconds": "185.0903",
+                "submitted_at": "2026-11-04 01:20:58"
+              },
+              {
+                "download_seconds": "145.2007",
+                "submitted_at": "2026-11-04 16:28:39"
+              },
+              {
+                "download_seconds": "150.1383",
+                "submitted_at": "2026-11-04 21:50:01"
+              },
+              {
+                "download_seconds": "362.7433",
+                "submitted_at": "2026-11-04 23:23:33"
+              }
+            ],
+            "team": "blueman"
+          },
+          {
+            "attempts": [
+              {
+                "download_seconds": "155.0473",
+                "submitted_at": "2026-10-31 23:06:46"
+              }
+            ],
+            "team": "hashkimi"
+          },
+          {
+            "attempts": [
+              {
+                "download_seconds": "271.4157",
+                "submitted_at": "2026-11-04 11:08:33"
+              },
+              {
+                "download_seconds": "155.0317",
+                "submitted_at": "2026-11-04 12:42:58"
+              },
+              {
+                "download_seconds": "155.6877",
+                "submitted_at": "2026-11-04 13:01:15"
+              },
+              {
+                "download_seconds": "153.633",
+                "submitted_at": "2026-11-04 16:39:16"
+              },
+              {
+                "download_seconds": "159.6677",
+                "submitted_at": "2026-11-04 17:00:52"
+              },
+              {
+                "download_seconds": "153.2673",
+                "submitted_at": "2026-11-05 08:35:40"
+              },
+              {
+                "download_seconds": "133.5623",
+                "submitted_at": "2026-11-05 08:47:06"
+              },
+              {
+                "download_seconds": "132.5727",
+                "submitted_at": "2026-11-05 09:37:39"
+              },
+              {
+                "download_seconds": "146.347",
+                "submitted_at": "2026-11-05 10:13:34"
+              }
+            ],
+            "team": "光明未来"
+          },
+          {
+            "attempts": [
+              {
+                "download_seconds": "133.7303",
+                "submitted_at": "2026-11-04 22:11:58"
+              },
+              {
+                "download_seconds": "166.043",
+                "submitted_at": "2026-11-04 22:14:10"
+              },
+              {
+                "download_seconds": "163.609",
+                "submitted_at": "2026-11-04 22:16:14"
+              },
+              {
+                "download_seconds": "189.8263",
+                "submitted_at": "2026-11-04 22:17:53"
+              },
+              {
+                "download_seconds": "142.013",
+                "submitted_at": "2026-11-04 22:21:33"
+              }
+            ],
+            "team": "大肥鱼"
+          },
+          {
+            "attempts": [
+              {
+                "download_seconds": "138.9053",
+                "submitted_at": "2026-11-05 10:09:57"
+              }
+            ],
+            "team": "无法导入"
+          }
+        ],
+        "title": "题目一"
+      }
+    ]
+  },
+  "submission_log": [
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-03 23:16:06",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-03 23:57:07",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "已达到最大提交次数",
+      "submitted_at": "2026-11-03 23:57:12",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 01:20:58",
+      "team": "blueman"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 11:08:33",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 12:42:58",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 13:01:15",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 13:08:27",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 15:17:07",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 16:28:39",
+      "team": "blueman"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 16:39:16",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 17:00:52",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 21:50:01",
+      "team": "blueman"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 22:11:05",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 22:11:58",
+      "team": "大肥鱼"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 22:14:10",
+      "team": "大肥鱼"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 22:16:14",
+      "team": "大肥鱼"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 22:17:53",
+      "team": "大肥鱼"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 22:21:33",
+      "team": "大肥鱼"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 23:23:33",
+      "team": "blueman"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-04 23:52:34",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "接收失败：格式检查未通过",
+      "submitted_at": "2026-11-04 23:58:17",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "已达到最大提交次数",
+      "submitted_at": "2026-11-04 23:58:35",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-05 00:02:54",
+      "team": "Catnet"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-05 08:35:40",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-05 08:47:06",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-05 09:37:39",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-05 10:09:57",
+      "team": "无法导入"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-05 10:13:34",
+      "team": "光明未来"
+    },
+    {
+      "problem": 1,
+      "status": "提交成功",
+      "submitted_at": "2026-11-05 10:37:53",
+      "team": "光明未来"
+    }
+  ]
+}
