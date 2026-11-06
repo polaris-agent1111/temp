@@ -32,7 +32,7 @@
 | `tools/` | 本地校验器 `validate_pacer.py`、盯榜 `watch_board.py`、统计 `config_stats.py`、云主机负载 `vm_load.py` |
 | `configs/params_schema.json` | 五个模块的参数名/类型/默认值/约束（唯一权威 schema） |
 | `intel/` | 赛情材料、公众号原文、榜单 JSON 快照与榜单时序 CSV |
-| `docs/` | 官方下载资料（`extracted/` 为 docx 抽取出的 Markdown，可直接检索；压缩包/大文件不入库） |
+| `docs/` | **官方资料**（原件 + 抽取文本 + 官方文档插图）：`题目1附件.zip`、`六载穿柜.docx`、`extracted/`（docx 抽取的 Markdown，可直接检索）、`figures_official/`（21 张内嵌图）、`analysis/`（赛题/榜单分析）、`knowledge/`（机制结论沉淀） |
 | `report/` | 技术报告、复现说明、实验结果数据表与图表 |
 | `runs/` | **本机实验记录，不入库**：`results.jsonl`、`submissions.jsonl`、`configs/`、`evals/`、`leaderboard/` 等 |
 | `zcode/` | 与 zcode 的异步任务通道（协议见 `zcode/README.md`） |
@@ -202,7 +202,9 @@ sudo ./competition_question1 --output-dir ./results --result-json ./results/eval
 - `client/secrets.json`：团队密码、平台账号、团队 GUID、云主机口令
 - `runs/.session.pkl`：榜单站会话 Cookie；`runs/trit_*.json`：平台 access/refresh token
 - `runs/*.jsonl`：实验与提交流水；`runs/` 下的评测原始结果、配置 tar 包
-- `docs/*.zip`、`docs/*.tar*`、`env/*.tar*`、`__pycache__/`、`*.pyc`
+- `docs/*.tar*`、`env/*.tar*`、`__pycache__/`、`*.pyc`
+
+> 官方资料 `docs/题目1附件.zip` 与各 docx **是有意入库的**（队友 clone 后无需再找队长要）；只想取原件时可 `unzip docs/题目1附件.zip`。
 
 提交前务必用 `git status` 复核，**任何密码/token/GUID 都不允许进仓库**。
 规则见 [.gitignore](.gitignore)，换行与二进制策略见 [.gitattributes](.gitattributes)。
@@ -226,6 +228,14 @@ sudo ./competition_question1 --output-dir ./results --result-json ./results/eval
 | [report/复现说明.md](report/复现说明.md) | 从零复现提交配置与评测结果的完整步骤 |
 | [report/技术报告-v1.md](report/技术报告-v1.md) | 技术报告（方法、实验、稳定性） |
 | [intel/article.md](intel/article.md) | 赛事规则原文要点 |
-| [docs/extracted/](docs/extracted/) | 官方资料抽取文本（流量整形模块说明、实验详细手册等） |
+| [docs/题目1附件.zip](docs/题目1附件.zip) | **官方资料原件**（实验详细手册、流量整形模块使用说明、websearch 背景流量模型） |
+| [docs/六载穿柜.docx](docs/六载穿柜.docx) | 官方题目原文（含拓扑图与评分规则） |
+| [docs/extracted/](docs/extracted/) | 官方资料抽取文本（可直接检索） |
+| [docs/figures_official/](docs/figures_official/) | 官方文档内嵌图（拓扑、模块、pacer 示意 21 张） |
+| [docs/analysis/](docs/analysis/) | 赛题/榜单/对手分析（官方分数曲面、本地-官方偏差、对手轨迹） |
+| [docs/knowledge/](docs/knowledge/) | 机制结论沉淀（定时器粒度、流量整形分析） |
+| [report/技术报告-v3.md](report/技术报告-v3.md) | 技术报告最新版 |
+| [report/提交台账.md](report/提交台账.md) | 官方提交记录与得分台账 |
+| [HANDOFF.md](HANDOFF.md) | 交接材料：官方材料结论汇总 + 当前待解问题 |
 | [zcode/README.md](zcode/README.md) | AI 异步任务通道协议 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 团队协作规范（分支、提交、PR、密文管理） |
