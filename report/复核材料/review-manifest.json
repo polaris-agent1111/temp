@@ -1,33 +1,128 @@
 {
- "package": "赛博coder 复核材料包 v2",
- "generated_at": "2026-11-05 18:33:36",
+ "package": "赛博coder 复核材料包 v3（王牌跨机制整形升级版）",
+ "generated_at": "2026-11-06 15:47:27",
  "note": "本文件自身不列入；校验: 对每个 path 重算 sha256/bytes 与本表比对。best-configs 内配置与 runs/configs/ 源字节一致（cp -p 复制，sha256 已核对）。",
- "file_count": 35,
+ "file_count": 59,
  "files": [
   {
-   "path": "README.md",
-   "bytes": 3833,
-   "sha256": "e7f95cfd764f90895de2f293f8cccd45b2e1c52cb4e814175c3b084a299b2822"
+   "path": "best-configs/hybrid-champ-100M-96M/1/pacer.txt",
+   "bytes": 141,
+   "sha256": "4fbf03db70c855073e29899d3a49553509a1bc0389f86205f26d7a0792984996"
   },
   {
-   "path": "checklist.md",
-   "bytes": 4160,
-   "sha256": "4f7c4b049536cd1e72ba550637c2aed4846872a824e89c99a8eae5f63f5372d5"
+   "path": "best-configs/hybrid-champ-100M-96M/2/pacer.txt",
+   "bytes": 141,
+   "sha256": "21e4fe70b5a024851804b52485eb2bc1670ed53b38b9673188f31e72f9445492"
   },
   {
-   "path": "methodology.md",
-   "bytes": 3741,
-   "sha256": "c0687873f68294da4723d4c26dfa1f3dd42962931213cbcb05704b6a79b39106"
+   "path": "best-configs/hybrid-champ-100M-96M/3/pacer.txt",
+   "bytes": 141,
+   "sha256": "e56e57fa3bcd40f0e319822f3a599fdadcf5043d34d1ad15eba71a649e56ccb6"
   },
   {
-   "path": "reproduce.md",
-   "bytes": 5433,
-   "sha256": "872ae9ece35509996b826c449517ac440a9531be98e47bd60d7423cd0295f585"
+   "path": "best-configs/hybrid-champ-100M-96M/4/pacer.txt",
+   "bytes": 141,
+   "sha256": "07b488977ffe6b6fd1291a258cc0f1d3455687e83f28af79732bd933a59a7e7a"
   },
   {
-   "path": "best-configs/README.md",
-   "bytes": 3436,
-   "sha256": "31bafddacb15bdfc6cf856471d486c654578f5f12287eb493e95ef1c8d56d9b9"
+   "path": "best-configs/hybrid-champ-100M-96M/5/pacer.txt",
+   "bytes": 125,
+   "sha256": "ac27b72477f6ae00db092b7507642503a04f54eca7f3c76a7334efe5950f0c89"
+  },
+  {
+   "path": "best-configs/hybrid-champ-100M-96M/6/pacer.txt",
+   "bytes": 125,
+   "sha256": "7632a4e5dbefcc737d86d34707ff787710d723133b0ef19e0b0081f4ee730c07"
+  },
+  {
+   "path": "best-configs/hybrid-champ-90M-96M/1/pacer.txt",
+   "bytes": 141,
+   "sha256": "4fbf03db70c855073e29899d3a49553509a1bc0389f86205f26d7a0792984996"
+  },
+  {
+   "path": "best-configs/hybrid-champ-90M-96M/2/pacer.txt",
+   "bytes": 141,
+   "sha256": "21e4fe70b5a024851804b52485eb2bc1670ed53b38b9673188f31e72f9445492"
+  },
+  {
+   "path": "best-configs/hybrid-champ-90M-96M/3/pacer.txt",
+   "bytes": 141,
+   "sha256": "e56e57fa3bcd40f0e319822f3a599fdadcf5043d34d1ad15eba71a649e56ccb6"
+  },
+  {
+   "path": "best-configs/hybrid-champ-90M-96M/4/pacer.txt",
+   "bytes": 141,
+   "sha256": "07b488977ffe6b6fd1291a258cc0f1d3455687e83f28af79732bd933a59a7e7a"
+  },
+  {
+   "path": "best-configs/hybrid-champ-90M-96M/5/pacer.txt",
+   "bytes": 125,
+   "sha256": "23203daabe55c860c5f599bc6f968415a3faf6a5a06f18b7f5b8ca436e7045e6"
+  },
+  {
+   "path": "best-configs/hybrid-champ-90M-96M/6/pacer.txt",
+   "bytes": 125,
+   "sha256": "7632a4e5dbefcc737d86d34707ff787710d723133b0ef19e0b0081f4ee730c07"
+  },
+  {
+   "path": "best-configs/hybrid-champ-92M-96M/1/pacer.txt",
+   "bytes": 141,
+   "sha256": "4fbf03db70c855073e29899d3a49553509a1bc0389f86205f26d7a0792984996"
+  },
+  {
+   "path": "best-configs/hybrid-champ-92M-96M/2/pacer.txt",
+   "bytes": 141,
+   "sha256": "21e4fe70b5a024851804b52485eb2bc1670ed53b38b9673188f31e72f9445492"
+  },
+  {
+   "path": "best-configs/hybrid-champ-92M-96M/3/pacer.txt",
+   "bytes": 141,
+   "sha256": "e56e57fa3bcd40f0e319822f3a599fdadcf5043d34d1ad15eba71a649e56ccb6"
+  },
+  {
+   "path": "best-configs/hybrid-champ-92M-96M/4/pacer.txt",
+   "bytes": 141,
+   "sha256": "07b488977ffe6b6fd1291a258cc0f1d3455687e83f28af79732bd933a59a7e7a"
+  },
+  {
+   "path": "best-configs/hybrid-champ-92M-96M/5/pacer.txt",
+   "bytes": 125,
+   "sha256": "cb8108f9b4916e597d87dddfd96030e43cca4da0ea3536c30fe951fbf7a45b83"
+  },
+  {
+   "path": "best-configs/hybrid-champ-92M-96M/6/pacer.txt",
+   "bytes": 125,
+   "sha256": "7632a4e5dbefcc737d86d34707ff787710d723133b0ef19e0b0081f4ee730c07"
+  },
+  {
+   "path": "best-configs/hybrid-champ-96M-both/1/pacer.txt",
+   "bytes": 141,
+   "sha256": "4fbf03db70c855073e29899d3a49553509a1bc0389f86205f26d7a0792984996"
+  },
+  {
+   "path": "best-configs/hybrid-champ-96M-both/2/pacer.txt",
+   "bytes": 141,
+   "sha256": "21e4fe70b5a024851804b52485eb2bc1670ed53b38b9673188f31e72f9445492"
+  },
+  {
+   "path": "best-configs/hybrid-champ-96M-both/3/pacer.txt",
+   "bytes": 141,
+   "sha256": "e56e57fa3bcd40f0e319822f3a599fdadcf5043d34d1ad15eba71a649e56ccb6"
+  },
+  {
+   "path": "best-configs/hybrid-champ-96M-both/4/pacer.txt",
+   "bytes": 141,
+   "sha256": "07b488977ffe6b6fd1291a258cc0f1d3455687e83f28af79732bd933a59a7e7a"
+  },
+  {
+   "path": "best-configs/hybrid-champ-96M-both/5/pacer.txt",
+   "bytes": 125,
+   "sha256": "185e9d500720340429a99b824c8034f06df4b2cc670f584287e29e50a12f542f"
+  },
+  {
+   "path": "best-configs/hybrid-champ-96M-both/6/pacer.txt",
+   "bytes": 125,
+   "sha256": "7632a4e5dbefcc737d86d34707ff787710d723133b0ef19e0b0081f4ee730c07"
   },
   {
    "path": "best-configs/leak-24-50-4000/1/pacer.txt",
@@ -150,6 +245,11 @@
    "sha256": "fc7dafbe23174cace2e2e5c44eb001ca8feca678d93e0d242ca2c1ff6e9e86df"
   },
   {
+   "path": "best-configs/README.md",
+   "bytes": 4702,
+   "sha256": "a423e5d130caead08ca33f931130eb9cceae15ad1367523289e3d0eb4a9138c3"
+  },
+  {
    "path": "best-configs/tb-100-200-20/1/pacer.txt",
    "bytes": 122,
    "sha256": "b8971c37dfff019f5188ed655b8c0d8a8ccfc7970224bb3250d80768a763727a"
@@ -178,6 +278,26 @@
    "path": "best-configs/tb-100-200-20/6/pacer.txt",
    "bytes": 122,
    "sha256": "5e38c8949d8bb49183d40ef9e5e4715fc15fc14c0e484cd9b33c6fce16a8789e"
+  },
+  {
+   "path": "checklist.md",
+   "bytes": 4160,
+   "sha256": "4f7c4b049536cd1e72ba550637c2aed4846872a824e89c99a8eae5f63f5372d5"
+  },
+  {
+   "path": "methodology.md",
+   "bytes": 3741,
+   "sha256": "c0687873f68294da4723d4c26dfa1f3dd42962931213cbcb05704b6a79b39106"
+  },
+  {
+   "path": "README.md",
+   "bytes": 3833,
+   "sha256": "e7f95cfd764f90895de2f293f8cccd45b2e1c52cb4e814175c3b084a299b2822"
+  },
+  {
+   "path": "reproduce.md",
+   "bytes": 5433,
+   "sha256": "872ae9ece35509996b826c449517ac440a9531be98e47bd60d7423cd0295f585"
   }
  ]
 }

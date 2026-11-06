@@ -1,0 +1,48 @@
+[
+  {
+    "tag": "1108-A1-hybrid-champ-90M-96M",
+    "note": "A1【王牌冠军组合】1-4 tb(40/40/r40/36)+5 precise(90M/g1k)+6 precise(96M/g1k) —— 前段锁住 23.5s 极限，后段 1ms 细粒度平滑防溢出",
+    "configs": {
+      "1": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "2": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "3": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 38, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "4": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 36, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "5": ["precise_rate_based", {"max_pacing_rate": 11250000, "clock_granularity": 1000, "enable_n_in_flight": 1}],
+      "6": ["precise_rate_based", {"max_pacing_rate": 12000000, "clock_granularity": 1000, "enable_n_in_flight": 1}]
+    }
+  },
+  {
+    "tag": "1108-A2-hybrid-champ-96M-both",
+    "note": "A2【高利用率冠军组合】1-4 tb(40/40/r40/36)+5-6 precise(96M/g1k) —— 5.bin 与 6.bin 均开放 96Mbps 冲锋",
+    "configs": {
+      "1": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "2": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "3": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 38, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "4": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 36, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "5": ["precise_rate_based", {"max_pacing_rate": 12000000, "clock_granularity": 1000, "enable_n_in_flight": 1}],
+      "6": ["precise_rate_based", {"max_pacing_rate": 12000000, "clock_granularity": 1000, "enable_n_in_flight": 1}]
+    }
+  },
+  {
+    "tag": "1108-A3-hybrid-tb4-precise-g4k",
+    "note": "A3【4ms容差对照】1-4 tb(40/40/r40/36)+5-6 precise(90M/86.4M/g4k) —— 4ms 容差对照组",
+    "configs": {
+      "1": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "2": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "3": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 38, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "4": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 36, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
+      "5": ["precise_rate_based", {"max_pacing_rate": 11250000, "clock_granularity": 4000, "enable_n_in_flight": 1}],
+      "6": ["precise_rate_based", {"max_pacing_rate": 10800000, "clock_granularity": 4000, "enable_n_in_flight": 1}]
+    }
+  },
+  {
+    "tag": "1108-A4-tb-uniform-best",
+    "note": "A4【纯令牌桶全局精调】tb tokens=40,burst=40,refill 38@4000 —— 稳态速率上调至 95Mbps 单配基线",
+    "all": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 38, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}]
+  },
+  {
+    "tag": "1108-A5-precise-uniform-96M",
+    "note": "A5【纯逐包平滑基准】precise max_pacing_rate=12000000,clock_granularity=1000,in_flight=1 —— 全局平滑基线",
+    "all": ["precise_rate_based", {"max_pacing_rate": 12000000, "clock_granularity": 1000, "enable_n_in_flight": 1}]
+  }
+]

@@ -1,0 +1,3 @@
+[timestamp:5]
+pacer_mode:precise_rate_based
+pacer_config:max_pacing_rate=11500000,clock_granularity=1000,enable_n_in_flight=1

@@ -53,6 +53,10 @@ docs/*.zip
 docs/*.tar*
 env/*.tar*
 env/*.zip
+# 会话备份与大压缩包
+dsh-session-*.zip
+*.zip
+!docs/题目1附件.zip
 
 # ---------- 体积与非必要材料 ----------
 report/figures/_fonttest.png
