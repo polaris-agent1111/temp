@@ -25,8 +25,17 @@ question/
 ```
 [timestamp:1]
 pacer_mode:leak_bucket
-pacer_config:leak_rate=9,bucket_cap=30,leak_interval_us=1000
+pacer_config:leak_rate=36,bucket_cap=40,leak_interval_us=4000
 ```
+
+## 1.5 ⚠ 必须用 4 ms 及以上间隔（v2 新增，复核必读）
+
+- **现象**：同一配置 `leak_bucket 9/30/1000µs`，本地 7 次实测 **123.81±7.19 s**，官方两次提交却是 **245.995 / 243.958 s（恰好 ×2）**；把 `leak_interval_us` 抬到 **4000** 后（`36/40/4000`），官方回到 **133.086 s**，与本地 132.45±6.73 一致（1:1）。
+- **原因（反推值，待验证）**：官方评测环境的定时器实际粒度 ≈ **4 ms**——`leak_bucket` 是五个模块中唯一没有 `enable_n_in_flight` 旁路的，速率完全绑定漏出定时器；9 包/1 ms 在 4 ms 粒度下退化为 9 包/4 ms = 21.6 Mbps → 630 MB ≈ 233 s + 残差 ≈ 244 s，与实测吻合。完整证据链与定量模型见 **`docs/knowledge/timer-granularity.md`**（工具：`python tools/timer_model.py fit`）。
+- **规避方法（复核配置选择规则）**：
+  1. 用 `leak_bucket` 时 **`leak_interval_us ≥ 4000`**（本包 `leak-36-40-4000`、`leak-24-50-4000` 均满足）；
+  2. 或改用带 `enable_n_in_flight` 旁路的模块（token_bucket / coarse / precise；origin 内建机制3），且标称速率留足余量（÷4 后仍 >41 Mbps 份额）；
+  3. **禁止**用 1 ms 漏桶（`leak9-rate9`/`leak8-rate8`）做官方复测——本地会给出误导性的好成绩。
 
 本地预检（可选但推荐，工作区执行，秒级）：
 
@@ -92,8 +101,9 @@ cd /home/openlab/Desktop
 | 配置 | 本地预期 (s) | 备注 |
 |---|---|---|
 | 平台默认（question 不放任何 pacer.txt） | 170.0±2.3 | 基线 n=2 |
-| `best-configs/leak9-rate9` | 123.8±7.2 | n=7；背景随机下 114.6–134.6 均属正常 |
-| `best-configs/leak8-rate8` | 126.1±7.0 | n=3 |
-| `best-configs/tb-100-200-20` | 136.2±7.6 | n=2；官方提交口径 |
+| `best-configs/leak-36-40-4000` | 132.5±6.7 | n=3；**官方 133.086 实测锚点** |
+| `best-configs/leak-24-50-4000` | 126.9±6.2 | n=11，min 119.6；官方待投 |
+| `best-configs/tb-100-200-20` | 136.2±7.6 | n=2；官方 140.927（1:1 对照） |
+| `best-configs/leak9-rate9`（历史） | 123.8±7.2 | ⚠ 1 ms 陷阱：**官方 244–246**，仅作差异证据 |
 
-跨环境提示：官方评测与本地存在系统性差异（同配置两次 245.995/243.958 s），复现本地值不代表官方值；差异分析见 `docs/analysis/official-score-anomaly.md`。
+跨环境提示：官方评测与本地的系统性差异已定位为**定时器粒度 ≈4 ms（反推）**——安全配置（interval≥4000 / 有旁路）官方≈本地×(1.03~1.15)，1 ms 漏桶官方≈×2；详见 §1.5 与 `docs/knowledge/timer-granularity.md`。

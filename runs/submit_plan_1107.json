@@ -1,0 +1,12 @@
+[
+  {"tag": "p1-leak-36-40-4000", "note": "P1【复测对照】leak 36/40/4000 —— 11-05 15:55 测过 = 133.086。今晚再投同款：若回到 133.1 说明官方确定且无时段效应；若明显变差说明时段/负载有影响（这决定了今晚其它 4 发怎么解读）",
+   "all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 40, "leak_interval_us": 4000}]},
+  {"tag": "p2-leak-36-36-4000", "note": "P2: leak 36/36/4000（cap 从 40 降到 cap=rate，同 rate 单变量）",
+   "all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 36, "leak_interval_us": 4000}]},
+  {"tag": "p3-leak-36-60-4000", "note": "P3: leak 36/60/4000（cap 从 40 升到 60，同 rate 单变量）",
+   "all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 60, "leak_interval_us": 4000}]},
+  {"tag": "p4-leak-40-40-4000", "note": "P4: leak 40/40/4000（rate +4，模型预测最优 131.3）",
+   "all": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 40, "leak_interval_us": 4000}]},
+  {"tag": "p5-leak-38-40-4000", "note": "P5: leak 38/40/4000（rate +2，碗底右侧）",
+   "all": ["leak_bucket", {"leak_rate": 38, "bucket_cap": 40, "leak_interval_us": 4000}]}
+]

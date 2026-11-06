@@ -1,0 +1,12 @@
+[
+  {"tag": "d2h-1-38-60-4000", "note": "分支A(高rate胜)：leak 38/60/4000（36→40 之间的内插）",
+   "all": ["leak_bucket", {"leak_rate": 38, "bucket_cap": 60, "leak_interval_us": 4000}]},
+  {"tag": "d2h-2-42-60-4000", "note": "分支A：leak 42/60/4000（40 上方半档）",
+   "all": ["leak_bucket", {"leak_rate": 42, "bucket_cap": 60, "leak_interval_us": 4000}]},
+  {"tag": "d2h-3-40-80-4000", "note": "分支A：leak 40/80/4000（大桶，抑制突发）",
+   "all": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 80, "leak_interval_us": 4000}]},
+  {"tag": "d2h-4-40-60-5000", "note": "分支A：leak 40/60/5000（高 rate + 5ms，抗更大粒度）",
+   "all": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 60, "leak_interval_us": 5000}]},
+  {"tag": "d2h-5-36-60-6000", "note": "分支A：leak 36/60/6000（高 rate + 6ms）",
+   "all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 60, "leak_interval_us": 6000}]}
+]

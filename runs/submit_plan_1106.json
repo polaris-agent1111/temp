@@ -1,0 +1,12 @@
+[
+  {"tag": "s6-leak-30-50-5000", "note": "S6: leak 30/50/5000（本地 121.83，n=6 —— 当前最优；5ms 间隔）",
+   "all": ["leak_bucket", {"leak_rate": 30, "bucket_cap": 50, "leak_interval_us": 5000}]},
+  {"tag": "s7-leak-24-60-4000", "note": "S7: leak 24/60/4000（本地 123.13，n=12 —— 4ms 最优）",
+   "all": ["leak_bucket", {"leak_rate": 24, "bucket_cap": 60, "leak_interval_us": 4000}]},
+  {"tag": "s8-leak-22-60-4000", "note": "S8: leak 22/60/4000（本地 124.5，n=2 —— 低速端）",
+   "all": ["leak_bucket", {"leak_rate": 22, "bucket_cap": 60, "leak_interval_us": 4000}]},
+  {"tag": "s9-leak-36-60-5000", "note": "S9: leak 36/60/5000（本地 125.38 —— 高速端 + 5ms，7200 包/s）",
+   "all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 60, "leak_interval_us": 5000}]},
+  {"tag": "s10-leak-40-60-4000", "note": "S10: leak 40/60/4000（本地 126.75 —— 最高包速率 10000 包/s，对冲官方偏好高 rate）",
+   "all": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 60, "leak_interval_us": 4000}]}
+]

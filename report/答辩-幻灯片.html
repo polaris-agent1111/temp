@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>六载穿柜 · 答辩幻灯片 · 赛博coder</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; background: #1a1a2e; font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+  #deck { max-width: 1280px; margin: 0 auto; }
+  section.slide {
+    display: none;
+    min-height: 92vh;
+    background: #f7f8fa;
+    color: #222;
+    padding: 0 56px 48px;
+    flex-direction: column;
+  }
+  section.slide.active { display: flex; }
+  .bar {
+    background: #16213e; color: #fff; font-size: 20px; letter-spacing: 1px;
+    padding: 12px 56px; margin: 0 -56px 28px; display: flex; justify-content: space-between;
+  }
+  h1 { font-size: 44px; line-height: 1.25; color: #0f3460; margin-bottom: 24px; }
+  h2 { font-size: 40px; line-height: 1.3; color: #0f3460; margin-bottom: 24px; }
+  ul { list-style: none; }
+  li { font-size: 26px; line-height: 1.55; margin: 14px 0; padding-left: 34px; position: relative; }
+  li::before { content: "▸"; color: #e94560; position: absolute; left: 0; }
+  p { font-size: 26px; line-height: 1.55; margin: 12px 0; }
+  strong { color: #c0392b; }
+  table { border-collapse: collapse; width: 100%; margin-top: 12px; font-size: 23px; }
+  th, td { border: 1px solid #bbb; padding: 9px 12px; text-align: center; }
+  th { background: #16213e; color: #fff; font-size: 23px; }
+  tr:nth-child(even) td { background: #eef1f6; }
+  img { max-width: 900px; max-height: 420px; display: block; margin: 14px auto 0; border: 1px solid #ccc; background: #fff; }
+  .lead { justify-content: center; align-items: center; text-align: center; background: #0f3460; color: #fff; }
+  .lead h1, .lead h2 { color: #fff; font-size: 54px; }
+  .lead li { font-size: 28px; text-align: left; display: inline-block; }
+  .lead li::before { color: #e94560; }
+  .lead p, .lead strong { color: #ffd479; }
+  .footnote { font-size: 19px; color: #666; margin-top: auto; padding-top: 14px; }
+  section.appendix { background: #fff; }
+  section.appendix h2 { font-size: 32px; }
+  section.appendix p { font-size: 20px; line-height: 1.5; margin: 9px 0; }
+  section.appendix strong { color: #0f3460; }
+  #nav { position: fixed; bottom: 12px; right: 18px; color: #888; font-size: 16px; background: rgba(255,255,255,.85); padding: 4px 12px; border-radius: 12px; z-index: 9; }
+  #hint { position: fixed; bottom: 12px; left: 18px; color: #aaa; font-size: 14px; z-index: 9; }
+  @media print {
+    html, body { background: #fff; }
+    section.slide { display: flex !important; page-break-after: always; min-height: auto; border-bottom: 2px solid #ccc; }
+    #nav, #hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div id="deck">
+
+<section class="slide lead">
+  <h1>六载穿柜：流量整形参数优化</h1>
+  <p><strong>赛博coder</strong> · 智能领域定制网络 iDSN 挑战赛</p>
+  <ul>
+    <li>630 MB 六文件顺序下载 × 100 Mbps 共享链路</li>
+    <li>本地 <strong>170.0 → 127.0 s</strong>（−25.3%，n=12）</li>
+    <li>官方 <strong>133.086 s，榜第 5</strong>（距第 1 名 6.12 s）</li>
+  </ul>
+  <p>答辩：2026-11-20~22 · 厦门</p>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>1/14</span></div>
+  <h2>问题背景：夹缝中取数</h2>
+  <ul>
+    <li>六文件 10→320 MB <strong>必须顺序</strong>下载，单连接、不可并行</li>
+    <li>与网页搜索背景流<strong>共享同一根 100 Mbps 上联</strong>（背景目标速率也 = 100 Mbps）</li>
+    <li>RTT 70 ms（BDP = 875 KB）；背景流长尾 30 MB、均值 1.7 MB</li>
+    <li>每次下载前可换一份 pacer 配置（5 模块 × 参数 × 6 阶段）</li>
+  </ul>
+  <p><strong>难点</strong>：谁在夹缝里抢到带宽、抢得稳不稳，就是全部分数</p>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>2/14</span></div>
+  <h2>问题建模</h2>
+  <ul>
+    <li><strong>决策变量</strong>：6 份配置 x_i =（模块选 1 × 参数），写入 <code>question/i/pacer.txt</code>（目录无文件则沿用上一份）</li>
+    <li><strong>目标</strong>：六次下载耗时之和最小</li>
+    <li><strong>约束</strong>：格式合法（timestamp=目录号、参数白名单）｜六文件全部成功（失败=零分）｜每天 ≤5 次提交</li>
+    <li>固定项：拓扑 / 背景流量 / QUIC 栈由平台给定</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>3/14</span></div>
+  <h2>实验平台与流水线</h2>
+  <ul>
+    <li>竞赛云主机 4 核：<code>format_check_client</code> → <code>competition_question1</code>（单次 2.5–4 min）</li>
+    <li><strong>143 次有效评测</strong>全记录：配置 + 分文件耗时 + valid（<code>runs/results.jsonl</code>）</li>
+    <li>统计一键复跑：<code>tools/config_stats.py</code>；官方模型复算：<code>tools/timer_model.py</code></li>
+    <li>提交链路：本地校验 → 官方 format_check → <code>local_send_client</code>（额度 5 次/天）</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>4/14</span></div>
+  <h2>瓶颈在哪：79% 损失在大文件</h2>
+  <ul>
+    <li>基线有效吞吐仅 <strong>30 Mbps</strong>（理论公平份额 50 Mbps）</li>
+    <li>小文件被握手 + 慢启动固定开销主导，优化空间 1–2 s</li>
+    <li>收益 <strong>79% 来自 4/5/6 号大文件</strong>（−36.6 s / 总 −46.2 s）→ 搜索预算全部投向大文件稳态</li>
+  </ul>
+  <img src="figures/fig2_per_file.png" alt="分文件耗时对比">
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>5/14</span></div>
+  <h2>五模块与关键差异</h2>
+  <table>
+    <tr><th>模块</th><th>突发 vs 平滑</th><th>enable_n_in_flight 旁路</th></tr>
+    <tr><td>token_bucket</td><td>桶突发 + 补充平滑</td><td>✅ 有</td></tr>
+    <tr><td>origin（默认）</td><td>突发 + 速率混合</td><td>✅ 机制3 内建</td></tr>
+    <tr><td>coarse / precise</td><td>按间隔卡时间</td><td>✅ 有</td></tr>
+    <tr><td><strong>leak_bucket</strong></td><td>固定节奏漏出</td><td><strong>❌ 唯一没有</strong></td></tr>
+  </table>
+  <p>→ 漏桶完全绑定定时器 —— 这一行差异后来成了胜负手</p>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>6/14</span></div>
+  <h2>方法：四层搜索 + 环境标定</h2>
+  <ul>
+    <li><strong>L0 对照</strong>：基线 ×2、各模块默认值（170.00±2.34 s）</li>
+    <li><strong>L1 单因子</strong>：模块 × 速率档 → leak/token 族胜出</li>
+    <li><strong>L2 网格</strong>：rate × interval × cap 约 45 组</li>
+    <li><strong>L3 复测 + 交错 A/B</strong>：同时段交替跑抵消漂移；<strong>n≥3 才排序</strong>（本地噪声 sd≈6–8 s）</li>
+  </ul>
+  <p>工程坑：CRLF 换行 → 服务端解析失败、本地 80 s「假成功」→ 生成即过 <code>validate_pacer.py</code>（8 项检查）</p>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>7/14</span></div>
+  <h2>破案：官方定时器粒度 ≈ 4 ms</h2>
+  <ul>
+    <li><strong>现象</strong>：同配置 leak 9/30/<strong>1000µs</strong>，本地 <strong>123.81±7.19</strong>，官方 <strong>245.995 / 243.958</strong>（差 0.83%）= 恰好 ×2</li>
+    <li><strong>排除</strong>：同窗他队正常（129–131）｜4 个 CPU 满载 hog 只 +10.9%｜格式检查通过</li>
+    <li><strong>定量</strong>：9包/1ms 在 4 ms 粒度 → 2250 包/s ≈ 21.6 Mbps → 630 MB ≈ 233 s + 残差 ≈ <strong>244 s</strong> ✓</li>
+    <li><strong>G 扫描唯一解 G=4000 µs</strong>（与 HZ=250 吻合，反推值）</li>
+    <li><strong>铁律</strong>：<code>leak_interval_us ≥ 4000</code> 或改用带旁路模块 → 官方立即 1:1</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>8/14</span></div>
+  <h2>结果：官方实测五连发（今日 5/5）</h2>
+  <table>
+    <tr><th>提交</th><th>配置</th><th>本地 (n)</th><th>官方 (s)</th><th>δ</th></tr>
+    <tr><td>v1 / v1b</td><td>leak 9/30/<strong>1000</strong></td><td>123.81 (7)</td><td>245.995 / 243.958</td><td>+96% ⚠陷阱</td></tr>
+    <tr><td>S3</td><td>token_bucket 100/200/20</td><td>136.24 (2)</td><td>140.927</td><td>+3.4%</td></tr>
+    <tr><td><strong>S4</strong></td><td><strong>leak 36/40/4000</strong></td><td>130.32 (5)</td><td><strong>133.086</strong></td><td><strong>+2.1%</strong></td></tr>
+    <tr><td>S5</td><td>leak 27/40/4000</td><td>123.41 (1)</td><td>141.727</td><td>+14.8% 异常</td></tr>
+  </table>
+  <p><strong>榜第 5</strong>：距第 3（131.265）1.83 s｜距第 4（132.573）0.513 s｜距第 1（<strong>126.965</strong>）6.12 s</p>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>9/14</span></div>
+  <h2>结果：本地最优（143 次有效评测）</h2>
+  <ul>
+    <li>现役族 <strong><code>leak 24/50/4000</code>：127.01±5.95（n=12，min 119.59）</strong>，比基线 −25.3%</li>
+    <li>交错三方（15 轮同时段）：<code>24/60</code> 均值 <strong>121.6</strong>、<code>22/50</code> 126.5、<code>24/50</code> 130.5</li>
+    <li><strong>历史最好单次 112.361 s</strong>（<code>24/60/4000</code>，其中 6.bin 仅 55.57 s）</li>
+    <li>更正记录：早期 n=5 的 122.07 属幸运样本，n=12 回归 127.01 —— 单点不可信</li>
+    <li>数据源：技术报告-v3 + hourly 2026-11-05_2000（121.6 / 112.36 为 v3 截止后的新增实测）</li>
+  </ul>
+  <img src="figures/fig1_config_compare.png" alt="Top8 配置族对比">
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>10/14</span></div>
+  <h2>负结果：参数扫描没有梯度</h2>
+  <ul>
+    <li>1 ms 时代：leak_rate 6→12 全不显著（p=0.19–0.91）</li>
+    <li><strong>原因</strong>：标称速率 69–138 Mbps ≫ 实际份额 41 Mbps → 整形器<strong>非绑定</strong>，测的全是背景随机</li>
+    <li>cap 维度同样无单调（60→120：122–131 乱跳）</li>
+    <li><strong>结论</strong>：负结果也是结果 —— 转向「绑定区设计 + 跨环境标定」，不给噪声梯度交学费</li>
+  </ul>
+  <img src="figures/fig3_rate_sweep.png" alt="leak_rate 扫描散点">
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>11/14</span></div>
+  <h2>稳定性与鲁棒性</h2>
+  <ul>
+    <li><strong>稳定性</strong>：n=12 CV 4.7%（标准误 1.72）；方差三来源 = 背景随机 > CPU 争抢（+10.9% 实测）> 配置（不显著）；跨时段漂移用<strong>交错 A/B</strong> 剥离</li>
+    <li><strong>官方侧</strong>：同配置重投差 0.83%（近似确定）；δ 正常档 <strong>+2.1~3.4%</strong>、异常点 +14.8%（S5，种子×配置交互待裁决）</li>
+    <li><strong>跨环境</strong>：2× 差异已从「未知风险」变成「已量化约束」（4 ms 铁律）</li>
+    <li><strong>选型</strong>：J = mean + λ·std，宁要平台点不要尖点（人工复测防过拟合）</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>12/14</span></div>
+  <h2>可复现性</h2>
+  <ul>
+    <li><code>report/复现说明.md</code> + <strong>复核材料包 v2</strong>（5 配置、1 ms 陷阱警示、<code>review-manifest.json</code> 全文件 sha256）</li>
+    <li>143 条评测记录 + 配置原文（LF/无末尾换行，与 <code>runs/configs/</code> 字节一致）</li>
+    <li>一键链路：<code>config_stats.py</code>（统计）→ <code>timer_model.py</code>（官方模型）→ <code>official_analysis.py</code>（探测分析）</li>
+    <li>图表由数据重生成；凭据零出现（GUID 全占位）</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>13/14</span></div>
+  <h2>局限与下一步</h2>
+  <ul>
+    <li><strong>局限</strong>：4 ms 是反推值｜官方按文件分解不可观测｜单点种子效应（δ 异常 S5）｜n=12 仍受跨时段漂移</li>
+    <li><strong>11/06 起每天 5 发</strong>：rate 22–26 / cap 40–60 的 2-D 标定（已排程），出分后 <code>official_analysis.py</code> 自动生成次日候选</li>
+    <li><strong>停止条件</strong>：15 个探测点仍 &gt;129 → 弃一等保二等；11/15 未过 132.57 → 末日只投最稳配置</li>
+    <li>目标：一等 ≤126.965（差 6.12 s）｜二等 ≤131.265（差 1.83 s）｜三等 ≤132.573（差 0.49 s）</li>
+  </ul>
+</section>
+
+<section class="slide lead">
+  <h1>谢谢聆听</h1>
+  <p><strong>赛博coder</strong> · 六载穿柜</p>
+  <ul>
+    <li>方法：链路预算 → 四层搜索 → 环境标定</li>
+    <li>本地 170 → 127 s；官方 133.086 s（榜第 5）</li>
+    <li>全部数据可复现，欢迎提问</li>
+  </ul>
+  <p><strong>Q &amp; A</strong></p>
+</section>
+
+<section class="slide appendix">
+  <div class="bar"><span>赛博coder · 六载穿柜</span><span>附录 · 打印用，不放映</span></div>
+  <h2>附录：逐页讲稿</h2>
+  <p><strong>P1 封面</strong>：各位评委好，我们是赛博coder。我们的赛题是六载穿柜：六份从 10 到 320 MB 的数据必须依次取回，全程只有一根 100 Mbps 的共享上联。我们用链路预算指导的参数搜索，把本地总耗时从 170 秒压到 127 秒，官方成绩 133.086 秒、目前第 5。</p>
+  <p><strong>P2 背景</strong>：场景很生活化：训练集群取模型分片，六个文件一个比一个大一倍；同一时间搜索查询一直在同一根汇聚链路上跑，目标速率恰好也是 100 Mbps——它一家就想吃满整条链路。背景流长尾到 30 MB，多数流只有几 KB，典型「短流夹长流」，我们得在夹缝里抢带宽。</p>
+  <p><strong>P3 建模</strong>：我们把问题形式化成黑箱优化：每次下载前改一份配置，五模块选一、参数随便填；目标是六次耗时之和最小；硬约束是格式合法、六文件全部成功——任何一条不满足，这次提交就是零分。配置还是继承的，目录不放文件就沿用上一份。</p>
+  <p><strong>P4 平台</strong>：评测在竞赛云主机里做：先格式检查再仿真，单次两三分钟。我们一共跑了 143 次有效评测，每次的配置、分文件耗时、是否有效全部记录在 jsonl 里——这是所有统计和图表的唯一数据源，每个数字都能溯源。</p>
+  <p><strong>P5 瓶颈</strong>：先看基线：默认配置有效吞吐只有 30 Mbps，理论公平份额是 50。拆开耗时看，损失的 79% 集中在四五六号大文件；小文件被握手和慢启动的固定开销主导，只有一两秒可省。所以全部搜索预算投向大文件的稳态——这个判断后面被数据反复验证。</p>
+  <p><strong>P6 五模块</strong>：五个模块的差别本质是「怎么控速」：漏桶定速漏包、令牌桶攒令牌放行、速率型按间隔卡时间、origin 是混合再加旁路。注意一个细节——漏桶是五个里唯一没有旁路的，完全依赖定时器，这一行差异后来成了胜负手。</p>
+  <p><strong>P7 方法</strong>：方法是四层：对照、单因子、网格、复测选型，评价函数是均值加方差惩罚，差异超过三倍标准误才算数。我们还做了同时段交错 A/B 来抵消环境漂移。踩过的坑是 CRLF 换行——服务端解析失败但本地出 80 秒假分，现在生成即校验。</p>
+  <p><strong>P8 破案</strong>：这是今天最关键的发现：同一份漏桶配置，本地 123.8 秒，官方却是 245.995 和 243.958——正好两倍。我们排除了环境慢、CPU 争抢、打包问题，最后定量锁定：官方定时器实际粒度约 4 毫秒，9 包每毫秒被拉成 9 包每 4 毫秒，速率掉到 21.6 Mbps，630 兆除下来正好 233 秒加残差等于 244。把漏水间隔抬到 4000 微秒，官方立刻回到本地水平。</p>
+  <p><strong>P9 官方成绩</strong>：今天五发全部打完：前两发是踩坑的 1 毫秒配置，245/244；第三发换带旁路的令牌桶，140.9；第四发 4 毫秒漏桶，133.086——目前第 5；第五发 141.7 是模型的前瞻检验，落在预测带内上沿。放大系数正常档是加 2% 到 3.4%。</p>
+  <p><strong>P10 本地最优</strong>：本地 143 次评测里，现役族 24/50/4000 是 127.01 加减 5.95，n 等于 12；交错三方实验里 24/60 均值 121.6，还跑出历史最好 112.361 秒、六号文件只要 55.57 秒。要诚实说的是：早期 n=5 的 122 是幸运样本，样本一多就回归到 127——单点不可信，这是我们反复强调的。</p>
+  <p><strong>P11 负结果</strong>：这张散点图是我们最有价值的负结果：参数扫描毫无单调性，统计上全不显著。原因是这些配置的标称速率都远高于实际能拿到的 41 Mbps，整形器根本没咬合，测出来的全是背景随机。知道路走不通比硬走更重要——我们因此转向绑定区设计和跨环境标定。</p>
+  <p><strong>P12 稳定鲁棒</strong>：稳定性上，n=12 的变异系数 4.7%；方差来源我们分解过：背景随机是大头，CPU 争抢实测只值 11%，配置本身控制后不显著。官方侧同配置重投只差 0.83%，近似确定；跨环境的两倍差异已经从未知风险变成量化的 4 毫秒铁律。选型用均值加方差惩罚，宁要平台点不要尖点——因为 top 提交会被人工复测。</p>
+  <p><strong>P13 复现</strong>：复现是傻瓜式的：统计一条命令、官方模型一条命令、探测分析一条命令；143 条记录和全部配置原文都在仓库里，复核材料包带全文件哈希清单；凭据全部占位，材料可以直接交给复核方。</p>
+  <p><strong>P14 局限</strong>：局限讲三点：4 毫秒是反推值、官方按文件分解拿不到、单点还有种子效应。下一步从明天起每天五发改 2-D 标定设计，出分后工具自动生成次日候选；停止条件写死了——15 个探测点还进不了 129 就转保二等。目标：一等差 6.12 秒、二等差 1.83 秒、三等差 0.49 秒。汇报完毕，请各位评委批评指正。</p>
+</section>
+
+</div>
+<div id="nav">— / —</div>
+<div id="hint">←/→ 翻页 · F 全屏 · P 打印</div>
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll("section.slide"));
+  var i = 0;
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (s, k) { s.classList.toggle("active", k === i); });
+    document.getElementById("nav").textContent = (i + 1) + " / " + slides.length;
+  }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") { show(i + 1); e.preventDefault(); }
+    else if (e.key === "ArrowLeft" || e.key === "PageUp") { show(i - 1); e.preventDefault(); }
+    else if (e.key === "Home") { show(0); }
+    else if (e.key === "End") { show(slides.length - 1); }
+    else if (e.key === "f" || e.key === "F") {
+      if (document.fullscreenElement) { document.exitFullscreen(); }
+      else { document.documentElement.requestFullscreen(); }
+    }
+    else if (e.key === "p" || e.key === "P") { window.print(); }
+  });
+  document.addEventListener("click", function (e) { if (e.clientX > window.innerWidth / 2) show(i + 1); else show(i - 1); });
+  show(0);
+})();
+</script>
+</body>
+</html>

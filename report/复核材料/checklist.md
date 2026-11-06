@@ -38,6 +38,11 @@
 
 ## E. 答辩/复核材料
 
-- [ ] **E1** `report/复核材料/` 五件套齐全（README / best-configs / reproduce / methodology / checklist）。
-- [ ] **E2** `report/技术报告-v1.md` 数字与统计报告一致；图表 PNG 可打开、中文无乱码。
+- [ ] **E1** `report/复核材料/` 五件套齐全（README / best-configs / reproduce / methodology / checklist）+ `review-manifest.json`。
+- [ ] **E2** `report/技术报告-v2.md` 数字与统计报告一致；图表 PNG 可打开、中文无乱码。
 - [ ] **E3** 队友（如参与）按 reproduce.md 独立复跑成功一次。
+
+## F. 跨环境鲁棒（v2 新增，0017）
+
+- [ ] **F1** **所有 `leak_bucket` 配置的 `leak_interval_us ≥ 4000`**（1 ms 间隔在官方会被定时器粒度腰斩：本地 124 s → 官方 244–246 s；见 reproduce.md §1.5、`docs/knowledge/timer-granularity.md`）。历史 1 ms 样本（leak9/leak8）只作差异证据，不作复测推荐。
+- [ ] **F2** 若用 token_bucket / coarse_grained_rate_based / precise_rate_based：**确认 `enable_n_in_flight` 未被显式置 0**（默认 1；该旁路是官方环境下免疫定时器粒度的关键机制之一），且标称速率 ÷4 后仍高于 ~41 Mbps 实际份额。
