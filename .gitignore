@@ -83,3 +83,9 @@ desktop.ini
 tmp_*
 *.tmp
 *.bak
+
+# ---------- 本地 agent / worktree / 崩溃日志 ----------
+.agents/
+.audit/
+hs_err_pid*.log
+replay_pid*.log

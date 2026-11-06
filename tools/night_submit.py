@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import json
 import subprocess
 import sys
 import time
@@ -20,6 +21,38 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PY = sys.executable
+SUBMISSIONS = ROOT / "runs" / "submissions.jsonl"
+
+
+def plan_tags(path: Path) -> list[str]:
+    try:
+        plan = json.loads(path.read_text("utf-8"))
+    except Exception:  # noqa: BLE001
+        return []
+    return [str(item["tag"]) for item in plan
+            if isinstance(item, dict) and item.get("tag")]
+
+
+def submitted_tags_today() -> set[str]:
+    if not SUBMISSIONS.exists():
+        return set()
+    today = dt.date.today()
+    tags = set()
+    for line in SUBMISSIONS.read_text("utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            rec = json.loads(line)
+            if rec.get("status") == "dry-run":
+                continue
+            if dt.date.fromisoformat(str(rec.get("date", ""))) != today:
+                continue
+            tag = str(rec.get("note", "")).split(" | ", 1)[0].strip()
+            if tag:
+                tags.add(tag)
+        except (ValueError, TypeError):
+            continue
+    return tags
 
 
 def wait_until(target: dt.datetime) -> None:
@@ -44,7 +77,13 @@ def main(argv=None) -> int:
         target = dt.datetime.strptime(args.at.strip(), "%Y-%m-%d %H:%M")
         wait_until(target)
 
+    tags = set(plan_tags(Path(args.plan)))
     for attempt in range(1, args.retries + 1):
+        done = tags & submitted_tags_today()
+        if done:
+            print(f"[BLOCK] 本 plan 已有今日提交: {', '.join(sorted(done))}")
+            print("[BLOCK] 停止自动重试，避免部分成功后重复提交；请人工核对 runs/submissions.jsonl")
+            return 2
         print(f"\n===== 提交尝试 {attempt}/{args.retries} @ {dt.datetime.now():%Y-%m-%d %H:%M:%S} =====", flush=True)
         rc = subprocess.call([PY, "tools/submit_batch.py", "--plan", args.plan, "--yes"], cwd=str(ROOT))
         print(f"[result] rc={rc}", flush=True)

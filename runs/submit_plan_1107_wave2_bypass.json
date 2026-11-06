@@ -1,7 +1,7 @@
 [
   {
     "tag": "w2-r3-hybrid-champ-100M-96M",
-    "note": "W2-R3【破纪录冲冠一号】1-4 tb(23.4s) + 5 precise(100M/1ms) + 6 precise(96M/1ms) —— 本地实测 116.542s 历史最高分，超榜首 3.3s",
+    "note": "W2-R3【冠军候选】1-4 tb + 5 precise(100M/1ms) + 6 precise(96M/1ms)。本地单场最好 116.542s；n=3 均值 137.43s（±18.42s），待 n≥8 复核后再定官方预期",
     "configs": {
       "1": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
       "2": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
@@ -13,7 +13,7 @@
   },
   {
     "tag": "w2-r4-hybrid-champ-96M-both",
-    "note": "W2-R4【王牌冲冠二号】1-4 tb(23.5s) + 5-6 precise(96M/1ms) —— 5.bin 与 6.bin 均开放 96Mbps 满线速连续平滑冲锋",
+    "note": "W2-R4【稳定候选】1-4 tb + 5-6 precise(96M/1ms)。本地 n=1、135.29s，样本不足，待补测后再评估",
     "configs": {
       "1": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
       "2": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
@@ -25,7 +25,7 @@
   },
   {
     "tag": "w2-r5-hybrid-champ-92M-96M",
-    "note": "W2-R5【黄金甜点构型】1-4 tb(23.3s) + 5 precise(92M/1ms) + 6 precise(96M/1ms) —— 本地实测 119.268s 破纪录构型，锁定全国第一",
+    "note": "W2-R5【亚军候选】1-4 tb + 5 precise(92M/1ms) + 6 precise(96M/1ms)。本地单场最好 119.268s；n=2 均值 131.10s（±16.73s），样本不足，待补测",
     "configs": {
       "1": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
       "2": ["token_bucket", {"tokens": 40, "burst": 40, "token_refill_rate": 40, "token_refill_interval_us": 4000, "enable_n_in_flight": 1}],
