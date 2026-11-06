@@ -1,46 +1,86 @@
-# Hybrid 混合构型统计总览与极值分析
+# Hybrid 混合构型统计总览与选型口径
 
-> **数据源**：`runs/results.jsonl` ｜ **构型数**：17 种 ｜ **实验场次**：24 场
-> **榜首基线**：Catnet 119.8293s ｜ **当前最佳单场**：116.542s (test-hybrid-tb4-p100M-p96M)
->
-> **口径提醒（2026-11-06）**：本表的 Min 是**本地单场最好**，不是官方预期。官方按「重复多次取平均」计分，且 top 提交会统一复测。冠军构型 n=3 的均值为 **137.430s（±18.42s）**；在补足 n≥8 前，不应把 116.542s 当作冲冠目标。详见 `docs/analysis/overfitting-and-selection.md`。本表由 `tools/summarize_hybrid_stats.py` 生成，重跑后会按均值排序并加入 CV/置信区间。
+> **数据源**：`runs/results.jsonl` ｜ **候选构型**：29 种 ｜ **原始场次**：273 ｜ **排除 invalid**：0 ｜ **排除 load**：0
+> **口径**：官方按「重复多次取平均」计分，top 提交会统一复测。本表按**均值**排序；`Min` 只是本地单场最好，**不是官方预期**。
 
-## 一、 各构型耗时统计对比表（按单场最佳耗时升序）
+## 一、各构型统计（按均值升序）
 
-| 构型 (Base Tag) | 样本数 N | 最佳 (Min) | 均值 (Mean) | 最差 (Max) | 波动 (Std) | 1~4.bin Min (Mean) | 5.bin Min (Mean) | 6.bin Min (Mean) | 架构描述 |
-|---|---|---|---|---|---|---|---|---|---|
-| `test-hybrid-tb4-p100M-p96M` | 3 | **116.542s** | 137.430s | 151.371s | ±18.42s | 23.98s (26.66s) | 31.03s (37.00s) | 61.53s (73.77s) | tb 1-4 + precise 5(100M/g1k) 6(96M/g1k) |
-| `test-hybrid-tb4-p92M-p96M` | 2 | **119.268s** | 131.100s | 142.932s | ±16.73s | 23.28s (26.20s) | 37.95s (41.52s) | 58.03s (63.39s) | tb 1-4 + precise 5(92M/g1k) 6(96M/g1k) |
-| `test-hybrid-tb4-p100M-p96M-g500` | 1 | **125.441s** | 125.441s | 125.441s | ±0.00s | 23.91s (23.91s) | 35.06s (35.06s) | 66.47s (66.47s) | tb 1-4 + precise 5(100M/g1k) 6(96M/g500) |
-| `test-hybrid-opt-g1k` | 2 | **129.370s** | 136.958s | 144.545s | ±10.73s | 27.39s (28.72s) | 36.50s (37.14s) | 61.55s (71.10s) | Hybrid TB 1-4 + Precise 90M/96M g1k 5-6 |
-| `test-hybrid-champ-100M-g1k` | 1 | **130.212s** | 130.212s | 130.212s | ±0.00s | 26.25s (26.25s) | 30.13s (30.13s) | 73.83s (73.83s) | tb 1-4 + precise 5-6 (100M full wire/g1k |
-| `test-hybrid-champ-g1k` | 2 | **134.867s** | 137.975s | 141.083s | ±4.40s | 23.48s (28.80s) | 40.73s (42.80s) | 66.23s (66.37s) | Hybrid Champ: TB 1-4 + Precise 96M g1k 5 |
-| `test-hybrid-tb-precise` | 1 | **135.273s** | 135.273s | 135.273s | ±0.00s | 36.85s (36.85s) | 29.24s (29.24s) | 69.18s (69.18s) | hybrid: 1-3 tb (burst/bypass) + 4-5 prec |
-| `test-hybrid-tb4-p96M-both` | 1 | **135.289s** | 135.289s | 135.289s | ±0.00s | 25.49s (25.49s) | 40.30s (40.30s) | 69.50s (69.50s) | tb 1-4 + precise 5-6(96M/g1k) |
-| `test-hybrid-tb4-precise2` | 3 | **137.748s** | 142.921s | 149.140s | ±5.77s | 23.63s (28.68s) | 31.91s (35.21s) | 76.44s (79.03s) | Candidate A2: TB 1-4 + Precise 90M/86.4M |
-| `test-hybrid-tb4-precise125M` | 1 | **138.028s** | 138.028s | 138.028s | ±0.00s | 24.24s (24.24s) | 39.91s (39.91s) | 73.88s (73.88s) | Hybrid TB 1-4 + Precise 12.5MB g1k 5-6 |
-| `test-hybrid-tb4-precise-con` | 1 | **139.869s** | 139.869s | 139.869s | ±0.00s | 23.74s (23.74s) | 37.83s (37.83s) | 78.30s (78.30s) | Hybrid TB 1-4 + Precise 90M/86.4M g1k 5- |
-| `test-hybrid-v2` | 1 | **140.001s** | 140.001s | 140.001s | ±0.00s | 31.98s (31.98s) | 35.32s (35.32s) | 72.71s (72.71s) | hybrid v2: 1-4 tb (burst/bypass) + 5-6 p |
-| `test-hybrid-tb5-precise1-g1k` | 1 | **144.916s** | 144.916s | 144.916s | ±0.00s | 30.97s (30.97s) | 34.53s (34.53s) | 79.41s (79.41s) | tb 1-5 + precise 6 (96M/g1k) |
-| `test-hybrid-tb-leak` | 1 | **147.066s** | 147.066s | 147.066s | ±0.00s | 29.89s (29.89s) | 30.77s (30.77s) | 86.41s (86.41s) | hybrid: 1-3 tb (burst/bypass) + 4-6 leak |
-| `test-hybrid-tb4-opt5-precise6` | 1 | **150.220s** | 150.220s | 150.220s | ±0.00s | 33.61s (33.61s) | 44.84s (44.84s) | 71.77s (71.77s) | tb 1-3(r40) 4(r38) + precise 5(86.4M/g1k |
-| `test-hybrid-tb4-p98M-p96M` | 1 | **150.427s** | 150.427s | 150.427s | ±0.00s | 30.06s (30.06s) | 52.45s (52.45s) | 67.92s (67.92s) | tb 1-4 + precise 5(98M/g1k) 6(96M/g1k) |
-| `test-hybrid-tb4-precise-g4k-92M` | 1 | **166.196s** | 166.196s | 166.196s | ±0.00s | 30.81s (30.81s) | 39.74s (39.74s) | 95.64s (95.64s) | tb 1-4 + precise 5 (90M/g4k) + precise 6 |
+| 构型 (Base Tag) | n | Min | Median | **Mean** | Std | CV | 95% CI | 1~4.bin Min (Mean) | 5.bin Min (Mean) | 6.bin Min (Mean) | 状态 |
+|---|---:|---:|---:|---:|---:|---:|---|---|---|---|---|
+| `test-hybrid-tb4-p100M-p96M-g500` | 1 | **125.441s** | 125.441s | **125.441s** | 0.00s | 0.0% | - | 23.91s (23.91s) | 35.06s (35.06s) | 66.47s (66.47s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p100M-p96M-g800` | 1 | **129.498s** | 129.498s | **129.498s** | 0.00s | 0.0% | - | 26.88s (26.88s) | 31.29s (31.29s) | 71.33s (71.33s) | LOW_N(1<3) |
+| `test-hybrid-champ-100M-g1k` | 1 | **130.212s** | 130.212s | **130.212s** | 0.00s | 0.0% | - | 26.25s (26.25s) | 30.13s (30.13s) | 73.83s (73.83s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p92M-p96M` | 2 | **119.268s** | 131.100s | **131.100s** | 16.73s | 12.8% | ±150.34s | 23.28s (26.20s) | 37.95s (41.52s) | 58.03s (63.39s) | LOW_N(2<3); HIGH_CV(12.8%) |
+| `test-hybrid-tb4-fast14-champ` | 2 | **133.291s** | 135.169s | **135.169s** | 2.66s | 2.0% | ±23.86s | 24.05s (27.20s) | 27.99s (30.07s) | 77.09s (77.90s) | LOW_N(2<3) |
+| `test-hybrid-tb-precise` | 1 | **135.273s** | 135.273s | **135.273s** | 0.00s | 0.0% | - | 36.85s (36.85s) | 29.24s (29.24s) | 69.18s (69.18s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p96M-both` | 1 | **135.289s** | 135.289s | **135.289s** | 0.00s | 0.0% | - | 25.49s (25.49s) | 40.30s (40.30s) | 69.50s (69.50s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p98M-champ` | 1 | **135.388s** | 135.388s | **135.388s** | 0.00s | 0.0% | - | 29.63s (29.63s) | 31.53s (31.53s) | 74.22s (74.22s) | LOW_N(1<3) |
+| `test-hybrid-tb4-2k-champ` | 1 | **135.893s** | 135.893s | **135.893s** | 0.00s | 0.0% | - | 27.19s (27.19s) | 35.09s (35.09s) | 73.61s (73.61s) | LOW_N(1<3) |
+| `test-hybrid-opt-g1k` | 2 | **129.370s** | 136.958s | **136.958s** | 10.73s | 7.8% | ±96.41s | 27.39s (28.72s) | 36.50s (37.14s) | 61.55s (71.10s) | LOW_N(2<3); HIGH_CV(7.8%) |
+| `test-hybrid-tb4-p100M-p96M` | 3 | **116.542s** | 144.376s | **137.430s** | 18.42s | 13.4% | ±45.77s | 23.98s (26.66s) | 31.03s (37.00s) | 61.53s (73.77s) | HIGH_CV(13.4%); MIN_FAR_BELOW_MEAN |
+| `test-hybrid-champ-g1k` | 2 | **134.867s** | 137.975s | **137.975s** | 4.40s | 3.2% | ±39.49s | 23.48s (28.80s) | 40.73s (42.80s) | 66.23s (66.37s) | LOW_N(2<3) |
+| `test-hybrid-tb4-precise125M` | 1 | **138.028s** | 138.028s | **138.028s** | 0.00s | 0.0% | - | 24.24s (24.24s) | 39.91s (39.91s) | 73.88s (73.88s) | LOW_N(1<3) |
+| `test-hybrid-tb4-2k-p98M-champ` | 1 | **139.575s** | 139.575s | **139.575s** | 0.00s | 0.0% | - | 30.23s (30.23s) | 35.56s (35.56s) | 73.78s (73.78s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p100M-p96M-g1500` | 1 | **139.718s** | 139.718s | **139.718s** | 0.00s | 0.0% | - | 29.26s (29.26s) | 42.01s (42.01s) | 68.44s (68.44s) | LOW_N(1<3) |
+| `test-hybrid-tb4-precise-con` | 1 | **139.869s** | 139.869s | **139.869s** | 0.00s | 0.0% | - | 23.74s (23.74s) | 37.83s (37.83s) | 78.30s (78.30s) | LOW_N(1<3) |
+| `test-hybrid-v2` | 1 | **140.001s** | 140.001s | **140.001s** | 0.00s | 0.0% | - | 31.98s (31.98s) | 35.32s (35.32s) | 72.71s (72.71s) | LOW_N(1<3) |
+| `test-hybrid-tb4-precise2` | 3 | **137.748s** | 141.874s | **142.921s** | 5.77s | 4.0% | ±14.33s | 23.63s (28.68s) | 31.91s (35.21s) | 76.44s (79.03s) | OK |
+| `test-hybrid-tb5-precise1-g1k` | 1 | **144.916s** | 144.916s | **144.916s** | 0.00s | 0.0% | - | 30.97s (30.97s) | 34.53s (34.53s) | 79.41s (79.41s) | LOW_N(1<3) |
+| `test-hybrid-tb50-champ` | 1 | **145.271s** | 145.271s | **145.271s** | 0.00s | 0.0% | - | 30.57s (30.57s) | 37.58s (37.58s) | 77.12s (77.12s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p100M-p96M-g1200` | 1 | **146.172s** | 146.172s | **146.172s** | 0.00s | 0.0% | - | 28.03s (28.03s) | 39.26s (39.26s) | 78.88s (78.88s) | LOW_N(1<3) |
+| `test-hybrid-tb-leak` | 1 | **147.066s** | 147.066s | **147.066s** | 0.00s | 0.0% | - | 29.89s (29.89s) | 30.77s (30.77s) | 86.41s (86.41s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p100M-p95M-champ` | 1 | **149.241s** | 149.241s | **149.241s** | 0.00s | 0.0% | - | 28.31s (28.31s) | 39.90s (39.90s) | 81.03s (81.03s) | LOW_N(1<3) |
+| `test-hybrid-tb3-precise3-champ` | 1 | **149.980s** | 149.980s | **149.980s** | 0.00s | 0.0% | - | 33.05s (33.05s) | 27.65s (27.65s) | 89.27s (89.27s) | LOW_N(1<3) |
+| `test-hybrid-tb4-opt5-precise6` | 1 | **150.220s** | 150.220s | **150.220s** | 0.00s | 0.0% | - | 33.61s (33.61s) | 44.84s (44.84s) | 71.77s (71.77s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p98M-p96M` | 1 | **150.427s** | 150.427s | **150.427s** | 0.00s | 0.0% | - | 30.06s (30.06s) | 52.45s (52.45s) | 67.92s (67.92s) | LOW_N(1<3) |
+| `test-hybrid-tb4-p100M-p97M-champ` | 1 | **151.015s** | 151.015s | **151.015s** | 0.00s | 0.0% | - | 32.80s (32.80s) | 34.90s (34.90s) | 83.31s (83.31s) | LOW_N(1<3) |
+| `test-origin4-precise2-champ` | 1 | **157.999s** | 157.999s | **157.999s** | 0.00s | 0.0% | - | 46.87s (46.87s) | 29.66s (29.66s) | 81.47s (81.47s) | LOW_N(1<3) |
+| `test-hybrid-tb4-precise-g4k-92M` | 1 | **166.196s** | 166.196s | **166.196s** | 0.00s | 0.0% | - | 30.81s (30.81s) | 39.74s (39.74s) | 95.64s (95.64s) | LOW_N(1<3) |
 
-## 二、 关键物理学发现与极限逼近
+## 二、选型提示
 
-### 1. 理论极限合成（Theoretical Envelope Bound）
-取所有实验中各分段的最佳观测值进行完美合成：
-- **1~4.bin 冲锋极限**：`23.279s` (test-hybrid-tb4-p92M-p96M-r1, 150MB @ 51.5 Mbps)
-- **5.bin 极限**：`30.134s` (test-hybrid-champ-100M-g1k-r1, 160MB @ 42.5 Mbps)
-- **6.bin 排空极限**：`58.034s` (test-hybrid-tb4-p92M-p96M-r1, 320MB @ 44.1 Mbps)
-- **全局信封极限 (Envelope Bound)**：
-  $$\text{Envelope} = 23.279\text{s} + 30.134\text{s} + 58.034\text{s} = \mathbf{111.447\text{s}}$$
-  *物理意义*：该信封极限远低于当前全国第一 Catnet (119.8293s) 达 **8.38 秒**！
+以下构型在官方复测口径下证据不足，不建议直接作为主推：
+- `test-hybrid-tb4-p100M-p96M-g500`：LOW_N(1<3)
+- `test-hybrid-tb4-p100M-p96M-g800`：LOW_N(1<3)
+- `test-hybrid-champ-100M-g1k`：LOW_N(1<3)
+- `test-hybrid-tb4-p92M-p96M`：LOW_N(2<3); HIGH_CV(12.8%)
+- `test-hybrid-tb4-fast14-champ`：LOW_N(2<3)
+- `test-hybrid-tb-precise`：LOW_N(1<3)
+- `test-hybrid-tb4-p96M-both`：LOW_N(1<3)
+- `test-hybrid-tb4-p98M-champ`：LOW_N(1<3)
+- `test-hybrid-tb4-2k-champ`：LOW_N(1<3)
+- `test-hybrid-opt-g1k`：LOW_N(2<3); HIGH_CV(7.8%)
+- `test-hybrid-tb4-p100M-p96M`：HIGH_CV(13.4%); MIN_FAR_BELOW_MEAN
+- `test-hybrid-champ-g1k`：LOW_N(2<3)
+- `test-hybrid-tb4-precise125M`：LOW_N(1<3)
+- `test-hybrid-tb4-2k-p98M-champ`：LOW_N(1<3)
+- `test-hybrid-tb4-p100M-p96M-g1500`：LOW_N(1<3)
+- `test-hybrid-tb4-precise-con`：LOW_N(1<3)
+- `test-hybrid-v2`：LOW_N(1<3)
+- `test-hybrid-tb5-precise1-g1k`：LOW_N(1<3)
+- `test-hybrid-tb50-champ`：LOW_N(1<3)
+- `test-hybrid-tb4-p100M-p96M-g1200`：LOW_N(1<3)
+- `test-hybrid-tb-leak`：LOW_N(1<3)
+- `test-hybrid-tb4-p100M-p95M-champ`：LOW_N(1<3)
+- `test-hybrid-tb3-precise3-champ`：LOW_N(1<3)
+- `test-hybrid-tb4-opt5-precise6`：LOW_N(1<3)
+- `test-hybrid-tb4-p98M-p96M`：LOW_N(1<3)
+- `test-hybrid-tb4-p100M-p97M-champ`：LOW_N(1<3)
+- `test-origin4-precise2-champ`：LOW_N(1<3)
+- `test-hybrid-tb4-precise-g4k-92M`：LOW_N(1<3)
 
-### 2. 4% 排空余量律（The 4% Drain Headroom Law）
-- 当 6.bin 稳态速率设定为满线速 100 Mbps (12,500,000 B/s) 时，背景 websearch 流量引发的瞬态排队无法被排空，导致交换机 40-pkt 队列溢出，耗时回升至 73.825s；
-- 当稳态速率下调至 96 Mbps (12,000,000 B/s) 并配合 1ms 时钟粒度时，单滴仅 8~9 个包，队列始终在安全水线以下，耗时大幅压低至 **58.034s ~ 61.547s**！
+## 三、跨构型理论下界（不是单次可达成绩）
 
-### 3. 前段 1~4.bin 阶梯充能律
-- 40 -> 40 -> 38 -> 36 阶梯渐进衰减，在保障 1~2.bin 满速慢启动的同时，避免 3~4.bin 累积队列，锁定 23.2s ~ 23.5s 的绝对物理下限。
+- 1~4.bin 跨构型最小：`23.279s`
+- 5.bin 跨构型最小：`27.651s`
+- 6.bin 跨构型最小：`58.034s`
+- 合成下界：**108.964s**
+
+这三项来自不同构型的不同单场，合成值只是理论下界，不能写成冲冠目标或官方预期。
+
+## 四、选型门槛
+
+- 候选：n≥3，报告 mean/median/std/CV；不足 3 次只记为探索点。
+- 主推：n≥8–10，CV≤5%，均值相对锚点有明确优势，且邻域扰动仍稳定。
+- 禁止 min-of-N / 极值红利；重复实验用于估计方差，不是抽低分。
+- 本地与官方分开陈述：`local_best`、`local_mean`、`official_score` 不得混用。
