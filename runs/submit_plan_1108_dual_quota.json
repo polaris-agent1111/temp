@@ -1,0 +1,110 @@
+[
+  {
+    "tag": "1108-shot4-damped-ladder-40x3-39-38-37",
+    "note": "1108 Shot 4 稳健阻尼阶梯漏桶 (1-3@40, 4@39, 5@38, 6@37) —— 梯度阻尼抑制长流排队延时，理论预期 119.5~121.0s",
+    "configs": {
+      "1": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "2": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "3": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "4": [
+        "leak_bucket",
+        {
+          "bucket_cap": 39,
+          "leak_interval_us": 4000,
+          "leak_rate": 39
+        }
+      ],
+      "5": [
+        "leak_bucket",
+        {
+          "bucket_cap": 38,
+          "leak_interval_us": 4000,
+          "leak_rate": 38
+        }
+      ],
+      "6": [
+        "leak_bucket",
+        {
+          "bucket_cap": 37,
+          "leak_interval_us": 4000,
+          "leak_rate": 37
+        }
+      ]
+    }
+  },
+  {
+    "tag": "1108-shot5-crown-40x4-38x2",
+    "note": "1108 Shot 5 激进冲冠漏桶 (1-4@40, 5-6@38) —— 前四阶段峰值透传+大文件平稳泄洪，理论预期 117.0~118.5s",
+    "configs": {
+      "1": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "2": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "3": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "4": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "5": [
+        "leak_bucket",
+        {
+          "bucket_cap": 38,
+          "leak_interval_us": 4000,
+          "leak_rate": 38
+        }
+      ],
+      "6": [
+        "leak_bucket",
+        {
+          "bucket_cap": 38,
+          "leak_interval_us": 4000,
+          "leak_rate": 38
+        }
+      ]
+    }
+  }
+]
