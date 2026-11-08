@@ -1,0 +1,267 @@
+{
+  "task": "0352",
+  "config": {
+    "n_mc": 1000000,
+    "n_retest_per_team": 10,
+    "floor_s": 106.597,
+    "seed": 20261108,
+    "opponents_best_official_s": {
+      "光明未来": 117.0257,
+      "Catnet": 119.8293,
+      "hashkimi": 120.267
+    },
+    "our_best_official_s": 124.3683,
+    "note": "11/08 Shot1 于 00:05 提交, 出分未回; mu_us 为情景设定非实测"
+  },
+  "rows": [
+    {
+      "mu_us": 116.0,
+      "sigma": 3.0,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 0.999856,
+      "p_beat_each_opponent": {
+        "光明未来": 0.999856,
+        "Catnet": 1.0,
+        "hashkimi": 1.0
+      },
+      "p_beat_at_least_one_top3": 1.0,
+      "expected_our_retest_mean_s": 116.02178419422086,
+      "our_retest_mean_q01_s": 113.77481681682858,
+      "our_retest_mean_q99_s": 118.29762150456101,
+      "cvar99_lower_fastest_s": 113.44831814764031,
+      "cvar99_upper_worst_s": 118.63485701868227,
+      "label": "BASE"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 1.0,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 1.0,
+      "p_beat_each_opponent": {
+        "光明未来": 1.0,
+        "Catnet": 1.0,
+        "hashkimi": 1.0
+      },
+      "p_beat_at_least_one_top3": 1.0,
+      "expected_our_retest_mean_s": 115.99973942138185,
+      "our_retest_mean_q01_s": 115.23867565541767,
+      "our_retest_mean_q99_s": 116.7621768800461,
+      "cvar99_lower_fastest_s": 115.1249871502812,
+      "cvar99_upper_worst_s": 116.8737056345301,
+      "label": "G0"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 3.0,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 0.999837,
+      "p_beat_each_opponent": {
+        "光明未来": 0.999837,
+        "Catnet": 1.0,
+        "hashkimi": 1.0
+      },
+      "p_beat_at_least_one_top3": 1.0,
+      "expected_our_retest_mean_s": 116.01978976706394,
+      "our_retest_mean_q01_s": 113.76993310724168,
+      "our_retest_mean_q99_s": 118.2939600506908,
+      "cvar99_lower_fastest_s": 113.44284919282961,
+      "cvar99_upper_worst_s": 118.63514099372851,
+      "label": "G1"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 5.0,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 0.982059,
+      "p_beat_each_opponent": {
+        "光明未来": 0.982536,
+        "Catnet": 0.999501,
+        "hashkimi": 0.999748
+      },
+      "p_beat_at_least_one_top3": 0.9999999978039369,
+      "expected_our_retest_mean_s": 116.42254752890918,
+      "our_retest_mean_q01_s": 113.05108725271955,
+      "our_retest_mean_q99_s": 120.02954410494849,
+      "cvar99_lower_fastest_s": 112.60017240137199,
+      "cvar99_upper_worst_s": 120.5854578712084,
+      "label": "G2"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 13.4,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 0.61932,
+      "p_beat_each_opponent": {
+        "光明未来": 0.735819,
+        "Catnet": 0.843161,
+        "hashkimi": 0.857319
+      },
+      "p_beat_at_least_one_top3": 0.9940881720171141,
+      "expected_our_retest_mean_s": 121.72872368568775,
+      "our_retest_mean_q01_s": 114.89734194609932,
+      "our_retest_mean_q99_s": 129.8010367276766,
+      "cvar99_lower_fastest_s": 114.08428174474872,
+      "cvar99_upper_worst_s": 131.11425285740512,
+      "label": "G3"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 5.0,
+      "nu": 4,
+      "delta_opp": 4.0,
+      "champion_retention": 0.94676,
+      "p_beat_each_opponent": {
+        "光明未来": 0.950797,
+        "Catnet": 0.993506,
+        "hashkimi": 0.995346
+      },
+      "p_beat_at_least_one_top3": 0.9999985129339916,
+      "expected_our_retest_mean_s": 117.03455402376633,
+      "our_retest_mean_q01_s": 113.2148559390135,
+      "our_retest_mean_q99_s": 121.9984079313691,
+      "cvar99_lower_fastest_s": 112.73480966544447,
+      "cvar99_upper_worst_s": 123.31414617789127,
+      "label": "G4"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 13.4,
+      "nu": 4,
+      "delta_opp": 4.0,
+      "champion_retention": 0.55408,
+      "p_beat_each_opponent": {
+        "光明未来": 0.687517,
+        "Catnet": 0.784402,
+        "hashkimi": 0.79847
+      },
+      "p_beat_at_least_one_top3": 0.986422780847154,
+      "expected_our_retest_mean_s": 123.61502396876793,
+      "our_retest_mean_q01_s": 115.35269026886115,
+      "our_retest_mean_q99_s": 136.2002729541222,
+      "cvar99_lower_fastest_s": 114.47738221311933,
+      "cvar99_upper_worst_s": 139.8452177820213,
+      "label": "G5"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 3.0,
+      "nu": 30,
+      "delta_opp": 0.0,
+      "champion_retention": 0.768998,
+      "p_beat_each_opponent": {
+        "光明未来": 0.76966,
+        "Catnet": 0.996966,
+        "hashkimi": 0.998937
+      },
+      "p_beat_at_least_one_top3": 0.9999992571207917,
+      "expected_our_retest_mean_s": 116.0200351585934,
+      "our_retest_mean_q01_s": 113.76740310137124,
+      "our_retest_mean_q99_s": 118.29728234639217,
+      "cvar99_lower_fastest_s": 113.44382033476434,
+      "cvar99_upper_worst_s": 118.62938167529958,
+      "label": "G6"
+    },
+    {
+      "mu_us": 116.0,
+      "sigma": 3.0,
+      "nu": 30,
+      "delta_opp": 8.0,
+      "champion_retention": 1.0,
+      "p_beat_each_opponent": {
+        "光明未来": 1.0,
+        "Catnet": 1.0,
+        "hashkimi": 1.0
+      },
+      "p_beat_at_least_one_top3": 1.0,
+      "expected_our_retest_mean_s": 116.01950501872166,
+      "our_retest_mean_q01_s": 113.76805426496247,
+      "our_retest_mean_q99_s": 118.29634429373766,
+      "cvar99_lower_fastest_s": 113.43883961584659,
+      "cvar99_upper_worst_s": 118.63248848612234,
+      "label": "G7"
+    },
+    {
+      "mu_us": 106.597,
+      "sigma": 3.0,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 1.0,
+      "p_beat_each_opponent": {
+        "光明未来": 1.0,
+        "Catnet": 1.0,
+        "hashkimi": 1.0
+      },
+      "p_beat_at_least_one_top3": 1.0,
+      "expected_our_retest_mean_s": 109.05181958578896,
+      "our_retest_mean_q01_s": 107.8213412113131,
+      "our_retest_mean_q99_s": 110.59782258025142,
+      "cvar99_lower_fastest_s": 107.68811556494552,
+      "cvar99_upper_worst_s": 110.86100415811161,
+      "label": "G8"
+    },
+    {
+      "mu_us": 120.0,
+      "sigma": 3.0,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 0.769935,
+      "p_beat_each_opponent": {
+        "光明未来": 0.770626,
+        "Catnet": 0.997102,
+        "hashkimi": 0.998897
+      },
+      "p_beat_at_least_one_top3": 0.9999992668073853,
+      "expected_our_retest_mean_s": 120.00096526860919,
+      "our_retest_mean_q01_s": 117.71269675624288,
+      "our_retest_mean_q99_s": 122.29099305360302,
+      "cvar99_lower_fastest_s": 117.38028252871402,
+      "cvar99_upper_worst_s": 122.62857519494295,
+      "label": "G9"
+    },
+    {
+      "mu_us": 124.3683,
+      "sigma": 3.0,
+      "nu": 30,
+      "delta_opp": 4.0,
+      "champion_retention": 0.006647,
+      "p_beat_each_opponent": {
+        "光明未来": 0.008106,
+        "Catnet": 0.348492,
+        "hashkimi": 0.470772
+      },
+      "p_beat_at_least_one_top3": 0.6579986427878293,
+      "expected_our_retest_mean_s": 124.36815977469483,
+      "our_retest_mean_q01_s": 122.08344208275372,
+      "our_retest_mean_q99_s": 126.65301180058617,
+      "cvar99_lower_fastest_s": 121.7412977495781,
+      "cvar99_upper_worst_s": 126.99321263082784,
+      "label": "G10"
+    }
+  ],
+  "verdict": {
+    "gate_champion_retention_ge_995": {
+      "target": 0.995,
+      "base_value": 0.999856,
+      "base_pass": true,
+      "best_value_in_grid": 1.0,
+      "best_combo": "G0",
+      "grid_pass_any": true
+    },
+    "gate_lower_cvar99_ge_1165": {
+      "target": 116.5,
+      "base_value": 113.44831814764031,
+      "base_pass": false,
+      "note": "下侧读数=最快1%期望 (现实性护栏); 若按最差1%读数则为 upper CVaR"
+    }
+  },
+  "sensitivity_verdict": {
+    "floor_scenario_champion_retention": 1.0,
+    "delta0_scenario_champion_retention": 0.768998,
+    "statement": "BASE 情景 (mu_us=116, sigma=3, delta_opp=4) 保持率 99.99% 通过门禁, 但对假设极敏感: 对手无回归优势 (delta_opp=0) 时降至 76.9%, sigma=5 时 98.2%, 重尾 nu=4 时 94.7%, 以当前最佳 124.37 为 mu_us 时仅 0.66%。99.5% 门禁只在有利角点成立, 非稳健达标; 决定性变量是今晚各发真实出分 (当前未回) 与对手真实均值, 二者均无实测依据。"
+  }
+}

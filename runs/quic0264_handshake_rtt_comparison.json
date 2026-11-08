@@ -1,0 +1,12 @@
+{
+  "task_id": "0264",
+  "sample_size": 1000,
+  "mean_single_conn_ttfb_1rtt_ms": 10.299,
+  "mean_single_conn_ttfb_0rtt_ms": 0.349,
+  "mean_6stage_cumulative_handshake_1rtt_ms": 61.479,
+  "mean_6stage_cumulative_handshake_0rtt_ms": 12.017,
+  "cumulative_savings_ms": 49.462,
+  "speedup_ratio": 5.12,
+  "replay_defense_rate": 1.0,
+  "pass_gate": true
+}

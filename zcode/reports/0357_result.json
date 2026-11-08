@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "mean_recovery_rtt": 0.6724506708267851,
+  "p99_recovery_rtt": 0.9454153144544026,
+  "anti_starvation_rate": 1.0
+}

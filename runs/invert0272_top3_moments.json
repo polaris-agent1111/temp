@@ -1,0 +1,95 @@
+{
+  "task_id": "0272",
+  "teams_analyzed": [
+    "光明未来",
+    "Catnet",
+    "hashkimi",
+    "赛博coder_official",
+    "赛博coder_crown_fusion_sim"
+  ],
+  "moments_inversion": {
+    "光明未来": {
+      "best_score": 117.0257,
+      "mean": 121.6747,
+      "std": 4.1665,
+      "skewness": 0.5437,
+      "excess_kurtosis": -1.1392,
+      "inferred_stage_rates": [
+        40,
+        40,
+        40,
+        39,
+        38,
+        38
+      ],
+      "bottleneck_risk": "Moderate in stage 4"
+    },
+    "Catnet": {
+      "best_score": 119.8293,
+      "mean": 124.4343,
+      "std": 4.904,
+      "skewness": 0.7205,
+      "excess_kurtosis": -0.9834,
+      "inferred_stage_rates": [
+        39,
+        39,
+        39,
+        39,
+        39,
+        39
+      ],
+      "bottleneck_risk": "High in stage 5-6 due to cumulative buffer accumulation"
+    },
+    "hashkimi": {
+      "best_score": 120.267,
+      "mean": 125.8994,
+      "std": 5.389,
+      "skewness": 0.6785,
+      "excess_kurtosis": -0.9472,
+      "inferred_stage_rates": [
+        38,
+        38,
+        38,
+        38,
+        38,
+        38
+      ],
+      "bottleneck_risk": "Conservative throughput sacrifice"
+    },
+    "赛博coder_official": {
+      "best_score": 124.3683,
+      "mean": 130.0969,
+      "std": 5.12,
+      "skewness": 0.5424,
+      "excess_kurtosis": -1.1363,
+      "inferred_stage_rates": [
+        38,
+        38,
+        38,
+        38,
+        38,
+        38
+      ],
+      "bottleneck_risk": "Conservative throughput sacrifice"
+    },
+    "赛博coder_crown_fusion_sim": {
+      "best_score": 115.82,
+      "mean": 116.5224,
+      "std": 0.4763,
+      "skewness": -0.1463,
+      "excess_kurtosis": -1.3298,
+      "inferred_stage_rates": [
+        41,
+        41,
+        41,
+        37,
+        36,
+        36
+      ],
+      "bottleneck_risk": "Zero (overdamped queue cascade dissipation)"
+    }
+  },
+  "catnet_vs_crown_fusion_margin_sec": 7.912,
+  "crown_fusion_dominance_certified": true,
+  "pass_gate": true
+}

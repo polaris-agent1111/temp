@@ -1,0 +1,210 @@
+{
+  "generated_at": "2026-11-07T23:17:43",
+  "physics": {
+    "mu_pkt_s": 10416.666666666666,
+    "B_task": 30,
+    "B_0082": 40,
+    "RTT_s": 0.07
+  },
+  "network_calculus": {
+    "theorem": "Σr<=mu ∧ Σb<=B ⇒ Q(t)≤Σb≤B（零溢出），时延≤B/μ",
+    "numeric_worst_excess_pkts": 0.24993779923569148,
+    "pass": true
+  },
+  "lp_kkt": {
+    "program": "max r0 s.t. r0 ≤ μ−R_bg−Δ, b0 ≤ B−B_bg",
+    "robust_margin_Delta_pkt_s": 1416.6666666666667,
+    "r0_star": 9000.0,
+    "r0_star_per4ms": 36.0,
+    "r0_analytic": 9000.0,
+    "lambda_capacity": 1.0,
+    "gamma_buffer": 0.0,
+    "kkt": {
+      "primal_feasible": true,
+      "stationarity_r0": 0.0,
+      "stationarity_b0": 0.0,
+      "comp_slack_cap": 0.0,
+      "comp_slack_buf": 0.0,
+      "dual_sign": true,
+      "max_residual": 0.0,
+      "pass": true
+    },
+    "crown_mapping": "r0* = 9000 pkt/s = 36 包/4ms（皇冠大文件档）；Δ=0085 leak36 排空余量 13.6%",
+    "drain_time_s": {
+      "B30": 0.021176470588235304,
+      "B40": 0.02823529411764707,
+      "note": "B/(μ−r0*) < RTT 70ms ⇒ 阵风在亚 RTT 内吸收"
+    }
+  },
+  "sim_v1_guaranteed_domain": [
+    {
+      "r_per4ms": 16,
+      "r_pkt_s": 4000.0,
+      "sent": 40000,
+      "dropped": 0,
+      "goodput": 3999.9,
+      "inside_domain": true
+    },
+    {
+      "r_per4ms": 18,
+      "r_pkt_s": 4500.0,
+      "sent": 45000,
+      "dropped": 0,
+      "goodput": 4499.9,
+      "inside_domain": true
+    },
+    {
+      "r_per4ms": 20,
+      "r_pkt_s": 5000.0,
+      "sent": 50000,
+      "dropped": 0,
+      "goodput": 4999.9,
+      "inside_domain": true
+    },
+    {
+      "r_per4ms": 20.5,
+      "r_pkt_s": 5125.0,
+      "sent": 51250,
+      "dropped": 0,
+      "goodput": 5124.9,
+      "inside_domain": true
+    },
+    {
+      "r_per4ms": 20.8,
+      "r_pkt_s": 5200.0,
+      "sent": 52000,
+      "dropped": 0,
+      "goodput": 5199.9,
+      "inside_domain": true
+    },
+    {
+      "r_per4ms": 21,
+      "r_pkt_s": 5250.0,
+      "sent": 52500,
+      "dropped": 388,
+      "goodput": 5209.7,
+      "inside_domain": false
+    },
+    {
+      "r_per4ms": 21.5,
+      "r_pkt_s": 5375.0,
+      "sent": 53750,
+      "dropped": 1638,
+      "goodput": 5209.8,
+      "inside_domain": false
+    },
+    {
+      "r_per4ms": 24,
+      "r_pkt_s": 6000.0,
+      "sent": 60000,
+      "dropped": 7888,
+      "goodput": 5209.8,
+      "inside_domain": false
+    }
+  ],
+  "sim_v1b_buffer_condition": [
+    {
+      "tb_burst": 10,
+      "worst_sigma_b": 30,
+      "sent": 25000,
+      "dropped": 0,
+      "drop_pct": 0.0,
+      "theorem_covers": true
+    },
+    {
+      "tb_burst": 15,
+      "worst_sigma_b": 35,
+      "sent": 37500,
+      "dropped": 228,
+      "drop_pct": 0.608,
+      "theorem_covers": false
+    }
+  ],
+  "sim_v2_gusty": [
+    {
+      "r_per4ms": 32,
+      "sent": 120000,
+      "dropped": 65,
+      "drop_pct": 0.05416666666666666,
+      "goodput": 7995.666666666667
+    },
+    {
+      "r_per4ms": 34,
+      "sent": 127500,
+      "dropped": 67,
+      "drop_pct": 0.05254901960784314,
+      "goodput": 8495.466666666667
+    },
+    {
+      "r_per4ms": 35,
+      "sent": 131250,
+      "dropped": 76,
+      "drop_pct": 0.0579047619047619,
+      "goodput": 8744.533333333333
+    },
+    {
+      "r_per4ms": 36,
+      "sent": 135000,
+      "dropped": 95,
+      "drop_pct": 0.07037037037037036,
+      "goodput": 8993.0
+    },
+    {
+      "r_per4ms": 37,
+      "sent": 138750,
+      "dropped": 94,
+      "drop_pct": 0.06774774774774775,
+      "goodput": 9242.733333333334
+    },
+    {
+      "r_per4ms": 38,
+      "sent": 142500,
+      "dropped": 112,
+      "drop_pct": 0.07859649122807018,
+      "goodput": 9491.2
+    },
+    {
+      "r_per4ms": 40,
+      "sent": 150000,
+      "dropped": 1844,
+      "drop_pct": 1.2293333333333334,
+      "goodput": 9875.2
+    },
+    {
+      "r_per4ms": 42,
+      "sent": 157499,
+      "dropped": 9230,
+      "drop_pct": 5.860354668918532,
+      "goodput": 9882.733333333334
+    }
+  ],
+  "sim_v3_leak_vs_tb": {
+    "leak40": {
+      "sent": 150000,
+      "dropped": 1844,
+      "drop_pct": 1.2293333333333334,
+      "goodput": 9875.2
+    },
+    "tb40": {
+      "sent": 150000,
+      "dropped": 41444,
+      "drop_pct": 27.629333333333335,
+      "goodput": 7237.066666666667
+    }
+  },
+  "sim_B40_sensitivity": [
+    {
+      "B": 40,
+      "r_per4ms": 36,
+      "dropped": 49,
+      "drop_pct": 0.0362962962962963
+    },
+    {
+      "B": 40,
+      "r_per4ms": 40,
+      "dropped": 1844,
+      "drop_pct": 1.2293333333333334
+    }
+  ],
+  "compliance": "纯本地只读；未访问远程系统；未写 runs/；无凭据输出"
+}

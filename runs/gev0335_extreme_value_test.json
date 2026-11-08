@@ -1,0 +1,10 @@
+{
+  "task": "0335",
+  "verified_at": "2026-11-07 23:47:36 UTC+08:00",
+  "blocks": 2000,
+  "gev_shape_xi": -0.38,
+  "gev_scale": 0.0753,
+  "estimated_lower_bound_s": 115.4954,
+  "is_bounded_below": true,
+  "pass_gate": true
+}

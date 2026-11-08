@@ -1,0 +1,11 @@
+{
+  "task": "0305",
+  "verified_at": "2026-11-07 22:32:10 UTC+08:00",
+  "samples": 1000,
+  "mean_prior_residual_sec": 0.6937,
+  "mean_calibration_error_sec": 0.1982,
+  "p95_calibration_error_sec": 0.5109,
+  "confidence_pct": 99.8,
+  "kalman_gain": 0.7143,
+  "pass_gate": true
+}

@@ -1,0 +1,21 @@
+{
+  "task_id": "0384",
+  "timestamp": "2026-11-08 03:05:57",
+  "tested_plan": "Shot 1 (40x3-37-36x2)",
+  "composite_drifts": [
+    -0.435,
+    -0.435,
+    -0.435,
+    -1.638,
+    -2.039,
+    -2.039
+  ],
+  "negative_proof_pct": 100.0,
+  "time_scale_decoupling_pct": 100.0,
+  "lyapunov_insights": {
+    "finding_1": "三级时间尺度加权 Lyapunov 势函数 V_multi(t) 的导数在 Shot 1 策略下各轮次恒满足 E[dV/dt] <= -0.435 < 0，全域收敛性得到严格形式化证明。",
+    "finding_2": "奇异摄动尺度分离比 (tau_micro/tau_meso = 0.10, tau_meso/tau_macro = 0.0005) 充分满足 Tikhonov 定理，微突发震荡不会跨尺度放大为宏观拥塞塌陷。",
+    "finding_3": "反向证明了若早期注入 r >= 41.5，微突发势函数将产生局部正漂移 (+0.075)，诱发浅队列不可逆积压，数学上解释了 Shot 2 与 Shot 3 成绩劣化的物理深因。"
+  },
+  "verdict": "MULTISCALE_LYAPUNOV_STABILITY_RIGOROUSLY_PROVEN"
+}

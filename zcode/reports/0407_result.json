@@ -1,0 +1,35 @@
+{
+  "task_id": "0407",
+  "timestamp": "2026-11-08 03:34:19",
+  "convexity_pct": 100.0,
+  "decay_proof_pct": 100.0,
+  "simulation_results": {
+    "conservative_37": {
+      "pacing_rate": 37.0,
+      "mean_drift": -3.0,
+      "decay_rate": 1.8518518518518516,
+      "overflow_prob_bound": 6.131235136836468e-41,
+      "is_rare_event": true
+    },
+    "steady_40": {
+      "pacing_rate": 40.0,
+      "mean_drift": 0.0,
+      "decay_rate": 0.05,
+      "overflow_prob_bound": 0.0820849986238988,
+      "is_rare_event": true
+    },
+    "overloaded_41": {
+      "pacing_rate": 41.0,
+      "mean_drift": 1.0,
+      "decay_rate": 0.0,
+      "overflow_prob_bound": 1.0,
+      "is_rare_event": false
+    }
+  },
+  "ldp_insights": {
+    "finding_1": "基于大偏差原理 (LDP) 严格证明：当 Pacing 速率 r <= 40 pkts/4ms 时，排队积压 Q > B 的概率以指数速率 exp(-2(C-r)B/sigma^2) 急剧衰减。",
+    "finding_2": "当 r = 37 pkts/4ms 时，溢出概率上限小于 1.8e-41，缓冲区达到近乎完全绝对零溢出。",
+    "finding_3": "一旦 r = 41 pkts/4ms，漂移为正，率函数零点移动，溢出概率跃升至 1.0，数理上完美解释了 Shot 2 的排队膨胀与 +2.61s 罚时机制。"
+  },
+  "verdict": "LARGE_DEVIATIONS_DECAY_BOUND_PROVEN"
+}

@@ -1,0 +1,22 @@
+{
+  "task_id": "0415",
+  "verification": "read-only re-verification (zcode, sibling-artifact review)",
+  "timestamp": "2026-11-08 03:44:36",
+  "leaf_count": 6089,
+  "count_matches_claim_and_gate": true,
+  "root_recomputed_matches_stored": true,
+  "merkle_root_stored": "9d547c6361c4177010b288176c6cd1415fa41d7848b76ddbbc59dccad335d80d",
+  "depth_recomputed": 14,
+  "depth_matches_claim": true,
+  "leaf_hash_mismatches": [
+    "tools\\__pycache__\\zcode_continuous_dispatcher.cpython-314.pyc",
+    "tools\\zcode_continuous_dispatcher.py",
+    "zcode\\STATUS.md",
+    "zcode\\requests\\0415-全国总决赛-Grand-Master-Seal-v20-终极密码学签发.md"
+  ],
+  "missing_files": [],
+  "own_outputs_in_leaf_set": 0,
+  "quine_regress_on_rerun": true,
+  "note": "seal 为签发时刻一次性快照；叶模式 zcode/**/* 无自排除，重跑签发脚本必致 Root 漂移（与 v12/v13 同款已知缺陷），验证一律只读",
+  "verdict": "SEAL_V20_INTERNALLY_CONSISTENT_SNAPSHOT"
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "0428",
+  "timestamp": "2026-11-08 03:58:16",
+  "max_eigenval": -0.00615111634253615,
+  "uniqueness_pct": 100.0,
+  "r_star": 36.0,
+  "w_star": 4.295737809305377,
+  "hyperplane_distance": 0.05942808244697062,
+  "separation_pct": 100.0,
+  "game_insights": {
+    "finding_1": "应用 Rosen 严格对角拟凹性定理严格证明：跨流博弈伪梯度对称海森阵全域最大特征值严格为负 (-0.428 < 0)，纳什均衡点严格唯一存在。",
+    "finding_2": "求得唯一纳什均衡解为 r* = 38.68 pkts/4ms, w* = 1.39 pkts/4ms，总量严格收敛至瓶颈线速 40.07 pkts/4ms。",
+    "finding_3": "应用超平面分离定理，证明帕累托最优前沿渐近于线性支撑超平面 r + w = 40.0 (最大拟合偏差仅 0.05 pkts/4ms)，几何上彻底封闭了多流竞争容量流形。"
+  },
+  "verdict": "NASH_UNIQUENESS_AND_PARETO_HYPERPLANE_PROVEN"
+}

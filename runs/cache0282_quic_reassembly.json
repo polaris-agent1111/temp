@@ -1,0 +1,14 @@
+{
+  "task_id": "0282",
+  "packets_processed": 10000,
+  "reorder_probability": 0.15,
+  "l1_cache_size_kb": 32,
+  "total_memory_accesses": 105390,
+  "l1_hits_count": 101761,
+  "l1_misses_count": 3629,
+  "l1_miss_rate_percent": 3.44,
+  "target_miss_rate_gate_percent": 4.5,
+  "throughput_degradation_percent": 1.46,
+  "target_degradation_gate_percent": 1.5,
+  "pass_gate": true
+}

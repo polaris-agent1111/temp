@@ -1,0 +1,20 @@
+{
+  "task": "0299",
+  "verified_at": "2026-11-07 22:00:47 UTC+08:00",
+  "simulations": 50000,
+  "podium_threshold_sec": 120.267,
+  "podium_probability_pct": 99.76,
+  "podium_ci_95": [
+    99.72,
+    99.8
+  ],
+  "top2_probability_pct": 98.93,
+  "championship_probability_pct": 28.3,
+  "expected_min_seconds": 117.5928,
+  "quantiles_sec": {
+    "p5": 115.921,
+    "p50": 117.6092,
+    "p95": 119.208
+  },
+  "pass_gate": true
+}

@@ -1,0 +1,10 @@
+{
+  "task_id": "0542",
+  "hurst_true": 0.75,
+  "hurst_estimated": 0.7507933745237879,
+  "hurst_consistency": 99.89421673016162,
+  "decay_rate": 100.0,
+  "peak_queue": 14.0,
+  "buffer_drops": 0,
+  "status": "PASS"
+}

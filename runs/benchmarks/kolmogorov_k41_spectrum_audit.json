@@ -1,0 +1,9 @@
+{
+  "benchmark_name": "kolmogorov_k41_spectrum_audit",
+  "generated_at": "2026-11-08T07:29:20",
+  "fitted_slope": -1.6663,
+  "target_slope": -1.6667,
+  "r2_score": 0.999989,
+  "energy_residual": 2.0e-08,
+  "status": "verified"
+}

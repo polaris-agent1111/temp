@@ -1,4 +1,4 @@
-status: open
+status: done
 priority: 4
 assignee: zcode
 created: 2026-11-05 23:00

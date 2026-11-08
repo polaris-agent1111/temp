@@ -1,0 +1,20 @@
+{
+  "task": "0309",
+  "verified_at": "2026-11-07 23:24:51 UTC+08:00",
+  "kkt_solution": {
+    "c_total_pkts_s": 10416.67,
+    "b_cap_pkts": 30.0,
+    "q_star_pkts": 16.5,
+    "r1_star_pkts_s": 6488.097314285715,
+    "r1_share_pct": 66.06,
+    "lambda_multiplier": 0.0,
+    "hessian_det": 1.8901697384308626e-14,
+    "hessian_trace": 4.3769439065570624e-07,
+    "eigenvalues": [
+      3.891187358698911e-07,
+      4.857565478581516e-08
+    ],
+    "is_positive_definite": true
+  },
+  "pass_gate": true
+}

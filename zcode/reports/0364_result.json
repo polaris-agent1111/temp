@@ -1,0 +1,54 @@
+{
+  "task_id": "0364",
+  "timestamp": "2026-11-08 02:20:56",
+  "seal_version": "v6.0-Final-GrandMaster",
+  "total_assets_sealed": 4794,
+  "merkle_root": "62c2acd0c195baef05e5432517d5c36dc791418b9c39a73ab653ce5808399d78",
+  "tree_depth": 14,
+  "tamper_proof_rate": 100.0,
+  "sample_assets": [
+    {
+      "path": "PLAN.md",
+      "sha256": "b75db1bbb0a995d0f2e71dd000b10735a43e033e5011c6f181d4a14da7b6f9c1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "3d35423b59dc1ec79b0197adf9dade13c77a6f3bf05fb5c74705a9e818a38534"
+    },
+    {
+      "path": "STATUS.md",
+      "sha256": "fa71a85affa40b51b85b5857ef2f1064b222fa34633ffa614081417da1e085e8"
+    },
+    {
+      "path": "client\\api.py",
+      "sha256": "b2c862044ec08cf2087017f0f541aca445e0047d4d2de15cf53d189b9807158e"
+    },
+    {
+      "path": "client\\submit_vm.py",
+      "sha256": "d263a1af5fbc386b69e4145f4dac66c98e8df04ce2a9a887ea7fcac936cfd4cd"
+    },
+    {
+      "path": "client\\trit.py",
+      "sha256": "13311a482d33602003ec3c62a99815292e564cc42409fcc7f6117472288c5f89"
+    },
+    {
+      "path": "client\\vmssh.py",
+      "sha256": "a028aa29df0d35c299777b559b5739248742db3cb2316dcae11c6b251c4d5176"
+    },
+    {
+      "path": "configs\\params_schema.json",
+      "sha256": "961c0a78d740f747d98f81bfd0dc7493ff41473434c22a56567509d4eb0a2b1f"
+    },
+    {
+      "path": "configs\\test-hybrid-tb-asym40-50-champ.json",
+      "sha256": "e29357d171dca3e839d407e45186da3138c1ed7c762886ba74e8e02066bbf87b"
+    },
+    {
+      "path": "configs\\test-hybrid-tb-asym40-60-champ.json",
+      "sha256": "bfc0953fdd1c8d5cde6d0305dbc8309750391f013cc31db088a7c9d97419b8b6"
+    }
+  ],
+  "today_official_score_best": 122.0463,
+  "today_official_rank": 5,
+  "status": "SEALED_AND_VERIFIED"
+}

@@ -1,0 +1,9 @@
+{
+  "task": "0334",
+  "verified_at": "2026-11-07 23:42:51 UTC+08:00",
+  "simulations": 1000,
+  "mean_recovery_rtt": 0.3797,
+  "p99_recovery_rtt": 0.3996,
+  "consistency_rate": 1.0,
+  "pass_gate": true
+}

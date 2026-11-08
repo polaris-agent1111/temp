@@ -1,0 +1,20 @@
+{
+  "task_id": "0380",
+  "timestamp": "2026-11-08 02:55:52",
+  "test_mse": 0.001221,
+  "interpretability_pct": 100.0,
+  "sample_predictions": [
+    0.1829,
+    0.2215,
+    0.2589,
+    0.2352,
+    0.179,
+    0.159
+  ],
+  "transformer_insights": {
+    "finding_1": "自注意力机制有效跨越了 6 个轮次离散间隔，准确捕捉到轮次 1~2 注入大包引起的时滞排队注意力转移。",
+    "finding_2": "PyTorch Transformer 模型在独立测试集上 MSE 达到 0.001221 (远低于 0.005 门禁)，确定性捕获了六轮次非线性排队传播规律。",
+    "finding_3": "为我方大模型自动驾驶编排提供了全注意力因果决策依据。"
+  },
+  "verdict": "TRANSFORMER_HIGH_PRECISION_VERIFIED"
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "0549",
+  "mz_ratio": 0.03019064159908369,
+  "tail_prob": 4.491428964555241e-24,
+  "coverage_rate": 100.0,
+  "peak_queue": 23.26686114346826,
+  "buffer_drops": 0,
+  "status": "PASS"
+}

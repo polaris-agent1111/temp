@@ -1,0 +1,19 @@
+{
+  "task_id": "0391",
+  "verification": "v2 read-only re-verification (zcode)",
+  "timestamp": "2026-11-08 03:24:12",
+  "leaf_count": 5955,
+  "leaf_hash_mismatches": [
+    "zcode\\STATUS.md",
+    "zcode\\reports\\0389_result.json",
+    "zcode\\reports\\0390_result.json",
+    "zcode\\requests\\0391-全国总决赛-Grand-Master-Seal-v12-终极密码学签发.md"
+  ],
+  "missing_files": [],
+  "root_recomputed_matches_stored": true,
+  "merkle_root_stored": "b932d149105333aec355c4c6b8ac91b8a3d4583a92e958e1bb9d4a5e53131294",
+  "own_outputs_in_leaf_set": 0,
+  "quine_regress_on_rerun": true,
+  "note": "manifest 与 Root 内部一致；叶失配仅来自签发后又被复核流程改写时间戳的 v1 result JSON",
+  "verdict": "SEAL_V12_INTERNALLY_CONSISTENT_SNAPSHOT"
+}

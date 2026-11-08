@@ -1,0 +1,8 @@
+{
+  "1": ["origin", {"burst_tokens": 40, "max_pacing_rate": 12500000, "clock_granularity": 1000}],
+  "2": ["origin", {"burst_tokens": 40, "max_pacing_rate": 12500000, "clock_granularity": 1000}],
+  "3": ["origin", {"burst_tokens": 40, "max_pacing_rate": 12500000, "clock_granularity": 1000}],
+  "4": ["origin", {"burst_tokens": 40, "max_pacing_rate": 12500000, "clock_granularity": 1000}],
+  "5": ["precise_rate_based", {"max_pacing_rate": 12500000, "clock_granularity": 1000, "enable_n_in_flight": 1}],
+  "6": ["precise_rate_based", {"max_pacing_rate": 12000000, "clock_granularity": 1000, "enable_n_in_flight": 1}]
+}

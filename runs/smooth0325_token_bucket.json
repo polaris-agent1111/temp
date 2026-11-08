@@ -1,0 +1,10 @@
+{
+  "task": "0325",
+  "verified_at": "2026-11-07 23:32:35 UTC+08:00",
+  "total_packets": 4000,
+  "par_unpaced": 5.0,
+  "par_paced": 1.25,
+  "par_reduction_ratio": 0.75,
+  "burst_factor_f": 1.0,
+  "pass_gate": true
+}

@@ -1,0 +1,7 @@
+{
+  "benchmark_name": "muckenhoupt_weight_constants",
+  "generated_at": "2026-11-08T07:20:20",
+  "a2_constant": 1.0312,
+  "weight_exponent": 0.4,
+  "status": "verified"
+}

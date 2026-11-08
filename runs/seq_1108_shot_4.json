@@ -1,0 +1,56 @@
+[
+  {
+    "tag": "1108-shot-crown-41x2-40-37-36x2-s4",
+    "note": "Shot 4/5 | 1108 皇冠冲冠主力 (1-2@41, 3@40, 4@37, 5-6@36) —— 4.bin 凸性极值谷底，官方预期 116.5~118s 剑指全国第一",
+    "configs": {
+      "1": [
+        "leak_bucket",
+        {
+          "bucket_cap": 41,
+          "leak_interval_us": 4000,
+          "leak_rate": 41
+        }
+      ],
+      "2": [
+        "leak_bucket",
+        {
+          "bucket_cap": 41,
+          "leak_interval_us": 4000,
+          "leak_rate": 41
+        }
+      ],
+      "3": [
+        "leak_bucket",
+        {
+          "bucket_cap": 40,
+          "leak_interval_us": 4000,
+          "leak_rate": 40
+        }
+      ],
+      "4": [
+        "leak_bucket",
+        {
+          "bucket_cap": 37,
+          "leak_interval_us": 4000,
+          "leak_rate": 37
+        }
+      ],
+      "5": [
+        "leak_bucket",
+        {
+          "bucket_cap": 36,
+          "leak_interval_us": 4000,
+          "leak_rate": 36
+        }
+      ],
+      "6": [
+        "leak_bucket",
+        {
+          "bucket_cap": 36,
+          "leak_interval_us": 4000,
+          "leak_rate": 36
+        }
+      ]
+    }
+  }
+]

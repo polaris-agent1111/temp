@@ -1,0 +1,11 @@
+{
+  "task": "0339",
+  "verified_at": "2026-11-07 23:51:53 UTC+08:00",
+  "retest_rounds_M": 3,
+  "mu_diff_s": 2.45,
+  "sigma_diff_s": 0.8216,
+  "retest_win_prob": 0.998568,
+  "drift_risk": 0.001432,
+  "mc_win_prob": 0.99855,
+  "pass_gate": true
+}

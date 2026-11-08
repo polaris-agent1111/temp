@@ -1,0 +1,16 @@
+{
+  "task_id": "0291",
+  "probe_window": "2026-11-08 00:00:00 - 00:05:00",
+  "sample_probes_count": 500,
+  "mean_baseline_rtt_ms": 10.002,
+  "target_rtt_range_ms": [
+    8.5,
+    11.5
+  ],
+  "std_jitter_ms": 0.343,
+  "target_max_jitter_ms": 0.8,
+  "p95_rtt_ms": 10.57,
+  "p99_rtt_ms": 10.767,
+  "channel_baseline_status": "LOCKED_NOMINAL",
+  "pass_gate": true
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "0507",
+  "amp_base": 1.4542261357402322,
+  "amp_ctrl": 0.24209630874277266,
+  "suppression_ratio": 83.35222405973741,
+  "dissipation_rate": 100.0,
+  "max_displacement": 0.29984599702642056,
+  "status": "PASS"
+}

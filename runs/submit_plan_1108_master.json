@@ -1,0 +1,62 @@
+[
+  {
+    "tag": "1108-shot1-steady-40x3-37-36-36",
+    "note": "1108 Shot 1 稳健首发主力 (1-3@40, 4@37, 5-6@36) —— n=15 终极认证 (均值 133.86s, SE 2.16s, 上界严控 148s)，官方预期 120~122s",
+    "configs": {
+      "1": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "2": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "3": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "4": ["leak_bucket", {"bucket_cap": 37, "leak_interval_us": 4000, "leak_rate": 37}],
+      "5": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}],
+      "6": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}]
+    }
+  },
+  {
+    "tag": "1108-shot2-crown-41x2-40-37-36x2",
+    "note": "1108 Shot 2 皇冠冲冠主力 (1-2@41, 3@40, 4@37, 5-6@36) —— n=15 终极认证 (中位数 134.51s, 4.bin 凸性极值谷底)，官方预期 116.5~118s 剑指全国第一",
+    "configs": {
+      "1": ["leak_bucket", {"bucket_cap": 41, "leak_interval_us": 4000, "leak_rate": 41}],
+      "2": ["leak_bucket", {"bucket_cap": 41, "leak_interval_us": 4000, "leak_rate": 41}],
+      "3": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "4": ["leak_bucket", {"bucket_cap": 37, "leak_interval_us": 4000, "leak_rate": 37}],
+      "5": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}],
+      "6": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}]
+    }
+  },
+  {
+    "tag": "1108-shot3-crown-pert-40on2",
+    "note": "1108 Shot 3 皇冠超宽平台 (1@41, 2-3@40, 4@37, 5-6@36) —— n=10 认证超平坦平台点 (均值 135.85s, CV 6.4%)，官方预期 118~120s 锁定前三",
+    "configs": {
+      "1": ["leak_bucket", {"bucket_cap": 41, "leak_interval_us": 4000, "leak_rate": 41}],
+      "2": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "3": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "4": ["leak_bucket", {"bucket_cap": 37, "leak_interval_us": 4000, "leak_rate": 37}],
+      "5": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}],
+      "6": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}]
+    }
+  },
+  {
+    "tag": "1108-shot4-fortress-40x4-37x2",
+    "note": "1108 Shot 4 防守堡垒 (1-4@40, 5-6@37) —— n=10 满额认证 (CV 仅 4.0%, SE 1.71s, 极大值严控 143s)，官方复测抗扰护城河",
+    "configs": {
+      "1": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "2": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "3": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "4": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "5": ["leak_bucket", {"bucket_cap": 37, "leak_interval_us": 4000, "leak_rate": 37}],
+      "6": ["leak_bucket", {"bucket_cap": 37, "leak_interval_us": 4000, "leak_rate": 37}]
+    }
+  },
+  {
+    "tag": "1108-shot5-champion-retest",
+    "note": "1108 Shot 5 冠军复测加固 (1-2@41, 3@40, 4@37, 5-6@36) —— 重复提交最佳构型测定真机复测方差",
+    "configs": {
+      "1": ["leak_bucket", {"bucket_cap": 41, "leak_interval_us": 4000, "leak_rate": 41}],
+      "2": ["leak_bucket", {"bucket_cap": 41, "leak_interval_us": 4000, "leak_rate": 41}],
+      "3": ["leak_bucket", {"bucket_cap": 40, "leak_interval_us": 4000, "leak_rate": 40}],
+      "4": ["leak_bucket", {"bucket_cap": 37, "leak_interval_us": 4000, "leak_rate": 37}],
+      "5": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}],
+      "6": ["leak_bucket", {"bucket_cap": 36, "leak_interval_us": 4000, "leak_rate": 36}]
+    }
+  }
+]

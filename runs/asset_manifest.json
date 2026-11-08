@@ -1,0 +1,514 @@
+{
+  "generated_at": "2026-11-07 02:12:42",
+  "generator": "zcode (task 0064)",
+  "algorithm": "SHA-256",
+  "scope_note": "question/ 目录本地不存在（评测配置树位于云端评测机 /home/openlab/Desktop/question，按红线不触碰），故核心指纹覆盖 configs/、tools/、harness/ 三目录全量文件；答辩材料指纹为精选清单。",
+  "core_code_configs": [
+    {
+      "path": "configs/params_schema.json",
+      "size_bytes": 4066,
+      "mtime": "2026-11-05 16:14:37",
+      "sha256": "961c0a78d740f747d98f81bfd0dc7493ff41473434c22a56567509d4eb0a2b1f"
+    },
+    {
+      "path": "configs/test-hybrid-tb-asym40-50-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 19:17:36",
+      "sha256": "e29357d171dca3e839d407e45186da3138c1ed7c762886ba74e8e02066bbf87b"
+    },
+    {
+      "path": "configs/test-hybrid-tb-asym40-60-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 19:17:19",
+      "sha256": "bfc0953fdd1c8d5cde6d0305dbc8309750391f013cc31db088a7c9d97419b8b6"
+    },
+    {
+      "path": "configs/test-hybrid-tb3-precise3-champ.json",
+      "size_bytes": 759,
+      "mtime": "2026-11-06 16:53:48",
+      "sha256": "e321ad05f0f710fb558f7761724ce78240ae730927509820bc5c28a7834613c1"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-2k-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 16:37:56",
+      "sha256": "ecc1ef8b2e04968372691d2c44be72673730f408a3b88371ecb4cd4a01eaf802"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-2k-p98M-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 16:38:08",
+      "sha256": "84d24e3876ab23b1b2d2ef85233ecf5989d5aa8ec842908cd4228446fde5b216"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-fast14-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 16:57:45",
+      "sha256": "0379affea944e9dce4a9068f8e9d8db02c92f576f853316fe4f27a0315bd918f"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-p100M-p95M-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 17:03:22",
+      "sha256": "1263ef1314d257dfebb7256afa900b2d9190bc606d64a166fa3342f91fb2b820"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-p100M-p96M-g1200.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 16:44:47",
+      "sha256": "8fe4a123fad19733673d8d4e1f2b2f29bde692377047f063a6700c6ec562e01e"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-p100M-p96M-g800.json",
+      "size_bytes": 781,
+      "mtime": "2026-11-06 16:44:40",
+      "sha256": "4902ac961d42c0efa09a02d6a6ff5b762c0e2bf202770920465d24f5f22f9d07"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-p100M-p97M-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 17:03:38",
+      "sha256": "333b1ac09ca8b5ee7d35d15255886428896f8a54b6ff3a3f5e41c1096967db0f"
+    },
+    {
+      "path": "configs/test-hybrid-tb4-p98M-champ.json",
+      "size_bytes": 783,
+      "mtime": "2026-11-06 16:38:02",
+      "sha256": "339b5a1f257c84d19ee8a40e9ffe355fad655677203ac8cc9d82515eee09f98d"
+    },
+    {
+      "path": "configs/test-origin4-precise2-champ.json",
+      "size_bytes": 619,
+      "mtime": "2026-11-06 16:50:23",
+      "sha256": "5bce5e5299fa8e18e913c4762426cdd63bafe4c3555206adc99c23b38481456b"
+    },
+    {
+      "path": "tools/adaptive_submit.py",
+      "size_bytes": 10429,
+      "mtime": "2026-11-05 23:14:23",
+      "sha256": "4465ec699bc12f1871f008b918352ab2a119e7aaa7bb96c71aaa32c69c730044"
+    },
+    {
+      "path": "tools/analyze_adaptive.py",
+      "size_bytes": 3251,
+      "mtime": "2026-11-05 23:52:03",
+      "sha256": "3e73e00bc4f6a8540d708edeed2c0118cfbf21fa7cabf174a9291088b358d4a8"
+    },
+    {
+      "path": "tools/analyze_hybrid.py",
+      "size_bytes": 1310,
+      "mtime": "2026-11-06 15:18:39",
+      "sha256": "82fe93b52e9108c69644feb72ad412cd9ee9453c42de9c3b7cc9595f6eba4b80"
+    },
+    {
+      "path": "tools/asym_leak_researcher.py",
+      "size_bytes": 9044,
+      "mtime": "2026-11-07 01:32:38",
+      "sha256": "e0af1d0422726fbef54be63f902bbd7ad08ee7ac4775062fa28803cc24be3d1e"
+    },
+    {
+      "path": "tools/audit_plan.py",
+      "size_bytes": 7083,
+      "mtime": "2026-11-06 17:10:24",
+      "sha256": "6253d294379923e9b64ac8b5d97be88aaa55a5ad4e492bc7f664f728c65cbf14"
+    },
+    {
+      "path": "tools/auto_continuous_researcher.py",
+      "size_bytes": 15299,
+      "mtime": "2026-11-06 20:12:07",
+      "sha256": "2e312fab59a701f822f8b0762a72aeb9b5b81ad5ad659e13aae5d4d3e8e3ebf3"
+    },
+    {
+      "path": "tools/check_all_configs.py",
+      "size_bytes": 11467,
+      "mtime": "2026-11-05 23:22:55",
+      "sha256": "c1c603dfa58c2471d09fab73478252087f33b7387a505116cb0d9f8135d615c8"
+    },
+    {
+      "path": "tools/check_precise_lower_rates.py",
+      "size_bytes": 879,
+      "mtime": "2026-11-06 19:16:37",
+      "sha256": "33516e57ee5fd9bd19b71e263e20f5977700cf385c80e6fd7ebc12eded6df10c"
+    },
+    {
+      "path": "tools/config_stats.py",
+      "size_bytes": 12646,
+      "mtime": "2026-11-05 16:02:52",
+      "sha256": "a44749b1bfda51f09341aa1a823e834843243f3fe52245a1cb1a1c40297feb04"
+    },
+    {
+      "path": "tools/deep_analysis.py",
+      "size_bytes": 1683,
+      "mtime": "2026-11-06 16:35:59",
+      "sha256": "7bcfac55ccd7ae8d1ffa31e3c389fde6f839fea25582f69d64223a5addb01e4b"
+    },
+    {
+      "path": "tools/delta_model.py",
+      "size_bytes": 20625,
+      "mtime": "2026-11-06 08:04:50",
+      "sha256": "da442ae8f780c8e20d985c85812e3b96728bea6381d673e5a205d0685fd55c76"
+    },
+    {
+      "path": "tools/dump_docs_clean.py",
+      "size_bytes": 2026,
+      "mtime": "2026-11-06 15:33:30",
+      "sha256": "035e4266d8e0956144d30692aa4f6042ac7fe4f6f8a6162621722ba52fd5a8d6"
+    },
+    {
+      "path": "tools/dump_official_md.py",
+      "size_bytes": 3436,
+      "mtime": "2026-11-06 15:34:18",
+      "sha256": "f00f687bc3c74e35d67ec13c1c75cd731aa4eed7c23f8fd6116ef1c3ceb9629b"
+    },
+    {
+      "path": "tools/extend_zcode_batches.py",
+      "size_bytes": 11372,
+      "mtime": "2026-11-06 23:14:52",
+      "sha256": "70ef3cb05cf53a7a59d5b238545ecf493c2852a554e01232650ebba95c4a147b"
+    },
+    {
+      "path": "tools/extract_docx.py",
+      "size_bytes": 2258,
+      "mtime": "2026-11-06 15:33:09",
+      "sha256": "2517035a036e2712ca2e6823b68ad1a5f7690c571252d268d6082ef8e6037693"
+    },
+    {
+      "path": "tools/fit_official_surface.py",
+      "size_bytes": 56924,
+      "mtime": "2026-11-06 07:59:50",
+      "sha256": "a4fc779ec2f06891ea6f1a242ab9cf1f06622d6e4bf691064e3d4c386e7fd197"
+    },
+    {
+      "path": "tools/generate_review_manifest.py",
+      "size_bytes": 1139,
+      "mtime": "2026-11-06 14:47:25",
+      "sha256": "15b9ab7c148ebe434480c0625a0fa1355ef7e77439f8609ca2ef3890964d5f34"
+    },
+    {
+      "path": "tools/inspect_binaries.py",
+      "size_bytes": 1193,
+      "mtime": "2026-11-06 16:22:35",
+      "sha256": "d7af061bc7b7d9f7cd34b3b1622dea9f4563447478edd68e4c25bb31322d775b"
+    },
+    {
+      "path": "tools/inspect_team.py",
+      "size_bytes": 730,
+      "mtime": "2026-11-06 14:44:20",
+      "sha256": "c350282c4495dd940f98d9c155b21e2071afc21d4863079276a896377b028a8a"
+    },
+    {
+      "path": "tools/local_official_map.py",
+      "size_bytes": 31442,
+      "mtime": "2026-11-05 23:43:49",
+      "sha256": "2c16e3673cd53399514641c3fc71953c255be63a54d8bb0fe425c63b63e992b4"
+    },
+    {
+      "path": "tools/monte_carlo_websearch.py",
+      "size_bytes": 6606,
+      "mtime": "2026-11-06 19:36:32",
+      "sha256": "e3e95087ca88e9e97e89ae6e42ea3d2ca4f7a9a4d8ba6096a219c105aa356487"
+    },
+    {
+      "path": "tools/night_submit.py",
+      "size_bytes": 3455,
+      "mtime": "2026-11-06 17:10:24",
+      "sha256": "24253dcf23e31cd6f334e6e29bdf096f6445dd49b8749e985237bad2e57e0cd7"
+    },
+    {
+      "path": "tools/official_analysis.py",
+      "size_bytes": 14634,
+      "mtime": "2026-11-05 19:31:29",
+      "sha256": "cadd202c0a5a9e6d917ce2fdcb79753a24d7783b5f8c5f72132d115dcd1919e2"
+    },
+    {
+      "path": "tools/official_log.py",
+      "size_bytes": 5478,
+      "mtime": "2026-11-05 18:41:44",
+      "sha256": "dc4c04bee95770a4bca9ebbf63b269b7d42b381d155f351ad2b7ef0267d5770f"
+    },
+    {
+      "path": "tools/parse_word.py",
+      "size_bytes": 603,
+      "mtime": "2026-11-06 15:33:55",
+      "sha256": "9e4ece5f3359f9d21edd27a5780e56f650a7eb7dc681df746b46bbb021f2394d"
+    },
+    {
+      "path": "tools/probe_matrix.py",
+      "size_bytes": 20788,
+      "mtime": "2026-11-06 08:36:29",
+      "sha256": "b67f524e7b1916e1dd1081dbc221454aae147c7d47a8f91126e6c19a14d5bab0"
+    },
+    {
+      "path": "tools/sequential_adaptive_night.py",
+      "size_bytes": 20420,
+      "mtime": "2026-11-06 19:33:29",
+      "sha256": "0e79a37e3ff441483eb18f36c890ac0087132f6067f3e33d05d6418e8da9a11d"
+    },
+    {
+      "path": "tools/show_board.py",
+      "size_bytes": 1666,
+      "mtime": "2026-11-06 14:43:53",
+      "sha256": "0dbfb96956b0984176fd312f6383f883088642e81b0b4dfb9a377651bc54b738"
+    },
+    {
+      "path": "tools/smart_adaptive_night.py",
+      "size_bytes": 13458,
+      "mtime": "2026-11-06 17:10:24",
+      "sha256": "76f4642d845ae1b2c0261b834270608dc53f6b89e6c00691007d1308f7b4b0c0"
+    },
+    {
+      "path": "tools/submit_batch.py",
+      "size_bytes": 3370,
+      "mtime": "2026-11-05 21:25:35",
+      "sha256": "5e28b3136f88b78bf6fd32c9d05bcbdc19a4e0167106282e97a12282f46b03a9"
+    },
+    {
+      "path": "tools/summarize_hybrid_stats.py",
+      "size_bytes": 9399,
+      "mtime": "2026-11-06 17:12:01",
+      "sha256": "0e7e830ec6da486f363ddff7dd3a015a4b8dfb33fc00cf46744798186e9d782b"
+    },
+    {
+      "path": "tools/test_1core.py",
+      "size_bytes": 3219,
+      "mtime": "2026-11-06 09:11:07",
+      "sha256": "bf3f11cf4cec6ced0eb4087087fa95deefdb30ab3a7a755d1a7d4ab7122d0a67"
+    },
+    {
+      "path": "tools/test_asym_tb.py",
+      "size_bytes": 1165,
+      "mtime": "2026-11-06 19:17:01",
+      "sha256": "f13ea4ec983ba808e9b3f3e879abff5d38e3d04b999c892c3669f5847256b96a"
+    },
+    {
+      "path": "tools/test_format_limits.py",
+      "size_bytes": 4704,
+      "mtime": "2026-11-06 17:10:24",
+      "sha256": "9241bd01ba57b1427da090605158e04b9071f421ce292b06c54d8acc1a2e3be1"
+    },
+    {
+      "path": "tools/test_granularity_limits.py",
+      "size_bytes": 1179,
+      "mtime": "2026-11-06 16:41:24",
+      "sha256": "8ab3377d089954306f9fa8b0e3d613817dad735061d61d486f1514d6ea2b8ce8"
+    },
+    {
+      "path": "tools/test_tb_intervals.py",
+      "size_bytes": 1343,
+      "mtime": "2026-11-06 16:37:10",
+      "sha256": "1fdd0c7f8750918873bf8fc42e02608cbd5d31d816491095b2596fb72fd6e660"
+    },
+    {
+      "path": "tools/timer_model.py",
+      "size_bytes": 6302,
+      "mtime": "2026-11-05 16:37:45",
+      "sha256": "f6167e1903103d585e50184dbc351b5f19fa9bdcb83505fbe77fd2546589b938"
+    },
+    {
+      "path": "tools/validate_pacer.py",
+      "size_bytes": 11806,
+      "mtime": "2026-11-05 16:16:07",
+      "sha256": "8681e580bfaa3d4f64f629a3094362ecd63d168313eb4b50cf34a2d503fe45e4"
+    },
+    {
+      "path": "tools/vm_load.py",
+      "size_bytes": 1537,
+      "mtime": "2026-11-05 15:17:50",
+      "sha256": "9a7bd34dcbf3378048d415ce8c8d167777a4151d5439bca037806687899b8e94"
+    },
+    {
+      "path": "tools/watch_board.py",
+      "size_bytes": 2678,
+      "mtime": "2026-11-05 15:14:35",
+      "sha256": "d511916f27fc39fe37e8bee0720713c24e6c4d661e4dab57d3e16fb934ff1f99"
+    },
+    {
+      "path": "tools/zcode_continuous_dispatcher.py",
+      "size_bytes": 94529,
+      "mtime": "2026-11-06 23:17:35",
+      "sha256": "91809a067ab852fc91f5b916e59a50bff3350c36bc95cc1d9ca6c75fb4ab3d1a"
+    },
+    {
+      "path": "tools/__pycache__/adaptive_submit.cpython-314.pyc",
+      "size_bytes": 16310,
+      "mtime": "2026-11-05 23:14:23",
+      "sha256": "8f26e9e89d3e2c47b74ce642ca55ee3c84f7f3907070406ab35ba6dfa22b7f24"
+    },
+    {
+      "path": "tools/__pycache__/asym_leak_researcher.cpython-314.pyc",
+      "size_bytes": 11531,
+      "mtime": "2026-11-07 01:32:01",
+      "sha256": "fe27662cdb4c7763a338ffc37839148994ea7d43323a0f76a54f4d7a8511f76c"
+    },
+    {
+      "path": "tools/__pycache__/audit_plan.cpython-314.pyc",
+      "size_bytes": 13964,
+      "mtime": "2026-11-06 17:11:55",
+      "sha256": "6ff7e1c4518e1fee4290a80aeefb591b81156c53ac1ec3f672eb92d027485e51"
+    },
+    {
+      "path": "tools/__pycache__/delta_model.cpython-314.pyc",
+      "size_bytes": 33918,
+      "mtime": "2026-11-06 08:29:57",
+      "sha256": "d3ded12a6a1e010bce53ad7543a0219bfd1d19369bf8809cc2304112e119b3fb"
+    },
+    {
+      "path": "tools/__pycache__/fit_official_surface.cpython-314.pyc",
+      "size_bytes": 95157,
+      "mtime": "2026-11-06 07:58:20",
+      "sha256": "07a182ca0099a2f923e8c0c47da54f9abfc8078489ce851cccb1191c8f196d79"
+    },
+    {
+      "path": "tools/__pycache__/local_official_map.cpython-314.pyc",
+      "size_bytes": 46994,
+      "mtime": "2026-11-05 23:49:51",
+      "sha256": "7f9d420fb504f2d2647e9093c950c652929501355bdb00d5568cac0e7d63f34d"
+    },
+    {
+      "path": "tools/__pycache__/night_submit.cpython-314.pyc",
+      "size_bytes": 6980,
+      "mtime": "2026-11-06 17:11:55",
+      "sha256": "1f8c1c3790ba9154e52a0465ee449425b290d6fa570352d1731b9305652770bf"
+    },
+    {
+      "path": "tools/__pycache__/probe_matrix.cpython-314.pyc",
+      "size_bytes": 34477,
+      "mtime": "2026-11-06 08:33:51",
+      "sha256": "06a92a79e14436ea38f9a71518e41462892592460d6d89c187c085a8f5d820a8"
+    },
+    {
+      "path": "tools/__pycache__/smart_adaptive_night.cpython-314.pyc",
+      "size_bytes": 24526,
+      "mtime": "2026-11-06 17:11:55",
+      "sha256": "8da8655b1ace0dfaf5da4f298b001869998472ca488c07dc7080035c778932c9"
+    },
+    {
+      "path": "tools/__pycache__/summarize_hybrid_stats.cpython-314.pyc",
+      "size_bytes": 17983,
+      "mtime": "2026-11-06 17:12:06",
+      "sha256": "84c7d6af0283e7952548d1e4d1872731972d35b20144bd5428a1856d62eb6317"
+    },
+    {
+      "path": "tools/__pycache__/test_format_limits.cpython-314.pyc",
+      "size_bytes": 7924,
+      "mtime": "2026-11-06 17:11:55",
+      "sha256": "8f87a6cef6a86b85ecd92a6f06bb92370511826bb6162532f78c58f596677635"
+    },
+    {
+      "path": "tools/__pycache__/zcode_continuous_dispatcher.cpython-314.pyc",
+      "size_bytes": 88145,
+      "mtime": "2026-11-06 23:15:04",
+      "sha256": "a00cd70c3c6390f0be49f0b23b4651f708821c314ad26cb614b0a26c514814b9"
+    },
+    {
+      "path": "harness/analyze.py",
+      "size_bytes": 3721,
+      "mtime": "2026-11-05 11:53:40",
+      "sha256": "050424a4aa6ecad3977e3a46d9b61befa69c3c4c9220d42dc29e1f43ad6b4843"
+    },
+    {
+      "path": "harness/import_vm_result.py",
+      "size_bytes": 1618,
+      "mtime": "2026-11-05 10:52:39",
+      "sha256": "49fc6259d3d054f4c28d0e159f324dedd78e710f2f8b001023c23a30f132c585"
+    },
+    {
+      "path": "harness/make_report_data.py",
+      "size_bytes": 3359,
+      "mtime": "2026-11-05 14:53:17",
+      "sha256": "2b6c8bd001c0f0a9e64f7d6e29440a38c8e1d60f946f138e87365b1b5ec7addd"
+    },
+    {
+      "path": "harness/run_experiment.py",
+      "size_bytes": 9496,
+      "mtime": "2026-11-05 11:31:16",
+      "sha256": "a00bfb34b92b364ed0c2dfb8748365b62cbbb1cb2d46e4309ab8c3efd01ffed3"
+    },
+    {
+      "path": "harness/sweep.py",
+      "size_bytes": 2166,
+      "mtime": "2026-11-05 10:49:31",
+      "sha256": "85b7c4f03b8b5ee5bf0d0d508167eac24c135c1c2c69b03004154e15c57f3674"
+    },
+    {
+      "path": "harness/upload_config.py",
+      "size_bytes": 2231,
+      "mtime": "2026-11-05 12:48:01",
+      "sha256": "8fda615a2299508d94c9d0b520caf70777b634fa30d0c0643ca41e1634ff1bf1"
+    },
+    {
+      "path": "harness/__pycache__/run_experiment.cpython-314.pyc",
+      "size_bytes": 17142,
+      "mtime": "2026-11-05 11:31:17",
+      "sha256": "d85f264a82cafb0a3387b6d279cfbf6723a3a71b98844d85e90e7cf452e9a55e"
+    }
+  ],
+  "defense_materials": [
+    {
+      "path": "docs/analysis/4plus2-phase-transition-theory.md",
+      "size_bytes": 2557,
+      "mtime": "2026-11-06 20:16:09",
+      "sha256": "2473e9d005b7d6c9cd0e30dc0981784d10c0224d75153a0563cf3deec2fb1b7d"
+    },
+    {
+      "path": "docs/analysis/first-prize-defense-whitepaper.md",
+      "size_bytes": 10062,
+      "mtime": "2026-11-07 02:11:36",
+      "sha256": "9e8d89d3d4954bcc8c5657cac929871d37261472ebec0f0e9a9d4958e076cab8"
+    },
+    {
+      "path": "docs/analysis/5shot-battle-retrospective.md",
+      "size_bytes": 11769,
+      "mtime": "2026-11-07 02:08:28",
+      "sha256": "a89cdbfe1e5f493e90255fc690af17259645980a09b26bd57b4540c2e6713ff3"
+    },
+    {
+      "path": "docs/analysis/11-07-five-shot-deep-review.md",
+      "size_bytes": 7858,
+      "mtime": "2026-11-07 01:26:47",
+      "sha256": "0a5b0dfb3471075738f55f8ec9ec5db1fa8c44daedb21507eccaf5e27c8c1d9d"
+    },
+    {
+      "path": "docs/analysis/hybrid-statistical-summary.md",
+      "size_bytes": 9326,
+      "mtime": "2026-11-07 02:12:16",
+      "sha256": "4373a0bdef4cdc7b4afb1dfa3a911ed0d7829b2d4ef917276689254dcc74ebb2"
+    },
+    {
+      "path": "docs/analysis/overfitting-and-selection.md",
+      "size_bytes": 6377,
+      "mtime": "2026-11-06 17:10:24",
+      "sha256": "ebc9d18f75976736884fc5fd576b4c4038fa9ab5809c4b4b1292b8b07e331f30"
+    },
+    {
+      "path": "docs/analysis/network-queuing-delay-theory.md",
+      "size_bytes": 2890,
+      "mtime": "2026-11-06 20:10:18",
+      "sha256": "d0670e43e6fc131a84e8634c6c7cbd6b19ecd8bb07f1b430f068010c26c53085"
+    },
+    {
+      "path": "docs/analysis/monte-carlo-collision-simulation.md",
+      "size_bytes": 5067,
+      "mtime": "2026-11-06 19:39:17",
+      "sha256": "2667197f93ce6b698ff0ca25978c2d8b2abbb76d2e9a5e9498d43bb354ee0585"
+    },
+    {
+      "path": "docs/analysis/variance-decomposition-and-bounds.md",
+      "size_bytes": 5438,
+      "mtime": "2026-11-06 19:47:03",
+      "sha256": "5e45bf220ff1f976f5f5fe7aafb8098300de339da53b09472ae79c88fd715094"
+    },
+    {
+      "path": "docs/资产清单.md",
+      "size_bytes": 11373,
+      "mtime": "2026-11-06 20:06:23",
+      "sha256": "7632ea17126162bd72ce4e3b977d3da74d5dd45e8a5a701fab497c51c69b989d"
+    },
+    {
+      "path": "runs/submissions.jsonl",
+      "size_bytes": 14865,
+      "mtime": "2026-11-07 01:06:43",
+      "sha256": "0a5ebe9b6220955c2b93a0d4a6e8f7766bc1c628bd7a593ed49434e14812a9e9"
+    }
+  ]
+}

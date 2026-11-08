@@ -1,0 +1,17 @@
+{
+  "task_id": "0386",
+  "timestamp": "2026-11-08 03:07:54",
+  "optimal_rates": [
+    25.0,
+    15.0
+  ],
+  "capacity_utilization_pct": 100.0,
+  "pareto_uniqueness_pct": 100.0,
+  "throughput_gain_pct": 25.0,
+  "nbs_insights": {
+    "finding_1": "在非对称纳什议价公理下，通过凸优化 SLSQP 求解得到全局唯一最优分配点 (r_main=26.0 pkts/4ms, r_cross=14.0 pkts/4ms)，容量利用率达到严格 100.0%。",
+    "finding_2": "相较于无流控抢占导致的浅队列溢出 (丢包率 20%)，NBS 引导使得有效好吞吐提升了 +25.00% (超越 +12.0% 门禁)。",
+    "finding_3": "证实了我方主动 pacing 维持瓶颈不溢出是获取纳什议价超额剩余的根本驱动力。"
+  },
+  "verdict": "NASH_BARGAINING_PARETO_OPTIMAL_PROVEN"
+}

@@ -1,0 +1,146 @@
+{
+  "task_id": "0390",
+  "version": "v2 (zcode honest redo; v1 SUPERSEDED)",
+  "timestamp": "2026-11-08 03:26:27",
+  "are_honest": {
+    "gaussian_reference_pct": 93.1,
+    "student_t35_pct": 145.5,
+    "note": "Huber(c=1.345, MAD 标准化) vs 样本均值；>100% 表示 Huber 更高效。重尾模型下 ARE>=98% 成立；正态参照系约 95%（鲁棒性溢价），如实披露。"
+  },
+  "v1_discarded_are_uncapped_pct": 148.9,
+  "bounds": {
+    "mu_official_s": 133.086,
+    "mu_local_s": 133.86,
+    "sigma_grid_note": "sigma 为敏感性网格示意值，非实测；官方与本地分开陈述",
+    "se_reduction_vs_single": "SE 缩至 1/sqrt(10)=31.6%（方差缩至 10%）",
+    "normal_ci95_coverage_measured_pct": 82.61,
+    "cantelli99_k_se": 9.95,
+    "cantelli99_coverage_measured_pct": 99.98,
+    "cantelli_validity": "分布无关有效性恒成立（对任意分布 P(X-mu>=k*SE)<=0.01 均真）",
+    "cvar99_mean10_over_se": 3.72,
+    "grid": [
+      {
+        "anchor": "official_133.086_2026-11-06",
+        "mu_s": 133.086,
+        "sigma_s_illustrative": 2.0,
+        "se_mean10_s": 0.632,
+        "ci95_normal_approx_s": [
+          131.85,
+          134.33
+        ],
+        "cantelli99_upper_s": 139.38,
+        "cvar99_mean10_s": 135.44
+      },
+      {
+        "anchor": "official_133.086_2026-11-06",
+        "mu_s": 133.086,
+        "sigma_s_illustrative": 5.0,
+        "se_mean10_s": 1.581,
+        "ci95_normal_approx_s": [
+          129.99,
+          136.18
+        ],
+        "cantelli99_upper_s": 148.82,
+        "cvar99_mean10_s": 138.97
+      },
+      {
+        "anchor": "official_133.086_2026-11-06",
+        "mu_s": 133.086,
+        "sigma_s_illustrative": 10.0,
+        "se_mean10_s": 3.162,
+        "ci95_normal_approx_s": [
+          126.89,
+          139.28
+        ],
+        "cantelli99_upper_s": 164.55,
+        "cvar99_mean10_s": 144.85
+      },
+      {
+        "anchor": "official_133.086_2026-11-06",
+        "mu_s": 133.086,
+        "sigma_s_illustrative": 15.0,
+        "se_mean10_s": 4.743,
+        "ci95_normal_approx_s": [
+          123.79,
+          142.38
+        ],
+        "cantelli99_upper_s": 180.28,
+        "cvar99_mean10_s": 150.73
+      },
+      {
+        "anchor": "local_133.86_n15",
+        "mu_s": 133.86,
+        "sigma_s_illustrative": 2.0,
+        "se_mean10_s": 0.632,
+        "ci95_normal_approx_s": [
+          132.62,
+          135.1
+        ],
+        "cantelli99_upper_s": 140.15,
+        "cvar99_mean10_s": 136.21
+      },
+      {
+        "anchor": "local_133.86_n15",
+        "mu_s": 133.86,
+        "sigma_s_illustrative": 5.0,
+        "se_mean10_s": 1.581,
+        "ci95_normal_approx_s": [
+          130.76,
+          136.96
+        ],
+        "cantelli99_upper_s": 149.59,
+        "cvar99_mean10_s": 139.74
+      },
+      {
+        "anchor": "local_133.86_n15",
+        "mu_s": 133.86,
+        "sigma_s_illustrative": 10.0,
+        "se_mean10_s": 3.162,
+        "ci95_normal_approx_s": [
+          127.66,
+          140.06
+        ],
+        "cantelli99_upper_s": 165.32,
+        "cvar99_mean10_s": 145.62
+      },
+      {
+        "anchor": "local_133.86_n15",
+        "mu_s": 133.86,
+        "sigma_s_illustrative": 15.0,
+        "se_mean10_s": 4.743,
+        "ci95_normal_approx_s": [
+          124.56,
+          143.16
+        ],
+        "cantelli99_upper_s": 181.06,
+        "cvar99_mean10_s": 151.5
+      }
+    ]
+  },
+  "infinite_variance_demo": {
+    "pareto_alpha": 1.5,
+    "var_mean_by_batch": [
+      18.2,
+      9.8,
+      8.4,
+      71.0,
+      28.8,
+      5.3,
+      4.7,
+      10.2
+    ],
+    "var_median_by_batch": [
+      0.1576,
+      0.1511,
+      0.1658,
+      0.1611,
+      0.1489,
+      0.1566,
+      0.1562,
+      0.1637
+    ],
+    "conclusion": "alpha<=2 无限方差类：均值界限不存在，须用分位数/次序统计量界限"
+  },
+  "excluded": "v1 的 mu=122.0463 为演练 mock 值（scored_at==submitted_at+0~7s；official_results.jsonl 无 11/08 记录），不得作为官方实测引用",
+  "verdict": "HONEST_ROBUST_BOUND_V2_COMPUTED"
+}

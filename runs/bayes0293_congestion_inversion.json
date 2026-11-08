@@ -1,0 +1,74 @@
+{
+  "task": "0293",
+  "verified_at": "2026-11-07 20:54:32 UTC+08:00",
+  "mc_samples": 2000,
+  "accuracy_pct": 98.05,
+  "pass_gate": true,
+  "priors": {
+    "Clean": 0.25,
+    "Nominal": 0.55,
+    "Congested": 0.2
+  },
+  "test_cases": [
+    {
+      "t1_observed": 118.2,
+      "map_state": "Clean",
+      "confidence": 0.9969525027778265,
+      "posteriors": {
+        "Clean": 0.9969525027778265,
+        "Nominal": 0.00304748480535792,
+        "Congested": 1.2416815467948914e-08
+      },
+      "inferred_bg_rate_mbps": 10.06,
+      "inferred_queue_delay_ms": 2.52
+    },
+    {
+      "t1_observed": 122.4,
+      "map_state": "Nominal",
+      "confidence": 0.9980822595343025,
+      "posteriors": {
+        "Clean": 0.0018699463293234458,
+        "Nominal": 0.9980822595343025,
+        "Congested": 4.77941363740117e-05
+      },
+      "inferred_bg_rate_mbps": 28.47,
+      "inferred_queue_delay_ms": 7.99
+    },
+    {
+      "t1_observed": 124.3683,
+      "map_state": "Nominal",
+      "confidence": 0.9993809882719841,
+      "posteriors": {
+        "Clean": 3.165753042539163e-06,
+        "Nominal": 0.9993809882719841,
+        "Congested": 0.0006158459749734483
+      },
+      "inferred_bg_rate_mbps": 28.51,
+      "inferred_queue_delay_ms": 8.01
+    },
+    {
+      "t1_observed": 127.5,
+      "map_state": "Nominal",
+      "confidence": 0.8153732687745554,
+      "posteriors": {
+        "Clean": 3.86427787068531e-11,
+        "Nominal": 0.8153732687745554,
+        "Congested": 0.18462673118680173
+      },
+      "inferred_bg_rate_mbps": 32.1,
+      "inferred_queue_delay_ms": 10.58
+    },
+    {
+      "t1_observed": 133.0,
+      "map_state": "Congested",
+      "confidence": 0.9999994212672655,
+      "posteriors": {
+        "Clean": 5.389721277533049e-27,
+        "Nominal": 5.787327344782209e-07,
+        "Congested": 0.9999994212672655
+      },
+      "inferred_bg_rate_mbps": 48.0,
+      "inferred_queue_delay_ms": 22.0
+    }
+  ]
+}

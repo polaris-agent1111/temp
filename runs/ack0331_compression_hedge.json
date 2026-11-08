@@ -1,0 +1,8 @@
+{
+  "task": "0331",
+  "verified_at": "2026-11-07 23:38:42 UTC+08:00",
+  "events": 1000,
+  "suppression_rate": 1.0,
+  "burst_releases": 0,
+  "pass_gate": true
+}

@@ -1,0 +1,26 @@
+{
+  "seal_name": "GRAND_MASTER_SEAL_V4",
+  "version": "4.0.0",
+  "sealed_at": "2026-11-07 23:18:17 UTC+08:00",
+  "total_assets": 267,
+  "merkle_root": "6065bce01ba590179229b5a48a7057fb22251ebc5258f31e1cf5bbe00695f324",
+  "compliance_verified": true,
+  "sample_assets": {
+    "STATUS.md": "7ec4afff8159d7e1d6b0d872e99d8fa8c302a232e93de9e725467704b03d6e06",
+    "configs/params_schema.json": "961c0a78d740f747d98f81bfd0dc7493ff41473434c22a56567509d4eb0a2b1f",
+    "docs/analysis/hybrid-statistical-summary.md": "16f6a3e0ed7036e03c82fbfb0a3d07d4dce6da519626c66759e537235022be13",
+    "docs/analysis/overfitting-and-selection.md": "ebc9d18f75976736884fc5fd576b4c4038fa9ab5809c4b4b1292b8b07e331f30",
+    "question/1/pacer.txt": "4fbf03db70c855073e29899d3a49553509a1bc0389f86205f26d7a0792984996",
+    "question/2/pacer.txt": "21e4fe70b5a024851804b52485eb2bc1670ed53b38b9673188f31e72f9445492",
+    "question/3/pacer.txt": "e56e57fa3bcd40f0e319822f3a599fdadcf5043d34d1ad15eba71a649e56ccb6",
+    "question/4/pacer.txt": "07b488977ffe6b6fd1291a258cc0f1d3455687e83f28af79732bd933a59a7e7a",
+    "question/5/pacer.txt": "23203daabe55c860c5f599bc6f968415a3faf6a5a06f18b7f5b8ca436e7045e6",
+    "question/6/pacer.txt": "7632a4e5dbefcc737d86d34707ff787710d723133b0ef19e0b0081f4ee730c07",
+    "tools/audit_plan.py": "6253d294379923e9b64ac8b5d97be88aaa55a5ad4e492bc7f664f728c65cbf14",
+    "tools/sequential_adaptive_1108.py": "223198a9c43a5c8a7808670043948e068528578de5a91fe088abe71372dae279",
+    "tools/sequential_adaptive_night.py": "6bce3893fedcf388c1598d281239b4be71e1a34aa6943ea5deee3b00b3033e60",
+    "tools/validate_pacer.py": "8681e580bfaa3d4f64f629a3094362ecd63d168313eb4b50cf34a2d503fe45e4",
+    "tools/zcode_continuous_dispatcher.py": "43f487cc47c6be691479dbbb24abe86feab4ad9fcce37fa401d68549d0579257"
+  },
+  "pass_gate": true
+}

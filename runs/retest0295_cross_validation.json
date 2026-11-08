@@ -1,0 +1,13 @@
+{
+  "task": "0295",
+  "verified_at": "2026-11-07 20:56:23 UTC+08:00",
+  "simulations": 1000,
+  "m_retests": 3,
+  "mean_drift_sec": 0.546,
+  "p95_drift_sec": 1.3362,
+  "robustness_pct": 97.2,
+  "win_probability_pct": 60.2,
+  "competitor_retest_mean_sec": 121.4373,
+  "competitor_tail_blowup_pct": 16.1,
+  "pass_gate": true
+}

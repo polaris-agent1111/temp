@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "raw_jitter_var": 9947.631263377149,
+  "depart_jitter_var": 1196.7724571072863,
+  "variance_attenuation": 0.8796927202646441,
+  "active_drops": 0
+}

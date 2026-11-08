@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "is_nash": true,
+  "jacobian_eigenvalue": -0.85,
+  "convergence_speed": 0.85,
+  "stability_rate": 1.0
+}

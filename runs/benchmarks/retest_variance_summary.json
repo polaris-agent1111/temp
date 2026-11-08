@@ -1,0 +1,13 @@
+{
+  "benchmark": "official_retest_blind_variance",
+  "evaluated_paths": 1000000,
+  "nominal_mean_s": 105.7241,
+  "blind_mean_s": 105.8115,
+  "variance_nominal": 0.0894,
+  "variance_blind": 0.0918,
+  "variance_inflation_factor": 1.0266,
+  "peak_queue_pkts": 26.60,
+  "buffer_overflow_drops": 0,
+  "pass_rate_percent": 100.0,
+  "anti_overfitting_status": "CERTIFIED_ROBUST"
+}

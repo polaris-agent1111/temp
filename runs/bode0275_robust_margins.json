@@ -1,0 +1,39 @@
+{
+  "task_id": "0275",
+  "delay_tau_ms": 10.0,
+  "nominal_K": 28.0,
+  "evaluations": [
+    {
+      "gain_perturbation_percent": -30,
+      "effective_K": 19.6,
+      "gain_crossover_freq_rad_s": 19.6,
+      "phase_crossover_freq_rad_s": 157.08,
+      "phase_margin_deg": 78.77,
+      "gain_margin_db": 18.08,
+      "is_stable": true
+    },
+    {
+      "gain_perturbation_percent": 0,
+      "effective_K": 28.0,
+      "gain_crossover_freq_rad_s": 28.0,
+      "phase_crossover_freq_rad_s": 157.08,
+      "phase_margin_deg": 73.96,
+      "gain_margin_db": 14.98,
+      "is_stable": true
+    },
+    {
+      "gain_perturbation_percent": 30,
+      "effective_K": 36.4,
+      "gain_crossover_freq_rad_s": 36.4,
+      "phase_crossover_freq_rad_s": 157.08,
+      "phase_margin_deg": 69.14,
+      "gain_margin_db": 12.7,
+      "is_stable": true
+    }
+  ],
+  "worst_phase_margin_deg": 69.14,
+  "target_pm_gate_deg": 45.0,
+  "worst_gain_margin_db": 12.7,
+  "target_gm_gate_db": 6.0,
+  "pass_gate": true
+}

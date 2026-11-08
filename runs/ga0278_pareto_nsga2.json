@@ -1,0 +1,23 @@
+{
+  "task_id": "0278",
+  "generations_run": 500,
+  "population_size": 60,
+  "crown_fusion_configuration": [
+    41,
+    41,
+    41,
+    37,
+    36,
+    36
+  ],
+  "crown_fusion_fitness": {
+    "f1_total_time_sec": 136.099,
+    "f2_queue_variance_penalty": 0.0
+  },
+  "crown_fusion_is_rank_0_pareto": true,
+  "individuals_dominating_crown_fusion_count": 0,
+  "individuals_dominated_by_crown_fusion_count": 0,
+  "crown_fusion_dominance_ratio_percent": 0.0,
+  "pareto_optimality_certified": true,
+  "pass_gate": true
+}

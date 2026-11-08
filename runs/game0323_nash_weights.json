@@ -1,0 +1,10 @@
+{
+  "task": "0323",
+  "verified_at": "2026-11-07 23:29:59 UTC+08:00",
+  "opt_strategy_push": 1.0,
+  "opt_strategy_def": 0.0,
+  "game_value_s": 1.85,
+  "regret": 0.0,
+  "win_rate": 1.0,
+  "pass_gate": true
+}

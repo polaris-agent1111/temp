@@ -1,0 +1,11 @@
+{
+  "task_id": "0287",
+  "platform": "win32",
+  "total_packets_sent": 4000,
+  "enobufs_errors_count": 0,
+  "mean_send_syscall_latency_us": 9.46,
+  "target_max_latency_us": 10.0,
+  "p95_send_syscall_latency_us": 13.09,
+  "packets_received_count": 4100,
+  "pass_gate": true
+}

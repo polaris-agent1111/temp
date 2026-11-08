@@ -1,0 +1,30 @@
+{
+  "seal_version": "v67_soaring_sun",
+  "timestamp": "2026-11-08 06:57:20",
+  "merkle_root": "04149f8d9079907aec38894b4af823a587f3bff2fcc529b5a73372f7e202f498",
+  "tree_depth": 14,
+  "asset_count": 7825,
+  "pass_rate": 100.0,
+  "sample_manifest": {
+    ".gitattributes": "a04ecdb1be2b3e0d3ec71587dfe0583dae902fc4d12ec7861f8af5619e26ddd3",
+    ".gitignore": "05f356146b47cad7039e92cc5bb0e49fe70d0148641df65580f3a11fda0f7005",
+    "AGENTS.md": "9df14aaec3a09f17f64b332750ca4f6a3fab041dd7b52a551cd4660c1c32493d",
+    "CONTRIBUTING.md": "0f3c8cf658d249fffdc4577d71907bf9689e020398dedc8f07f5a075d61c9fe4",
+    "HANDOFF.md": "2a7b05f70849b60560fdd59af11823e246c9ec8d622fb67ed74b689fe72ead41",
+    "PLAN.md": "b75db1bbb0a995d0f2e71dd000b10735a43e033e5011c6f181d4a14da7b6f9c1",
+    "README.md": "3d35423b59dc1ec79b0197adf9dade13c77a6f3bf05fb5c74705a9e818a38534",
+    "STATUS.md": "acfff953dbeaab9ef5f233b99fcf9bd365242c210f9c0b1cd71f31632a7b8b6f",
+    "client/__pycache__/api.cpython-314.pyc": "2488d018b4684d121807e8a24f7149925611e70a6e8eeb83d5fc1edf7728e401",
+    "client/__pycache__/trit.cpython-314.pyc": "afc7b2519893e0d057e6623632288096a17b8c331e389b7724784927eef98a67",
+    "client/__pycache__/vmssh.cpython-314.pyc": "a30ea10612d5ecb99c38fb589e5ef21d8c4762bd931f47a9cc70c8ec3531951a",
+    "client/api.py": "b2c862044ec08cf2087017f0f541aca445e0047d4d2de15cf53d189b9807158e",
+    "client/secrets.json": "edb0a3e4ca7f358e2f9c4adf292ed8729b33e3848c97da8c27bd069e1646cc55",
+    "client/submit_vm.py": "d263a1af5fbc386b69e4145f4dac66c98e8df04ce2a9a887ea7fcac936cfd4cd",
+    "client/trit.py": "13311a482d33602003ec3c62a99815292e564cc42409fcc7f6117472288c5f89",
+    "client/vmssh.py": "a028aa29df0d35c299777b559b5739248742db3cb2316dcae11c6b251c4d5176",
+    "configs/params_schema.json": "961c0a78d740f747d98f81bfd0dc7493ff41473434c22a56567509d4eb0a2b1f",
+    "configs/test-hybrid-tb-asym40-50-champ.json": "e29357d171dca3e839d407e45186da3138c1ed7c762886ba74e8e02066bbf87b",
+    "configs/test-hybrid-tb-asym40-60-champ.json": "bfc0953fdd1c8d5cde6d0305dbc8309750391f013cc31db088a7c9d97419b8b6",
+    "configs/test-hybrid-tb3-precise3-champ.json": "e321ad05f0f710fb558f7761724ce78240ae730927509820bc5c28a7834613c1"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "task": "0351",
+  "data": {
+    "source": "runs/results.jsonl",
+    "tag_regex": "^test-anchor-shot2-pert-40x3-37-36-36-r\\d+$",
+    "n_runs": 15,
+    "per_round_obs_mean_s": [
+      2.515,
+      4.034,
+      6.736,
+      14.581,
+      31.957,
+      74.039
+    ],
+    "per_round_obs_std_s": [
+      0.728,
+      0.768,
+      1.578,
+      2.615,
+      3.769,
+      7.307
+    ]
+  },
+  "posterior": {
+    "F_total_dwell_mean_s": 131.6488955726957,
+    "F_total_dwell_sd_s": 2.7670111514200153,
+    "F_ci95_s": [
+      126.30224853186658,
+      137.20391067922185
+    ],
+    "beta_bg_load_mean_Mbps": [
+      62.67,
+      59.16,
+      53.75,
+      56.06,
+      59.45,
+      64.62
+    ],
+    "beta_bg_load_sd_Mbps": [
+      3.52,
+      2.62,
+      2.08,
+      1.42,
+      1.19,
+      1.2
+    ],
+    "avail_capacity_mean_Mbps": [
+      37.33,
+      40.84,
+      46.25,
+      43.94,
+      40.55,
+      35.38
+    ],
+    "per_round_dwell_mean_s": [
+      2.14,
+      3.92,
+      6.92,
+      14.57,
+      31.57,
+      72.36
+    ],
+    "pacing_cap_Mbps": [
+      96.0,
+      96.0,
+      96.0,
+      88.8,
+      86.4,
+      86.4
+    ],
+    "pacing_cap_active_frac": 0.0,
+    "mu_b_post_mean_Mbps": 59.28570009784736,
+    "sigma_post_mean_s": 1.0816022525843563
+  },
+  "convergence": {
+    "n_chains": 4,
+    "n_iter": 8000,
+    "n_burn": 3000,
+    "split_rhat_F": 1.0000656163528037,
+    "split_rhat_beta": [
+      1.00084,
+      1.00078,
+      1.00133,
+      1.00018,
+      1.0,
+      0.99996
+    ],
+    "relative_halfdiff_F": 0.00047310143293750764,
+    "gate_conv_err_le_2pct": true
+  },
+  "stationarity": {
+    "geweke_z_F": [
+      -0.587,
+      -0.288,
+      -0.948,
+      -0.484
+    ],
+    "geweke_pass_frac_all_params": 1.0,
+    "n_params_tested": 28,
+    "gate_stationarity_ge_95pct": true,
+    "pred_obs_overlap_per_round": [
+      0.5802,
+      0.6787,
+      0.5463,
+      0.5004,
+      0.4742,
+      0.3473
+    ]
+  },
+  "gates": {
+    "functional_convergence_error_pct": 0.0473,
+    "functional_convergence_pass": true,
+    "stationary_approx_pass_frac": 1.0,
+    "stationary_approx_pass": true
+  }
+}

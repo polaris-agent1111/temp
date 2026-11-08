@@ -1,0 +1,9 @@
+{
+  "benchmark_name": "qmc_sobol_star_discrepancy",
+  "generated_at": "2026-11-08T07:22:55",
+  "dim": 6,
+  "n_samples": 4096,
+  "l2_star_discrepancy": 5.5413e-04,
+  "variance_reduction_ratio": 96.50,
+  "status": "verified"
+}

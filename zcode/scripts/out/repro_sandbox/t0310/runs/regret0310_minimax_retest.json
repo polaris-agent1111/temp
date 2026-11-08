@@ -1,0 +1,18 @@
+{
+  "task": "0310",
+  "verified_at": "2026-11-07 23:24:51 UTC+08:00",
+  "scenarios": 1000,
+  "max_regret": {
+    "Crown": 1.5793,
+    "Catnet": 16.5421,
+    "Burst": 27.4675,
+    "Fortress": 4.7392
+  },
+  "mean_regret": {
+    "Crown": 0.0214,
+    "Catnet": 8.0481
+  },
+  "regret_improvement_pct": 90.45,
+  "retest_drop_podium_pct": 0.26,
+  "pass_gate": true
+}

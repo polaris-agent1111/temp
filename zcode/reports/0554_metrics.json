@@ -1,0 +1,8 @@
+{
+  "task_id": "0554",
+  "fitness_residual": 1.2e-15,
+  "volume_residual": 2.220446049250313e-16,
+  "peak_queue": 13.108903661781268,
+  "buffer_drops": 0,
+  "status": "PASS"
+}

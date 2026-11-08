@@ -1,0 +1,304 @@
+{
+  "title": "11/08 Campaign Cryptographic Configuration Seal Manifest v2",
+  "generated_at": "2026-11-07 14:28:00",
+  "total_configs": 5,
+  "total_files": 30,
+  "configs": {
+    "1108-A1-hybrid-champ-90M-96M": {
+      "valid": true,
+      "bins": {
+        "1": {
+          "sha256": "4fbf03db70c855073e29899d3a49553509a1bc0389f86205f26d7a0792984996",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:1]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=40,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "2": {
+          "sha256": "21e4fe70b5a024851804b52485eb2bc1670ed53b38b9673188f31e72f9445492",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:2]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=40,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "3": {
+          "sha256": "e56e57fa3bcd40f0e319822f3a599fdadcf5043d34d1ad15eba71a649e56ccb6",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:3]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=38,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "4": {
+          "sha256": "07b488977ffe6b6fd1291a258cc0f1d3455687e83f28af79732bd933a59a7e7a",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:4]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=36,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "5": {
+          "sha256": "23203daabe55c860c5f599bc6f968415a3faf6a5a06f18b7f5b8ca436e7045e6",
+          "bytes": 125,
+          "preview": [
+            "[timestamp:5]",
+            "pacer_mode:precise_rate_based",
+            "pacer_config:max_pacing_rate=11250000,clock_granularity=1000,enable_n_in_flight=1"
+          ]
+        },
+        "6": {
+          "sha256": "7632a4e5dbefcc737d86d34707ff787710d723133b0ef19e0b0081f4ee730c07",
+          "bytes": 125,
+          "preview": [
+            "[timestamp:6]",
+            "pacer_mode:precise_rate_based",
+            "pacer_config:max_pacing_rate=12000000,clock_granularity=1000,enable_n_in_flight=1"
+          ]
+        }
+      }
+    },
+    "1108-A2-hybrid-champ-96M-both": {
+      "valid": true,
+      "bins": {
+        "1": {
+          "sha256": "4fbf03db70c855073e29899d3a49553509a1bc0389f86205f26d7a0792984996",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:1]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=40,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "2": {
+          "sha256": "21e4fe70b5a024851804b52485eb2bc1670ed53b38b9673188f31e72f9445492",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:2]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=40,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "3": {
+          "sha256": "e56e57fa3bcd40f0e319822f3a599fdadcf5043d34d1ad15eba71a649e56ccb6",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:3]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=38,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "4": {
+          "sha256": "07b488977ffe6b6fd1291a258cc0f1d3455687e83f28af79732bd933a59a7e7a",
+          "bytes": 141,
+          "preview": [
+            "[timestamp:4]",
+            "pacer_mode:token_bucket",
+            "pacer_config:tokens=40,burst=40,token_refill_rate=36,token_refill_interval_us=4000,enable_n_in_flight=1"
+          ]
+        },
+        "5": {
+          "sha256": "185e9d500720340429a99b824c8034f06df4b2cc670f584287e29e50a12f542f",
+          "bytes": 125,
+          "preview": [
+            "[timestamp:5]",
+            "pacer_mode:precise_rate_based",
+            "pacer_config:max_pacing_rate=12000000,clock_granularity=1000,enable_n_in_flight=1"
+          ]
+        },
+        "6": {
+          "sha256": "7632a4e5dbefcc737d86d34707ff787710d723133b0ef19e0b0081f4ee730c07",
+          "bytes": 125,
+          "preview": [
+            "[timestamp:6]",
+            "pacer_mode:precise_rate_based",
+            "pacer_config:max_pacing_rate=12000000,clock_granularity=1000,enable_n_in_flight=1"
+          ]
+        }
+      }
+    },
+    "test-leak-asym-41x2-40-37-36x2-r1": {
+      "valid": true,
+      "bins": {
+        "1": {
+          "sha256": "e163bf96d9613e9d9037a3af58280292a635b92489fb0a2a925a966e17b6f348",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:1]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=41,bucket_cap=41,leak_interval_us=4000"
+          ]
+        },
+        "2": {
+          "sha256": "29f43bd75306d3f535a635eedc4b33c4e8e0a7c7e3789d9434c737c5f9f428d7",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:2]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=41,bucket_cap=41,leak_interval_us=4000"
+          ]
+        },
+        "3": {
+          "sha256": "2f2018d2c94544b0fe82d2b11b11b78b233010a1610b5adf8777dd61eed7ab50",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:3]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=40,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "4": {
+          "sha256": "91985d6ca31320f7e5a67127babfd6a49c0490c7126ad822d5a09eda61aeb22e",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:4]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=37,bucket_cap=37,leak_interval_us=4000"
+          ]
+        },
+        "5": {
+          "sha256": "0c7eb667a94c28bf8405443bd1f9078143004d51b1d274f3e30bf144661aea05",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:5]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=36,leak_interval_us=4000"
+          ]
+        },
+        "6": {
+          "sha256": "cc4d12273893169850ad79af67d1aaae2c33406d81efa42f3144e355a540c127",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:6]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=36,leak_interval_us=4000"
+          ]
+        }
+      }
+    },
+    "test-leak-asym-40x3-37-37-36-r1": {
+      "valid": true,
+      "bins": {
+        "1": {
+          "sha256": "5ca2a8e6602b4b8a0f5cf631b96f4d84f7bda044ed0a394445079b9ae82f3d0d",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:1]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=40,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "2": {
+          "sha256": "c818658dc4c0833578de19fd447da33130ddd6b47a60de624309519c8a7bee2f",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:2]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=40,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "3": {
+          "sha256": "2f2018d2c94544b0fe82d2b11b11b78b233010a1610b5adf8777dd61eed7ab50",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:3]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=40,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "4": {
+          "sha256": "91985d6ca31320f7e5a67127babfd6a49c0490c7126ad822d5a09eda61aeb22e",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:4]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=37,bucket_cap=37,leak_interval_us=4000"
+          ]
+        },
+        "5": {
+          "sha256": "61c7c5aa7aae25ef90e22dbc4bcde035388d1bbaf04585097f00916090c8910a",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:5]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=37,bucket_cap=37,leak_interval_us=4000"
+          ]
+        },
+        "6": {
+          "sha256": "cc4d12273893169850ad79af67d1aaae2c33406d81efa42f3144e355a540c127",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:6]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=36,leak_interval_us=4000"
+          ]
+        }
+      }
+    },
+    "leakc-36-40-4000": {
+      "valid": true,
+      "bins": {
+        "1": {
+          "sha256": "a0f68528a94a727f52401905650c73604cead84159df531729d15b7789899509",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:1]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "2": {
+          "sha256": "78730cc6316850f30a34c5baa6e096962dec91c5dc8924b91a895d7da1f36ab1",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:2]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "3": {
+          "sha256": "f8b7d53f5740576dc81f8746287ead6d7a25beed32be23b378fec8c97d479877",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:3]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "4": {
+          "sha256": "fef4cddb274cdfb6b33e3729c70c25575b51820a1410956cf72c1e5180526ce4",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:4]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "5": {
+          "sha256": "25d956d2f28ebd951a0b2c8f18cc7497a1baf335b6a0ac090a501de1a0ab3816",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:5]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=40,leak_interval_us=4000"
+          ]
+        },
+        "6": {
+          "sha256": "9a7ad42f55f301f82240326237e7466cde80d2c9463ba9c6111cf1abc40c40da",
+          "bytes": 98,
+          "preview": [
+            "[timestamp:6]",
+            "pacer_mode:leak_bucket",
+            "pacer_config:leak_rate=36,bucket_cap=40,leak_interval_us=4000"
+          ]
+        }
+      }
+    }
+  },
+  "all_verified_valid": true
+}

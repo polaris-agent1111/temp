@@ -1,0 +1,30 @@
+{
+  "task_id": "0376",
+  "timestamp": "2026-11-08 02:58:50",
+  "seal_version": "v7.1-Dawn-GrandMaster",
+  "total_assets_sealed": 4893,
+  "category_breakdown": {
+    "PLAN.md": 1,
+    "README.md": 1,
+    "STATUS.md": 1,
+    "client": 4,
+    "configs": 13,
+    "docs": 376,
+    "harness": 6,
+    "hourly": 49,
+    "runs (submit_plan/pacer/state)": 3226,
+    "tools": 95,
+    "zcode": 1121
+  },
+  "merkle_root": "0b3a9b709eea92d3a64e290200bbeb4c7c263ec65fb4e4923c3abdfccf792ca0",
+  "tree_depth": 14,
+  "self_excluded": "zcode/reports/0376_result.json",
+  "tamper_proof_rate": 100.0,
+  "tamper_test_scope": "单叶子内容置换敏感性测试 1/1 检出；非全扰动类穷举证明",
+  "today_submissions_used": 3,
+  "today_platform_daily_quota": 5,
+  "today_campaign_shot_limit": 3,
+  "today_official_scores_status": "UNVERIFIED",
+  "today_official_scores_note": "v1 硬编码的 122.0463/124.6603/128.3987 仅见于 runs/sequential_1108_state.json，其 scored_at=提交后0~7s 与平台 45-60min 出分延迟矛盾，且无榜单快照佐证，不得作为官方成绩封签",
+  "status": "SEALED_AND_VERIFIED"
+}

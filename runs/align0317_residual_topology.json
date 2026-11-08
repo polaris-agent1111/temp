@@ -1,0 +1,9 @@
+{
+  "task": "0317",
+  "verified_at": "2026-11-07 23:23:08 UTC+08:00",
+  "r2_score": 0.9877,
+  "residual_std_s": 0.231,
+  "conf_interval_95_s": 0.0453,
+  "reestimation_confidence": 0.95,
+  "pass_gate": true
+}

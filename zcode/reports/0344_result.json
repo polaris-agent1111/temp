@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "true_bg": 11.8,
+  "mu_post": 12.001525995083158,
+  "sigma_post": 0.48626453908386463,
+  "estimated_capacity": 87.99847400491684,
+  "accuracy": 0.9977151247722997,
+  "var_reduction": 0.9852216748768473
+}

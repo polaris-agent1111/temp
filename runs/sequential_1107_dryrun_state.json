@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-07",
+  "updated_at": "2026-11-07 13:26:41",
+  "completed_shots": 5,
+  "current_best_seconds": 118.1307,
+  "history": [
+    {
+      "shot_idx": 1,
+      "candidate_id": "steady_champion",
+      "tag": "1108-shot-steady-40x3-37-36-36",
+      "decision_reason": "【Shot 1 首发锚定】以 n=15 极低方差稳健标杆 (133.86s, SE 2.16s) 首发探测官方环境基准",
+      "submitted_at": "2026-11-07 13:26:36",
+      "status": "scored",
+      "download_seconds": 122.2168,
+      "rank": 5,
+      "best_seconds": 122.2168,
+      "scored_at": "2026-11-07 13:26:37"
+    },
+    {
+      "shot_idx": 2,
+      "candidate_id": "crown_fusion",
+      "tag": "1108-shot-crown-41x2-40-37-36x2",
+      "decision_reason": "【Shot 2 皇冠冲锋】首发出分 122.22s 极其优异（<=122.5s，信道畅通），果断切换 1-2@41 皇冠冲冠主力直扑全国第一（<117s）！",
+      "submitted_at": "2026-11-07 13:26:37",
+      "status": "scored",
+      "download_seconds": 118.1307,
+      "rank": 1,
+      "best_seconds": 118.1307,
+      "scored_at": "2026-11-07 13:26:38"
+    },
+    {
+      "shot_idx": 3,
+      "candidate_id": "crown_plateau_a",
+      "tag": "1108-shot-crown-pert-40on2",
+      "decision_reason": "【Shot 3 胜果巩固】当前最优 118.13s 已破全国前二，转入平台验证测量官方复测抽样分布",
+      "submitted_at": "2026-11-07 13:26:38",
+      "status": "scored",
+      "download_seconds": 123.4151,
+      "rank": 5,
+      "best_seconds": 123.4151,
+      "scored_at": "2026-11-07 13:26:39"
+    },
+    {
+      "shot_idx": 4,
+      "candidate_id": "crown_fusion",
+      "tag": "1108-shot-crown-41x2-40-37-36x2",
+      "decision_reason": "【Shot 4 决胜绝杀】当前最佳 118.13s 逼近全国第一，全油门皇冠冲顶决战",
+      "submitted_at": "2026-11-07 13:26:39",
+      "status": "scored",
+      "download_seconds": 118.3167,
+      "rank": 1,
+      "best_seconds": 118.3167,
+      "scored_at": "2026-11-07 13:26:40"
+    },
+    {
+      "shot_idx": 5,
+      "candidate_id": "crown_fusion",
+      "tag": "1108-shot-crown-41x2-40-37-36x2",
+      "decision_reason": "【Shot 5 终极冲冠】本日最后一发，全部算力倾注皇冠冲冠主力，冲击全场绝对最高分！",
+      "submitted_at": "2026-11-07 13:26:40",
+      "status": "scored",
+      "download_seconds": 120.257,
+      "rank": 3,
+      "best_seconds": 120.257,
+      "scored_at": "2026-11-07 13:26:41"
+    }
+  ]
+}

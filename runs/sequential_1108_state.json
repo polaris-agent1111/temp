@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-08",
+  "updated_at": "2026-11-08 02:19:51",
+  "completed_shots": 3,
+  "max_allowed_shots": 3,
+  "current_best_seconds": 122.0463,
+  "history": [
+    {
+      "shot_idx": 1,
+      "candidate_id": "steady_champion",
+      "tag": "1108-shot-steady-40x3-37-36-36-s1",
+      "decision_reason": "【Shot 1 首发锚定】以 n=15 极低方差稳健标杆首发探测官方环境基准",
+      "submitted_at": "2026-11-08 00:05:04",
+      "status": "scored",
+      "download_seconds": 122.0463,
+      "rank": 5,
+      "best_seconds": 122.0463,
+      "scored_at": "2026-11-08 00:05:04"
+    },
+    {
+      "shot_idx": 2,
+      "candidate_id": "crown_fusion",
+      "tag": "1108-shot-crown-41x2-40-37-36x2",
+      "decision_reason": "【Shot 2 皇冠冲锋】首发出分 122.05s 极其优异（<=122.5s，信道畅通），果断切换 1-2@41 皇冠冲冠主力直扑全国第一（<117s）！",
+      "submitted_at": "2026-11-08 01:59:19",
+      "status": "scored",
+      "download_seconds": 124.6603,
+      "rank": null,
+      "best_seconds": null,
+      "scored_at": "2026-11-08 01:59:26"
+    },
+    {
+      "shot_idx": 3,
+      "candidate_id": "crown_plateau_a",
+      "tag": "1108-shot-crown-pert-40on2",
+      "decision_reason": "【Shot 3 平台避险】Shot 2 出现方差抖动，切换回 n=10 超宽平坦平台点稳定中枢",
+      "submitted_at": "2026-11-08 02:10:40",
+      "status": "scored",
+      "download_seconds": 128.3987,
+      "rank": null,
+      "best_seconds": null,
+      "scored_at": "2026-11-08 02:10:47"
+    }
+  ]
+}
