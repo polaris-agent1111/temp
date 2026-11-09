@@ -1,45 +1,45 @@
 project:
-  title: "iDSN Q1 pacing: make the offline evaluator predictive and find better pacer configs"
+  title: "iDSN Q1 pacing: how far can offline evaluation be trusted, and where to spend official shots"
   question: >
-    Which pacer configurations minimise the official 6-file download time under WebSearch background,
-    and can an offline simulator be made accurate enough (vs. the 11 official points) to rank candidates
-    before spending the 5/day official submissions?
+    Can an offline simulator rank pacer configs like the official evaluator, and how large must an
+    official score difference be to reflect a transferable (new-seed) effect?
   status: active
   started: "2026-11-09"
   domain: "network transport / QUIC pacing / simulation calibration"
 
 literature:
-  key_papers: []
   facts:
-    - "lsquic master: LSQUIC_DF_CC_ALGO = BBRv1 (include/lsquic.h); older (2020) default was Cubic. Competition stack version unknown."
-    - "TrafficGenerator client: Poisson requests at -b Mbps / mean size, persistent TCP connections, opens a new one if none idle; -s seed default = system time."
+    - "lsquic master: LSQUIC_DF_CC_ALGO = BBRv1 (include/lsquic.h); a 2020 issue says the default was Cubic then. Competition stack version unknown."
+    - "TrafficGenerator client: Poisson requests at -b Mbps, persistent TCP connections plus new ones when none idle; -s seed defaults to system time."
   open_problems:
-    - "Download CC (BBRv1 vs Cubic) unknown"
-    - "Bottleneck queue size unknown (team claims 40-42 pkts; Mininet netem default limit is 1000)"
-    - "leak_bucket rejection semantics and whether cap matters"
+    - "Download CC, bottleneck queue size, leak 'reject' semantics, timer semantics: not identifiable from 10 official totals"
 
 hypotheses:
-  - id: H0
-    statement: "Existing simulator v1 has no predictive skill beyond a constant on official points"
-    status: active
+  - {id: H0, status: supported, statement: "sim v1 has no skill (LOO 22.7 s vs constant 9.04 s)"}
+  - {id: H1, status: refuted, statement: "per-flow TCP background sim_v2 beats constant (best 9.8 s over 24 variants)"}
+  - {id: H2, status: supported, statement: "official repeat sd 0.47 s; U-fit residual 1.48 s"}
+  - {id: H3, status: refuted, statement: "system chaotic under fixed seed -> refuted; CRN cuts variance 20x; +-1-pkt effects seed-specific sd 2.0 s (exploratory)"}
+  - id: H4
+    status: pending
     priority: high
-    parent: null
+    statement: "Design remaining official shots as structural contrasts with expected |effect| >= 5 s (bypass modules on 4 ms timer; cap vs rate decomposition of staircase gain)"
 
 experiments:
-  proxy_metric: "LOO-RMSE (s) of offset-corrected sim predictions vs 10 official points (fidelity.py); lower is better"
-  baseline_value: null
-  best_value: null
-  total_runs: 0
-  trajectory: []
+  proxy_metric: "LOO-RMSE (s) of offset-corrected sim predictions vs 10 official points; constant model = 9.04"
+  baseline_value: 22.69
+  best_value: 9.82
+  total_runs: 4
+  trajectory:
+    - {run_id: H0, metric_value: 22.69, change_summary: "existing sim v1"}
+    - {run_id: H1-grid1-best, metric_value: 9.82, change_summary: "sim_v2 q400 bbr rto0.5 warmup5 lat0"}
 
 outer_loop:
-  cycle: 0
-  last_direction: null
-  last_reflection: ""
+  cycle: 1
+  last_direction: pivot
+  last_reflection: "Stop chasing absolute sim fidelity; treat official as fixed-seed benchmark; spend shots on >=5 s structural contrasts; paired-seed local A/B."
 
 workspace:
   findings: "research/findings.md"
   log: "research/research-log.md"
-  literature_dir: "research/literature/"
   experiments_dir: "research/experiments/"
   to_human_dir: "research/to_human/"

@@ -1,0 +1,101 @@
+<!doctype html><html><head><meta charset="utf-8"><title>iDSN Q1 research progress 01</title>
+<style>body{font-family:sans-serif;max-width:900px;margin:2em auto;line-height:1.5}td,th{border:1px solid #ccc;padding:3px 8px}table{border-collapse:collapse}</style></head><body>
+<h1>iDSN 题目1：离线评测可信度研究（进展 01，2026-11-09）</h1>
+<h2>问题</h2>
+<p>本地仿真器能否替代官方评测来给 pacer 配置排序？官方分数里多大的差异才算真实？</p>
+<h2>结论 1：两个仿真器都无法对官方结果排序</h2>
+<svg width="560" height="160" font-family="sans-serif" font-size="12">
+<text x="0" y="14" font-weight="bold">LOO-RMSE vs 10 official points (lower = better)</text>
+<text x="0" y="43">v1 (existing sim)</text>
+<rect x="200" y="28" width="287.0" height="20" fill="#4a78b5"/>
+<text x="492.0" y="43">22.69 s</text>
+<text x="0" y="73">sim_v2 median of 24</text>
+<rect x="200" y="58" width="212.0" height="20" fill="#4a78b5"/>
+<text x="417.0" y="73">16.76 s</text>
+<text x="0" y="103">sim_v2 best of 24</text>
+<rect x="200" y="88" width="124.2" height="20" fill="#4a78b5"/>
+<text x="329.2" y="103">9.82 s</text>
+<text x="0" y="133">constant (predict mean)</text>
+<rect x="200" y="118" width="114.3" height="20" fill="#4a78b5"/>
+<text x="319.3" y="133">9.04 s</text>
+<line x1="314.3" y1="24" x2="314.3" y2="154" stroke="#c33" stroke-dasharray="4"/>
+<text x="317.3" y="158" fill="#c33">constant</text>
+</svg>
+<p>指标是 10 个官方点的留一 RMSE（加一个全局偏移）。现有仿真器 v1 为 22.7 s，不如“直接预测均值”的 9.0 s，秩相关为 −0.06。
+新写的机理仿真器 sim_v2 跑了 24 个结构变体（逐流 TCP 背景流、显式队列/拥塞控制/定时器），最好的一个也只有 9.8 s。
+两者都缺少“40–44 包突发变慢”的右壁，<code>30/50/5000</code> 也预测错。</p>
+<svg width="420" height="360" font-family="sans-serif" font-size="11">
+<text x="0" y="14" font-weight="bold">predicted vs official (perfect = dashed diagonal)</text>
+<line x1="50.0" y1="320.0" x2="400.0" y2="30.0" stroke="#999" stroke-dasharray="3"/>
+<text x="170.0" y="352">official (s)</text>
+<text x="2" y="180.0" transform="rotate(-90 10 180.0)">predicted (s)</text>
+<text x="42.0" y="334">115</text><text x="22" y="324.0">115</text>
+<text x="100.33333333333334" y="334">125</text><text x="22" y="275.6666666666667">125</text>
+<text x="158.66666666666669" y="334">135</text><text x="22" y="227.33333333333331">135</text>
+<text x="217.0" y="334">145</text><text x="22" y="179.0">145</text>
+<text x="275.33333333333337" y="334">155</text><text x="22" y="130.66666666666666">155</text>
+<text x="333.6666666666667" y="334">165</text><text x="22" y="82.33333333333334">165</text>
+<text x="392.0" y="334">175</text><text x="22" y="34.0">175</text>
+<circle cx="201.2" cy="234.0" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="155.5" cy="248.6" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="205.9" cy="247.7" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="198.6" cy="30.0" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="258.1" cy="249.3" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="180.6" cy="245.7" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="178.9" cy="247.4" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="212.1" cy="243.5" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="91.1" cy="245.5" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="106.4" cy="246.0" r="4" fill="#d08030" opacity="0.8"/>
+<circle cx="270" cy="30" r="4" fill="#d08030"/><text x="280" y="34">v1</text>
+<circle cx="201.2" cy="159.0" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="155.5" cy="234.1" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="205.9" cy="213.3" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="198.6" cy="118.9" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="258.1" cy="166.0" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="180.6" cy="261.8" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="178.9" cy="241.3" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="212.1" cy="250.5" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="91.1" cy="246.3" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="106.4" cy="241.4" r="4" fill="#3070c0" opacity="0.8"/>
+<circle cx="270" cy="46" r="4" fill="#3070c0"/><text x="280" y="50">sim_v2 best</text>
+</svg>
+<h2>结论 2：官方是固定种子基准，±1 包微调的效果只对这组种子成立</h2>
+<svg width="560" height="220" font-family="sans-serif" font-size="12">
+<text x="0" y="14" font-weight="bold">Where the variance is (sd, seconds)</text>
+<text x="0" y="43">local: across bg seeds (sim)</text>
+<rect x="200" y="28" width="287.0" height="20" fill="#5a9a5a"/>
+<text x="492.0" y="43">22.61 s</text>
+<text x="0" y="73">local evaluator, 1 run (measured)</text>
+<rect x="200" y="58" width="147.0" height="20" fill="#5a9a5a"/>
+<text x="352.0" y="73">11.58 s</text>
+<text x="0" y="103">±1-pkt effect, sd across seeds (sim)</text>
+<rect x="200" y="88" width="23.5" height="20" fill="#5a9a5a"/>
+<text x="228.5" y="103">1.85 s</text>
+<text x="0" y="133">official: fit residual</text>
+<rect x="200" y="118" width="18.8" height="20" fill="#5a9a5a"/>
+<text x="223.8" y="133">1.48 s</text>
+<text x="0" y="163">sim: same seed, jitter only</text>
+<rect x="200" y="148" width="16.2" height="20" fill="#5a9a5a"/>
+<text x="221.2" y="163">1.28 s</text>
+<text x="0" y="193">official: identical repeat</text>
+<rect x="200" y="178" width="6.0" height="20" fill="#5a9a5a"/>
+<text x="211.0" y="193">0.47 s</text>
+</svg>
+<ul>
+<li>官方同配置重复提交：标准差约 0.47 s。本地评测器单次：约 11.6 s（用系统时间做种子）。</li>
+<li>在 sim_v2 中固定背景种子后，方差下降约 20 倍。这与官方表现一致：固定种子有效。</li>
+<li>对冠军阶梯做 ±1 包修改，平均效果只有约 0.4 s。但在任意一组固定种子下，同一修改会表现出 ±2 s（标准差）、最大 4.6 s 的效果。</li>
+<li>所以 S2−S1 = +2.6 s 和 S3−S1 = +2.7 s 很可能是“这组种子特有”的效应，不能证明“41 包越过红线”。规则写明头部提交会换种子复测，微调带来的提升预计会消失。</li>
+<li>阶梯相对 uniform 36/40 的 −11.0 s 远大于所有噪声源（z ≥ 5），是唯一可信的结构性官方结论。</li>
+</ul>
+<h2>建议</h2>
+<ol>
+<li>不要用仿真器（v1 或 sim_v2）的数值或排序来选择提交。</li>
+<li>不要把官方额度花在 ±1 包的阶梯微调上。只有 ≥ 5 s 的差异，或者被结构不同的配置复现的差异，才算可迁移的证据。</li>
+<li>本地 A/B 测试应固定背景种子并比较配对差值（TrafficGenerator 支持 <code>-s</code>；本地评测器是否暴露这个参数还没确认）。这样噪声可降约 20 倍。这只改本地测量方法，不改提交内容。</li>
+<li>最大的信息缺口是：带旁路的模块（token_bucket / precise，<code>enable_n_in_flight=1</code>）在官方 4 ms 定时器下的表现。目前只有一个官方点（burst=200，140.9 s）。榜首的 116 s 很可能在这个方向上。</li>
+</ol>
+<h2>下一步</h2>
+<p>设计按信息量排序的官方提交方案：只做结构性对照，每发预期差异 ≥ 5 s。同时用配对种子的 sim_v2 做定性的机制检查。</p>
+<p>代码与数据：<code>research/</code>（findings.md、experiments/H0–H3、src/）。</p>
+</body></html>
