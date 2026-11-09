@@ -1,8 +1,0 @@
-{
-  "task_id": "0552",
-  "adjusted_rand_index": 1.0,
-  "convergence_rate": 100.0,
-  "peak_queue": 13.5,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

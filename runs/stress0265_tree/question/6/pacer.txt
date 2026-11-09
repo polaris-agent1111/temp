@@ -1,3 +1,0 @@
-leak_rate=37,bucket_cap=30,leak_interval_us=1000
-mode=leak_bucket
-[timestamp:6]

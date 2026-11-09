@@ -1,9 +1,0 @@
-{
-  "task": "0326",
-  "verified_at": "2026-11-07 23:33:41 UTC+08:00",
-  "best_mean_3shots_s": 115.6425,
-  "p_podium": 1.0,
-  "p_top2": 1.0,
-  "elasticity": 0.0,
-  "pass_gate": true
-}

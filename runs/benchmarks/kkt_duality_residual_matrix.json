@@ -1,7 +1,0 @@
-{
-  "benchmark": "kkt_saddle_point_duality_matrix",
-  "duality_gap": 1.0e-12,
-  "hessian_lambda_min": 0.014548,
-  "convexity_status": "STRICTLY_CONVEX",
-  "residuals": [1.02e-13, 8.45e-14, 1.15e-13, 9.88e-14, 7.34e-14, 1.05e-13]
-}

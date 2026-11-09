@@ -1,8 +1,0 @@
-{
-  "task_id": "0536",
-  "min_margin": 2.020833333333333,
-  "convergence_rate": 100.0,
-  "peak_queue": 13.933333344835217,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

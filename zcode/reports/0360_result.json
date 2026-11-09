@@ -1,7 +1,0 @@
-{
-  "status": "PASS",
-  "max_buf_depth": 103,
-  "p99_buf_depth": 15.0,
-  "overflow_count": 0,
-  "zero_drop_recovery_rate": 1.0
-}

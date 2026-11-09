@@ -1,8 +1,0 @@
-{
-  "task": "0330",
-  "verified_at": "2026-11-07 23:37:54 UTC+08:00",
-  "steps": 10000,
-  "max_lyapunov_exponent": -0.4005,
-  "is_asymptotically_stable": true,
-  "pass_gate": true
-}

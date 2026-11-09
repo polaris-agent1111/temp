@@ -1,9 +1,0 @@
-{
-  "benchmark_name": "evt_gpd_var_cvar_audit",
-  "generated_at": "2026-11-08T07:16:00",
-  "ks_p_value": 0.3554,
-  "var_9999": 25.60,
-  "cvar_9999": 29.98,
-  "drops": 0,
-  "status": "verified"
-}

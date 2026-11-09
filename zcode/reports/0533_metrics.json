@@ -1,9 +1,0 @@
-{
-  "task_id": "0533",
-  "lie_residual": 1.1102230246251565e-16,
-  "adjoint_residual": 2.9868433616677e-16,
-  "geodesic_smoothness": 1.0,
-  "peak_queue": 12.914755438744608,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

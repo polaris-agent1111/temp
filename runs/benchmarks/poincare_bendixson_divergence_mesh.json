@@ -1,9 +1,0 @@
-{
-  "benchmark_name": "poincare_bendixson_divergence_mesh",
-  "generated_at": "2026-11-08T07:13:20",
-  "max_divergence": -1.6250,
-  "mean_divergence": -1.7667,
-  "area_integral": -2826.6667,
-  "limit_cycle_excluded": true,
-  "status": "verified"
-}

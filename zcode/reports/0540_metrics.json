@@ -1,8 +1,0 @@
-{
-  "task_id": "0540",
-  "contraction_rate": 1.1096834006109801,
-  "ricci_curvature": 0.03883891902138431,
-  "peak_queue": 15.579584,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

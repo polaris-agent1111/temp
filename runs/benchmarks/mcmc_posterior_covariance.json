@@ -1,8 +1,0 @@
-{
-  "benchmark": "mcmc_posterior_covariance",
-  "gelman_rubin_r_hat_max": 1.009357,
-  "spectral_gap": 0.071629,
-  "chains": 4,
-  "total_samples": 12000,
-  "covariance_diagonal": [0.352, 0.348, 0.412, 0.425, 0.510, 0.533]
-}

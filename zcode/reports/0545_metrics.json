@@ -1,9 +1,0 @@
-{
-  "task_id": "0545",
-  "lambda_min_P": 0.3144551278215407,
-  "neg_pass_rate": 100.0,
-  "decay_pass": 100.0,
-  "peak_queue": 24.0,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

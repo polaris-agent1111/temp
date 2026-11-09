@@ -1,8 +1,0 @@
-{
-  "benchmark_name": "bch_lie_algebra_residual",
-  "generated_at": "2026-11-08T07:19:40",
-  "bch_4th_residual": 9.4482e-09,
-  "exp_residual": 9.4836e-09,
-  "volume_preservation_error": 0.0,
-  "status": "verified"
-}

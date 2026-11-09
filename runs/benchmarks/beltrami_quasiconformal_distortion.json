@@ -1,9 +1,0 @@
-{
-  "benchmark_name": "beltrami_quasiconformal_distortion",
-  "generated_at": "2026-11-08T07:26:20",
-  "mu_inf": 0.2247,
-  "mu_mean": 0.1598,
-  "maximal_dilatation_K": 1.5797,
-  "uniform_ellipticity_holds": true,
-  "status": "verified"
-}

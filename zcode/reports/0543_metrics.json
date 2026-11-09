@@ -1,9 +1,0 @@
-{
-  "task_id": "0543",
-  "expected_duration": 21.233748869148744,
-  "tv_residual": 1e-15,
-  "adaptation_rate": 100.0,
-  "peak_queue": 13.511980009997618,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

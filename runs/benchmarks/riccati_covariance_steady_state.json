@@ -1,8 +1,0 @@
-{
-  "benchmark_name": "riccati_covariance_steady_state",
-  "generated_at": "2026-11-08T07:10:00",
-  "care_residual": 8.4910e-16,
-  "min_eigenvalue": 0.0100,
-  "stability_margin": -1.6504,
-  "status": "verified"
-}

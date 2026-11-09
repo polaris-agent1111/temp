@@ -1,9 +1,0 @@
-{
-  "benchmark_name": "hardy_littlewood_a2_bound",
-  "generated_at": "2026-11-08T07:19:40",
-  "muckenhoupt_a2": 1.0312,
-  "norm_f_L2w": 197.5611,
-  "norm_Mf_L2w": 198.6123,
-  "bound_ratio": 1.0053,
-  "status": "verified"
-}

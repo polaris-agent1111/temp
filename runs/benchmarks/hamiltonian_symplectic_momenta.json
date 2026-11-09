@@ -1,7 +1,0 @@
-{
-  "benchmark": "hamiltonian_symplectic_momenta",
-  "integrator": "stoermer_verlet_second_order",
-  "convergence_order": 2.0021,
-  "volume_jacobian_residual": 1.1102e-16,
-  "conserved_energy_std": 0.000000
-}

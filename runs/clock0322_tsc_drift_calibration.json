@@ -1,9 +1,0 @@
-{
-  "task": "0322",
-  "verified_at": "2026-11-07 23:28:52 UTC+08:00",
-  "steps": 2000,
-  "p95_error_us": 44.3432,
-  "max_error_us": 76.3383,
-  "jitter_suppression_ratio": 0.9913,
-  "pass_gate": true
-}

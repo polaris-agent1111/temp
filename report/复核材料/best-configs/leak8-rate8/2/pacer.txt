@@ -1,3 +1,0 @@
-[timestamp:2]
-pacer_mode:leak_bucket
-pacer_config:leak_rate=8,bucket_cap=30,leak_interval_us=1000

@@ -1,3 +1,0 @@
-[timestamp:2]
-pacer_mode:token_bucket
-pacer_config:tokens=100,burst=200,token_refill_rate=20,token_refill_interval_us=1000

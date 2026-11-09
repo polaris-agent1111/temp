@@ -1,8 +1,0 @@
-{
-  "benchmark": "kan_spline_coefficients",
-  "basis_function": "cubic_b_spline_plus_silu",
-  "r_squared": 1.000000,
-  "out_of_sample_error_percent": 0.0278,
-  "spline_grid_points": 8,
-  "weight_norm": 2.4518
-}

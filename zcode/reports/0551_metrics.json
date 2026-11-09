@@ -1,8 +1,0 @@
-{
-  "task_id": "0551",
-  "spectral_gap": 0.8333333333333331,
-  "consensus_error": 1.4210854715202004e-14,
-  "peak_queue": 13.926666666666666,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

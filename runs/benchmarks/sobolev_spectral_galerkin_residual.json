@@ -1,9 +1,0 @@
-{
-  "benchmark_name": "sobolev_spectral_galerkin_residual",
-  "generated_at": "2026-11-08T07:22:55",
-  "el_residual": 2.8422e-14,
-  "norm_u_L2": 0.6798,
-  "norm_u_prime_L2": 2.1381,
-  "poincare_constant": 0.3183,
-  "status": "verified"
-}

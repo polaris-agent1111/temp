@@ -1,9 +1,0 @@
-{
-  "benchmark_name": "connes_spectral_triple_audit",
-  "generated_at": "2026-11-08T07:26:20",
-  "theta": 0.6180,
-  "hermitian_residual": 0.0,
-  "commutator_norm": 1.0,
-  "dixmier_trace": 5.5529,
-  "status": "verified"
-}

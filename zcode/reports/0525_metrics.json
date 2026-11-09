@@ -1,8 +1,0 @@
-{
-  "task_id": "0525",
-  "r2_score": 0.9999999223586029,
-  "test_rel_error_percent": 0.027756525545405662,
-  "peak_queue": 30.88556173106463,
-  "buffer_drops": 0,
-  "status": "PASS"
-}

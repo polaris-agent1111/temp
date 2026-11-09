@@ -1,8 +1,0 @@
-[
-  {"tag": "hr-40-60-4000", "note": "HR1: leak 40/60/4000（10000 包/s；本地 126.75）——官方 δ 随包速率下降，10000 包/s 可能是新甜点",
-   "all": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 60, "leak_interval_us": 4000}]},
-  {"tag": "hr-42-60-4000", "note": "HR2: leak 42/60/4000（10500 包/s）",
-   "all": ["leak_bucket", {"leak_rate": 42, "bucket_cap": 60, "leak_interval_us": 4000}]},
-  {"tag": "hr-44-60-4000", "note": "HR3: leak 44/60/4000（11000 包/s；本地 135.67）",
-   "all": ["leak_bucket", {"leak_rate": 44, "bucket_cap": 60, "leak_interval_us": 4000}]}
-]
