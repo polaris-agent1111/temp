@@ -1,0 +1,183 @@
+{
+  "sim": "v2",
+  "opts": {
+    "queue": 400,
+    "cc": "cubic"
+  },
+  "seeds": 32,
+  "offset": -Infinity,
+  "rmse": NaN,
+  "loo_rmse": NaN,
+  "spearman": -0.3939393939393939,
+  "stair_gap": NaN,
+  "stair_gap_official": -11.04,
+  "trap_pred": NaN,
+  "trap_gate": false,
+  "points": [
+    {
+      "id": "v1_leak9_1000",
+      "target": 244.9765,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "tb100_200_20",
+      "target": 140.927,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "leak36_40",
+      "target": 133.086,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "leak27_40",
+      "target": 141.7273,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "leak30_50_5000",
+      "target": 140.479,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "leak24_60",
+      "target": 150.676,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "leak40_60",
+      "target": 137.384,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "leak42_60",
+      "target": 137.091,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "leak44_60",
+      "target": 142.784,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "S1_stair_40x3_37_36x2",
+      "target": 122.0463,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "S2_stair_41x2_40_37_36x2",
+      "target": 124.6603,
+      "pred": NaN,
+      "sim_std": 0.0,
+      "n": 0,
+      "per_file": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}
