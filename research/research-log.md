@@ -29,3 +29,7 @@ steps:
 - Use paired-seed local comparisons.
 
 Progress report: `to_human/progress-01.html`.
+
+## 2026-11-09 H4
+- Locked the structural submission plan (experiments/H4-submission-design/protocol.md) with predictions and a decision tree. Candidate pacer trees are rendered and validated. Offline paired check: C1/C2 collapse is a sim_v2 BBR artefact; C3 -0.7 s; C4 +0.1 s.
+- Waiting on the human to submit and report official scores.
