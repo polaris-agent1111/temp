@@ -89,3 +89,9 @@ tmp_*
 .audit/
 hs_err_pid*.log
 replay_pid*.log
+
+# ---------- local-eval 运行产物（配置与文档入库，结果不入库） ----------
+local-eval/runs/
+local-eval/evals/
+local-eval/.audit/
+local-eval/scripts/*.log
