@@ -267,8 +267,9 @@ class Download:
 
 def simulate_run(cfg, seed, queue=100, cc="bbr", lat=0.0, G=4000.0, pkt=1250.0, bg_mbps=100.0,
                  warmup=5.0, gap=0.3, t_max=500.0, bg_iw=10, bg_beta=0.7, handshake_rtts=1.5,
-                 bg_rto=1):
-    rng = random.Random(seed * 7919 + 11)
+                 bg_rto=1, jitter_seed=0, start_jitter_ms=0):
+    rng_bg = random.Random(seed * 7919 + 11)          # TrafficGenerator: arrivals + sizes (fixed by -s)
+    rng = random.Random((seed * 7919 + 11) * 1000003 + jitter_seed)   # everything else (system randomness)
     dt_us = 1000.0
     c_bytes = LINK_BPS / 8 * dt_us / 1e6        # bytes served per tick
     D = 70                                       # base RTT in ticks
@@ -350,8 +351,8 @@ def simulate_run(cfg, seed, queue=100, cc="bbr", lat=0.0, G=4000.0, pkt=1250.0, 
 
     def bg_tick():
         nonlocal fid
-        for _ in range(poisson(rng, lam)):
-            pending.append((t + 35, sample_flow(rng)))
+        for _ in range(poisson(rng_bg, lam)):
+            pending.append((t + 35, sample_flow(rng_bg)))
         if pending:
             keep = []
             for at, size in pending:
@@ -419,7 +420,7 @@ def simulate_run(cfg, seed, queue=100, cc="bbr", lat=0.0, G=4000.0, pkt=1250.0, 
         pacer = Pacer(module, params, pkt, G, lat)
         dl.reset(size)
         t_file0 = t
-        hs = int(handshake_rtts * D)
+        hs = int(handshake_rtts * D) + (rng.randrange(start_jitter_ms + 1) if start_jitter_ms else 0)
         for _ in range(hs):
             t += 1
             bg_tick()
