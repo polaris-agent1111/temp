@@ -1,0 +1,50 @@
+{
+ "1": [
+  "leak_bucket",
+  {
+   "leak_rate": 40,
+   "bucket_cap": 40,
+   "leak_interval_us": 4000
+  }
+ ],
+ "2": [
+  "leak_bucket",
+  {
+   "leak_rate": 40,
+   "bucket_cap": 40,
+   "leak_interval_us": 4000
+  }
+ ],
+ "3": [
+  "leak_bucket",
+  {
+   "leak_rate": 40,
+   "bucket_cap": 40,
+   "leak_interval_us": 4000
+  }
+ ],
+ "4": [
+  "leak_bucket",
+  {
+   "leak_rate": 37,
+   "bucket_cap": 37,
+   "leak_interval_us": 4000
+  }
+ ],
+ "5": [
+  "precise_rate_based",
+  {
+   "max_pacing_rate": 11250000,
+   "clock_granularity": 4000,
+   "enable_n_in_flight": 1
+  }
+ ],
+ "6": [
+  "precise_rate_based",
+  {
+   "max_pacing_rate": 11250000,
+   "clock_granularity": 4000,
+   "enable_n_in_flight": 1
+  }
+ ]
+}
