@@ -1,0 +1,42 @@
+{
+  "_doc": "Official (cloud leaderboard, 3-run fixed-seed average) results for our team. Source: local-eval/docs/background/{official-surface.md, timer-granularity.md, HANDOFF-2026-11-08.md}. cfg maps dir -> [module, params]; 'all' = same for 1..6.",
+  "points": [
+    {"id": "v1_leak9_1000", "date": "11-05", "official": [245.995, 243.958],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 9, "bucket_cap": 30, "leak_interval_us": 1000}]}},
+    {"id": "tb100_200_20", "date": "11-05", "official": [140.927],
+     "cfg": {"all": ["token_bucket", {"tokens": 100, "burst": 200, "token_refill_rate": 20, "token_refill_interval_us": 1000, "enable_n_in_flight": 1}]}},
+    {"id": "leak36_40", "date": "11-05", "official": [133.086],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 40, "leak_interval_us": 4000}]}},
+    {"id": "leak27_40", "date": "11-05", "official": [141.7273],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 27, "bucket_cap": 40, "leak_interval_us": 4000}]}},
+    {"id": "leak30_50_5000", "date": "11-06", "official": [140.479],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 30, "bucket_cap": 50, "leak_interval_us": 5000}]}},
+    {"id": "leak24_60", "date": "11-06", "official": [150.676],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 24, "bucket_cap": 60, "leak_interval_us": 4000}]}},
+    {"id": "leak40_60", "date": "11-06", "official": [137.384],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 60, "leak_interval_us": 4000}]}},
+    {"id": "leak42_60", "date": "11-06", "official": [137.091],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 42, "bucket_cap": 60, "leak_interval_us": 4000}]}},
+    {"id": "leak44_60", "date": "11-06", "official": [142.784],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 44, "bucket_cap": 60, "leak_interval_us": 4000}]}},
+    {"id": "S1_stair_40x3_37_36x2", "date": "11-08", "official": [122.0463],
+     "cfg": {"1": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 40, "leak_interval_us": 4000}],
+             "2": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 40, "leak_interval_us": 4000}],
+             "3": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 40, "leak_interval_us": 4000}],
+             "4": ["leak_bucket", {"leak_rate": 37, "bucket_cap": 37, "leak_interval_us": 4000}],
+             "5": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 36, "leak_interval_us": 4000}],
+             "6": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 36, "leak_interval_us": 4000}]}},
+    {"id": "S2_stair_41x2_40_37_36x2", "date": "11-08", "official": [124.6603],
+     "cfg_uncertain": "caps assumed = rate (tag name only)",
+     "cfg": {"1": ["leak_bucket", {"leak_rate": 41, "bucket_cap": 41, "leak_interval_us": 4000}],
+             "2": ["leak_bucket", {"leak_rate": 41, "bucket_cap": 41, "leak_interval_us": 4000}],
+             "3": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 40, "leak_interval_us": 4000}],
+             "4": ["leak_bucket", {"leak_rate": 37, "bucket_cap": 37, "leak_interval_us": 4000}],
+             "5": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 36, "leak_interval_us": 4000}],
+             "6": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 36, "leak_interval_us": 4000}]}}
+  ],
+  "excluded": [
+    {"id": "S3_pert_40on2", "official": [124.783], "reason": "exact config not recorded"}
+  ],
+  "leaderboard_top_1108": {"Catnet": 116.3367, "光明未来": 117.0257, "hashkimi": 120.267}
+}

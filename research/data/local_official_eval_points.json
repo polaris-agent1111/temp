@@ -1,0 +1,21 @@
+{
+  "_doc": "Local runs of the official evaluator (competition_question1) on the practice VM (CONFIG_HZ=1000, high-res timers => no 4 ms timer quantisation). Single-run std ~11.6 s. Segments: s14 = files 1-4, f5, f6. Source: bottleneck-and-40shot-plan.md section 2.3, flow-shaping-analysis.md 1.1, 技术报告-v4 4.2.",
+  "points": [
+    {"id": "origin_default", "n": 1, "total": 167.663, "per_file": [2.516, 4.611, 16.743, 18.503, 43.702, 81.588],
+     "cfg": {}},
+    {"id": "leak36_40", "n": 12, "total": 132.71, "std": 10.11, "seg": [26.74, 33.83, 72.14],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 40, "leak_interval_us": 4000}]}},
+    {"id": "leak36_36", "n": null, "total": 126.72, "seg": [23.94, 32.25, 70.53],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 36, "bucket_cap": 36, "leak_interval_us": 4000}]}},
+    {"id": "leak40_40", "n": null, "total": 134.84, "seg": [24.39, 36.63, 73.82],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 40, "bucket_cap": 40, "leak_interval_us": 4000}]}},
+    {"id": "leak24_60", "n": 12, "total": 123.13, "std": 5.55, "seg": [29.06, 30.20, 63.87],
+     "cfg": {"all": ["leak_bucket", {"leak_rate": 24, "bucket_cap": 60, "leak_interval_us": 4000}]}},
+    {"id": "mix_b_36_24", "n": null, "total": 117.13, "seg": [23.57, 31.76, 61.79],
+     "cfg_note": "front 36/40, back lowered to 24 (exact split not recorded)"},
+    {"id": "tb100_200_r36_4k", "n": null, "total": 148.2, "seg": [32.1, 34.5, 81.6]},
+    {"id": "hybrid_v4_119", "n": 1, "total": 119.268, "seg": [23.279, 37.955, 58.034],
+     "cfg_note": "dirs1-4 token_bucket 40/40 refill 40,40,38,36 @4000 inflight=1; dir5 precise 11.5e6 g1000; dir6 precise 12.0e6 g1000"},
+    {"id": "hybrid_tb4_p100M_p96M", "n": 3, "total": 137.43, "std": 18.42, "min": 116.542}
+  ]
+}

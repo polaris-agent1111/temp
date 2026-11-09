@@ -1,0 +1,45 @@
+project:
+  title: "iDSN Q1 pacing: make the offline evaluator predictive and find better pacer configs"
+  question: >
+    Which pacer configurations minimise the official 6-file download time under WebSearch background,
+    and can an offline simulator be made accurate enough (vs. the 11 official points) to rank candidates
+    before spending the 5/day official submissions?
+  status: active
+  started: "2026-11-09"
+  domain: "network transport / QUIC pacing / simulation calibration"
+
+literature:
+  key_papers: []
+  facts:
+    - "lsquic master: LSQUIC_DF_CC_ALGO = BBRv1 (include/lsquic.h); older (2020) default was Cubic. Competition stack version unknown."
+    - "TrafficGenerator client: Poisson requests at -b Mbps / mean size, persistent TCP connections, opens a new one if none idle; -s seed default = system time."
+  open_problems:
+    - "Download CC (BBRv1 vs Cubic) unknown"
+    - "Bottleneck queue size unknown (team claims 40-42 pkts; Mininet netem default limit is 1000)"
+    - "leak_bucket rejection semantics and whether cap matters"
+
+hypotheses:
+  - id: H0
+    statement: "Existing simulator v1 has no predictive skill beyond a constant on official points"
+    status: active
+    priority: high
+    parent: null
+
+experiments:
+  proxy_metric: "LOO-RMSE (s) of offset-corrected sim predictions vs 10 official points (fidelity.py); lower is better"
+  baseline_value: null
+  best_value: null
+  total_runs: 0
+  trajectory: []
+
+outer_loop:
+  cycle: 0
+  last_direction: null
+  last_reflection: ""
+
+workspace:
+  findings: "research/findings.md"
+  log: "research/research-log.md"
+  literature_dir: "research/literature/"
+  experiments_dir: "research/experiments/"
+  to_human_dir: "research/to_human/"
