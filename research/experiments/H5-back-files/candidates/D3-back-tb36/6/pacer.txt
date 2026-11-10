@@ -1,0 +1,3 @@
+[timestamp:6]
+pacer_mode:token_bucket
+pacer_config:tokens=36,burst=36,token_refill_rate=36,token_refill_interval_us=4000,enable_n_in_flight=1

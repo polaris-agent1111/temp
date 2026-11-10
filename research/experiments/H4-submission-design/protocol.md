@@ -49,6 +49,10 @@ C3-front-tokenbypass (token_bucket 40/40 with bypass on dirs 1-4) is held back. 
     bypass-only contrast.
   - Hold shot 5.
 - In every branch, resubmitting S1 is not needed. Repeat noise is already known (0.47 s).
+  **Corrected 2026-11-10:** this is wrong. S1 was resubmitted as #26 and scored 133.20 s against
+  122.05 s. The sd of one official shot is about 5-9 s for high-rate configs
+  (`research/findings.md`, finding 1). The ">= 5 s structural effect" rule therefore needs two
+  shots per config to detect.
 
 ## Caveat on the offline check
 `sim_v2_paired_check.txt` (16 paired seeds):

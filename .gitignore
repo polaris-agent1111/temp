@@ -6,6 +6,7 @@
 # ---------- 凭据与密钥（任何情况都不得入库） ----------
 client/secrets.json
 client/secrets*.json
+vm/secrets.json
 runs/.session.pkl
 *.pkl
 *.pickle

@@ -1,5 +1,13 @@
 # H2 analysis (CONFIRMATORY)
 
+> **Correction, 2026-11-10.** The repeat-noise figure below (sd 0.47 s) does not hold for
+> high-rate configs. Three byte-identical configs were each submitted twice and differ by
+> 11.2 s, 12.3 s, and 15.1 s (#16/#26, #12/#25, #14/#15 in
+> `research/data/official_and_local_data_inventory.md`). The sd of one official shot is about
+> 5-9 s. v1/v1b are pacer-limited, which is why they repeat closely. The z values in the second
+> table are therefore too large. "uniform 36/40 - S1" drops to z of about 1-1.5, and S2/S3 are
+> within noise. See `research/findings.md`, finding 1.
+
 Output of `python research/src/official_noise.py` (saved to `results/noise.json`):
 
 | quantity | value |
